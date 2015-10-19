@@ -23,6 +23,154 @@ local function can_grow(pos)
 	return true
 end
 
+--
+-- default Tree nodes
+--
+
+minetest.register_node("default:tree", {
+	description = "Tree",
+	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node
+})
+
+minetest.register_node("default:leaves", {
+	description = "Leaves",
+	drawtype = "allfaces_optional",
+	visual_scale = 1.3,
+	tiles = {"default_leaves.png"},
+	paramtype = "light",
+	waving = 1,
+	is_ground_content = false,
+	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				-- player will get sapling with 1/20 chance
+				items = {'default:sapling'},
+				rarity = 20,
+			},
+			{
+				-- player will get leaves only if he get no saplings,
+				-- this is because max_items is 1
+				items = {'default:leaves'},
+			}
+		}
+	},
+	sounds = default.node_sound_leaves_defaults(),
+	after_place_node = default.after_place_leaves,
+})
+
+minetest.register_node("default:sapling", {
+	description = "Sapling",
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_sapling.png"},
+	inventory_image = "default_sapling.png",
+	wield_image = "default_sapling.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+		attached_node = 1, sapling = 1},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
+minetest.register_node("default:apple", {
+	description = "Apple",
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_apple.png"},
+	inventory_image = "default_apple.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, 0, 0.2}
+	},
+	groups = {fleshy = 3, dig_immediate = 3, flammable = 2,
+		leafdecay = 3, leafdecay_drop = 1},
+	on_use = minetest.item_eat(2),
+	sounds = default.node_sound_leaves_defaults(),
+	after_place_node = function(pos, placer, itemstack)
+		if placer:is_player() then
+			minetest.set_node(pos, {name = "default:apple", param2 = 1})
+		end
+	end,
+})
+
+--[[ included for legacy support. Mods should use "material:wood"
+
+minetest.register_node("default:wood", {
+	description = "Wooden Planks",
+	tiles = {"default_wood.png"},
+	groups = {choppy = 2,oddly_breakable_by_hand = 2,flammable = 3,wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+})
+]]
+
+minetest.register_node("default:jungletree", {
+	description = "Jungle Tree",
+	tiles = {"default_jungletree_top.png", "default_jungletree_top.png",
+		"default_jungletree.png"},
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+	on_place = minetest.rotate_node
+})
+
+minetest.register_node("default:jungleleaves", {
+	description = "Jungle Leaves",
+	drawtype = "allfaces_optional",
+	waving = 1,
+	visual_scale = 1.3,
+	tiles = {"default_jungleleaves.png"},
+	special_tiles = {"default_jungleleaves_simple.png"},
+	paramtype = "light",
+	is_ground_content = false,
+	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+	drop = {
+		max_items = 1,
+		items = {
+			{items = {'default:junglesapling'}, rarity = 20},
+			{items = {'default:jungleleaves'}}
+		}
+	},
+	sounds = default.node_sound_leaves_defaults(),
+
+	after_place_node = default.after_place_leaves,
+})
+
+minetest.register_node("default:junglesapling", {
+	description = "Jungle Sapling",
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"default_junglesapling.png"},
+	inventory_image = "default_junglesapling.png",
+	wield_image = "default_junglesapling.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+		attached_node = 1, sapling = 1},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
 
 -- Sapling ABM
 
