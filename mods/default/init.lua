@@ -43,5 +43,6 @@ dofile(minetest.get_modpath("default").."/player.lua")
 dofile(minetest.get_modpath("default").."/chatcommands.lua")
 dofile(minetest.get_modpath("default").."/trees.lua")
 dofile(minetest.get_modpath("default").."/aliases.lua")
+dofile(minetest.get_modpath("default").."/mapgen.lua")
 
 minetest.log("action", "MOD["..minetest.get_current_modname().."]: [Loaded]")

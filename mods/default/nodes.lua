@@ -142,12 +142,12 @@ minetest.register_node("default:dirt_with_grass_footsteps", {
 minetest.register_node("default:dirt_with_dry_grass", {
 	description = "Dirt with Dry Grass",
 	tiles = {"default_dry_grass.png",
-		"default_dirt.png",
-		{name = "default_dirt.png^default_dry_grass_side.png",
+		"default_dirt_red.png",
+		{name = "default_dirt_red.png^default_dry_grass_side.png",
 			tileable_vertical = false}},
 	groups = {crumbly = 3, soil = 1},
 	soil = {
-		base = "default:drygrass",
+		base = "default:dirt_with_drygrass",
 		dry = "default:soil",
 		wet = "default:soil_wet"
 	},
@@ -203,7 +203,7 @@ minetest.register_node("default:dirt_with_ice", {
 		{name = "default_dirt_yellow.png^default_icydirt_side.png",
 			tileable_vertical = false}},
 	groups = {crumbly = 1},
-	drop = "default:dirt",
+	drop = "default:dirt_yellow",
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_snow_footstep", gain = 0.15},
 		dug = {name = "default_snow_footstep", gain = 0.45},
@@ -248,11 +248,11 @@ minetest.register_abm({
 
 minetest.register_node("default:dirt_with_snow", {
 	description = "Dirt with Snow",
-	tiles = {"default_snow.png", "default_dirt.png",
-		{name = "default_dirt.png^default_snow_side.png",
+	tiles = {"default_snow.png", "default_dirt_yellow.png",
+		{name = "default_dirt_yellow.png^default_snow_side.png",
 			tileable_vertical = false}},
 	groups = {crumbly = 3, soil = 1},
-	drop = 'default:dirt',
+	drop = 'default:dirt_yellow',
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_snow_footstep", gain = 0.25},
 	}),
@@ -810,7 +810,7 @@ minetest.register_node("default:snow", {
 	}),
 	on_construct = function(pos)
 		pos.y = pos.y - 1
-		if minetest.get_node(pos).name == "default:icydirt" then
+		if minetest.get_node(pos).name == "default:dirt_with_ice" then
 			minetest.set_node(pos, {name = "default:dirt_with_snow"})
 		end
 	end,
@@ -844,7 +844,7 @@ minetest.register_node("default:snowblock", {
 
 -- If Snow near Water, change Water to Ice
 minetest.register_abm({
-	nodenames = {"default:icydirt", "default:snow", "default:snowblock", "default:dirt_with_snow"},
+	nodenames = {"default:dirt_with_ice", "default:snow", "default:snowblock", "default:dirt_with_snow"},
 	neighbors = {"default:water_source"},
 	interval = 15,
 	chance = 2,
@@ -878,7 +878,7 @@ minetest.register_abm({
 		elseif node.name == "default:snowblock" then -- or string.split(node.name, ":")[1]then
 			minetest.add_node(pos,{name = "default:water_flowing"})
 		elseif node.name == "default:dirt_with_snow" then
-			minetest.add_node(pos,{name = "default:icydirt"})
+			minetest.add_node(pos,{name = "default:dirt_with_ice"})
 		end
 		nodeupdate(pos)
 	end,
