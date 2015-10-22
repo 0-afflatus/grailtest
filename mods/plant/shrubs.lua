@@ -194,9 +194,9 @@ minetest.register_decoration({
 		octaves = 3, 
 		persist = 0.66
 	},
-	biomes = {"woodland", "alpine"},
+	biomes = {"woodland", "alpine", "rainforest"},
 	--spawn_by = "",
-	y_min = 1,
+	y_min = 13,
 	y_max = 80,
 	decoration = {"plant:rhodedendron"},
 })
@@ -292,17 +292,18 @@ minetest.register_decoration({
 	sidelen = 80,
 	noise_params = {
 		offset = 0, 
-		scale = 0.01, 
+		scale = 0.007, 
 		spread = {x = 256, y = 256, z = 256}, 
 		seed = 611, 
-		octaves = 3, 
-		persist = 0.66
+		octaves = 4, 
+		persist = 0.8
 	},
 	biomes = {"grassland", "woodland", "alpine"},
 	--spawn_by = "",
 	y_min = 5,
 	y_max = 80,
 	decoration = {"plant:gorse"},
+	rotation = "random",
 })
 
 --
@@ -413,11 +414,11 @@ minetest.register_decoration({
 	sidelen = 80,
 	noise_params = {
 		offset = 0, 
-		scale = 0.01, 
+		scale = 0.007, 
 		spread = {x = 256, y = 256, z = 256}, 
 		seed = 715, 
-		octaves = 3, 
-		persist = 0.66
+		octaves = 4, 
+		persist = 0.8
 	},
 	biomes = {"grassland", "woodland"},
 	--spawn_by = "",
@@ -517,17 +518,18 @@ minetest.register_decoration({
 	sidelen = 80,
 	noise_params = {
 		offset = 0, 
-		scale = 0.01, 
+		scale = 0.02, 
 		spread = {x = 256, y = 256, z = 256}, 
 		seed = 330, 
-		octaves = 3, 
-		persist = 0.66
+		octaves = 4, 
+		persist = 0.8
 	},
-	biomes = {"woodland"},
+	biomes = {"woodland", "alpine"},
 	--spawn_by = "",
 	y_min = 5,
 	y_max = 40,
 	decoration = {"plant:hawthorn"},
+	rotation = "180",
 })
 
 --
@@ -644,17 +646,17 @@ minetest.register_decoration({
 	sidelen = 80,
 	noise_params = {
 		offset = 0, 
-		scale = 0.01, 
+		scale = 0.005, 
 		spread = {x = 256, y = 256, z = 256}, 
 		seed = 233, 
 		octaves = 3, 
-		persist = 0.66
+		persist = 0.8
 	},
 	biomes = {"woodland", "alpine", "tundra"},
 	--spawn_by = "",
 	y_min = 5,
-	y_max = 50,
-	decoration = {"plant:hawthorn"},
+	y_max = 60,
+	decoration = {"plant:strawberry"},
 })
 
 --
@@ -674,6 +676,8 @@ rock_surfaces = {
 	"mineral:silver_stone",	
 }
 
+rockplant_biomes = {"tundra", "tundra_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "woodland", "woodland_swamp", "alpine", "mountain"}
+
 heath_surfaces = {
 	"default:rock",
 	"default:lichen_stone",
@@ -684,6 +688,8 @@ heath_surfaces = {
 	"mineral:tin_stone",
 	"mineral:silver_stone",	
 }
+
+heath_biomes = {"tundra", "tundra_ocean", "taiga_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "woodland", "woodland_swamp", "savanna", "savanna_swamp", "rainforest_swamp", "alpine", "mountain", "sandy_shore"}
 
 minetest.register_node("plant:heath_sandwort", {
 	description = "Sandwort",
@@ -760,14 +766,14 @@ minetest.register_decoration({
 		scale = 0.03, 
 		spread = {x = 256, y = 256, z = 256}, 
 		seed = 391, 
-		octaves = 3, 
-		persist = 0.66
+		octaves = 4, 
+		persist = 0.8
 	},
-	--biomes = {"woodland", "alpine", "tundra"},
-	--spawn_by = "",
 	y_min = 1,
 	y_max = 83,
+	biomes = rockplant_biomes,
 	decoration = {"plant:heath_purple", "plant:heath_saxifrage_purple", "plant:heath_sandwort", },
+	rotation = "random",
 })
 
 
@@ -886,11 +892,11 @@ minetest.register_decoration({
 		spread = {x = 256, y = 256, z = 256}, 
 		seed = 474, 
 		octaves = 3, 
-		persist = 0.66
+		persist = 1.2
 	},
-	--biomes = {"woodland", "alpine", "tundra"},
-	--spawn_by = "",
 	y_min = 1,
 	y_max = 87,
+	biomes = heath_biomes,
 	decoration = {"plant:heath_green", "plant:heath_gold", "plant:heath_red", },
+	rotation = "random",
 })

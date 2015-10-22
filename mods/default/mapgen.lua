@@ -154,7 +154,7 @@ function mapgen.register_biomes()
 		--depth_water_top = ,
 		--node_water = "",
 		y_min = 2,
-		y_max = 82,
+		y_max = 85,
 		heat_point = 55,
 		humidity_point = 35,
 	})
@@ -188,7 +188,7 @@ function mapgen.register_biomes()
 		--depth_water_top = ,
 		--node_water = "",
 		y_min = 2,
-		y_max = 82,
+		y_max = 95,
 		heat_point = 55,
 		humidity_point = 79,
 	})
@@ -242,7 +242,7 @@ function mapgen.register_biomes()
 		--depth_water_top = ,
 		--node_water = "",
 		y_min = 3,
-		y_max = 87,
+		y_max = 55,
 		heat_point = 105,
 		humidity_point = 1,
 	})
@@ -276,7 +276,7 @@ function mapgen.register_biomes()
 		--depth_water_top = ,
 		--node_water = "",
 		y_min = 2,
-		y_max = 87,
+		y_max = 65,
 		heat_point = 95,
 		humidity_point = 45,
 	})
@@ -328,7 +328,7 @@ function mapgen.register_biomes()
 		--depth_water_top = ,
 		--node_water = "",
 		y_min = 2,
-		y_max = 82,
+		y_max = 75,
 		heat_point = 100,
 		humidity_point = 85,
 	})

@@ -24,7 +24,7 @@ minetest.register_node("plant:dry_shrub", {
 
 minetest.register_decoration({
 	deco_type = "simple",
-	place_on = {"default:desert_sand", "default:dirt_with_snow"},
+	place_on = {"default:desert_sand", "default:dirt_with_snow", "default:dirt_with_ice", "default:dirt_with_dry_grass"},
 	sidelen = 16,
 	noise_params = {
 		offset = 0,
@@ -34,7 +34,7 @@ minetest.register_decoration({
 		octaves = 3,
 		persist = 0.6
 	},
-	biomes = {"desert", "tundra"},
+	biomes = {"desert", "steppe", "tundra"},
 	y_min = 2,
 	y_max = 120,
 	decoration = "plant:dry_shrub",
@@ -122,7 +122,7 @@ local function register_grass_decoration(offset, scale, length)
 			octaves = 3,
 			persist = 0.6
 		},
-		biomes = {"grassland", "woodland", "alpine"},
+		biomes = {"grassland", "woodland", "alpine", "savanna_swamp", "woodland_swamp"},
 		y_min = 1,
 		y_max = 100,
 		decoration = "plant:grass_"..length,
@@ -266,7 +266,7 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_grass"},
 	sidelen = 80,
 	fill_ratio = 0.1,
-	biomes = {"rainforest"},
+	biomes = {"rainforest", "rainforest_swamp"},
 	y_min = 1,
 	y_max = 70,
 	decoration = "plant:junglegrass",
