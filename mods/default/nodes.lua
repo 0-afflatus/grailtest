@@ -111,22 +111,6 @@ minetest.register_node("default:dirt_with_grass", {
 	}),
 })
 
-minetest.register_abm({
-	nodenames = {"default:dirt_with_grass"},
-	interval = 2,
-	chance = 20,
-	action = function(pos, node)
-		local above = {x = pos.x, y = pos.y+1, z = pos.z}
-		local name = minetest.get_node(above).name
-		local nodedef = minetest.registered_nodes[name]
-		if name ~= "ignore" and nodedef
-				and not ((nodedef.sunlight_propagates or nodedef.paramtype == "light")
-				and nodedef.liquidtype == "none") then
-			minetest.set_node(pos, {name = "default:dirt"})
-		end
-	end
-})
-
 minetest.register_node("default:dirt_with_grass_footsteps", {
 	description = "Dirt with Grass and Footsteps",
 	tiles = {"default_grass.png^default_footprint.png", "default_dirt.png",
@@ -139,6 +123,23 @@ minetest.register_node("default:dirt_with_grass_footsteps", {
 	}),
 })
 
+minetest.register_abm({
+	nodenames = {"default:dirt_with_grass"},
+	interval = 2,
+	chance = 20,
+	action = function(pos, node)
+		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
+		local name = minetest.get_node(above).name
+		local nodedef = minetest.registered_nodes[name]
+		if name ~= "ignore" and nodedef and not ((nodedef.sunlight_propagates or
+				nodedef.paramtype == "light") and
+				nodedef.liquidtype == "none") then
+			minetest.set_node(pos, {name = "default:dirt"})
+		end
+	end
+})
+
+
 minetest.register_node("default:dirt_with_dry_grass", {
 	description = "Dirt with Dry Grass",
 	tiles = {"default_dry_grass.png",
@@ -147,7 +148,7 @@ minetest.register_node("default:dirt_with_dry_grass", {
 			tileable_vertical = false}},
 	groups = {crumbly = 3, soil = 1},
 	soil = {
-		base = "default:dirt_with_drygrass",
+		base = "default:dirt_with_dry_grass",
 		dry = "default:soil",
 		wet = "default:soil_wet"
 	},
@@ -172,21 +173,6 @@ minetest.register_abm({
 		end
 	end
 })
-
---[[minetest.register_node("default:jungle_dirt", {
-	description = "Jungle dirt",
-	tiles = {
-		"default_dirt_yellow.png^default_leaf_cover.png",
-		"default_dirt_yellow.png", 	
-		"default_dirt_yellow.png^default_leaf_cover_side.png"
-	},
-	is_ground_content = true,
-	groups = {crumbly = 1},
-	drop = "default:dirt",
-	sounds = default.node_sound_dirt_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})]]
 
 minetest.register_node("default:permafrost", {
 	description = "Permafrost",
@@ -316,7 +302,7 @@ minetest.register_abm({
 			if name == "default:snow" or name == "default:snowblock" then
 				minetest.set_node(pos, {name = "default:dirt_with_snow"})
 			else
-				minetest.set_node(pos, {name = "default:dirt_with_drygrass"})
+				minetest.set_node(pos, {name = "default:dirt_with_dry_grass"})
 			end
 		end
 	end
@@ -576,103 +562,6 @@ minetest.register_node("default:water_source", {
 	sounds = default.node_sound_water_defaults(),
 })
 
---[[minetest.register_node("default:freshwater", {
-	description = "Freshwater source",
-	inventory_image = {"default_water.png"},
-	drawtype = "liquid",
-	tiles = {
-		{
-			name = "default_water_source_animated.png",
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16, 
-				aspect_h = 16, 
-				length = 2.0,
-			}
-		}
-	},
-	special_tiles = {
-		{
-			name = "default_water_source_animated.png",
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16, 
-				aspect_h = 16, 
-				length = 2.0,
-			},
-			backface_culling = false,
-		}
-	},
-	alpha = 160,
-	paramtype = "light",
-	is_ground_content = false,
-	walkable = false,
-	pointable = false,
-	diggable = false,
-	buildable_to = true,
-	drop = "",
-	drowning = 1,
-	liquidtype = "source",
-	liquid_alternative_flowing = "default:freshwaterflow",
-	liquid_alternative_source = "default:freshwater",
-	liquid_viscosity = 1,
-	--liquid_renewable = false,
-	liquid_range = 3,
-	freezemelt = "default:freshice",
-	post_effect_color = {a = 120, r = 100, g = 150, b = 200},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1},
-	sounds = default.node_sound_water_defaults(),
-})
-
-minetest.register_node("default:freshwaterflow", {
-	description = "Flowing freshwater",
-	inventory_image = {"default_water.png"},
-	drawtype = "flowingliquid",
-	tiles = {"default_water.png"},
-	special_tiles = {
-		{
-			name = "default_water_flowing_animated.png",
-			backface_culling = false,
-			animation = {
-				type = "vertical_frames", 
-				aspect_w = 16, 
-				aspect_h = 16, 
-				length = 0.8,
-			}
-		},
-		{
-			name = "default_water_flowing_animated.png",
-			backface_culling = true,
-			animation = {
-				type = "vertical_frames", 
-				aspect_w = 16, 
-				aspect_h = 16, 
-				length = 0.8,
-			}
-		},
-	},
-	alpha = 160,
-	paramtype = "light",
-	paramtype2 = "flowingliquid",
-	is_ground_content = false,
-	walkable = false,
-	pointable = false,
-	diggable = false,
-	buildable_to = true,
-	drop = "",
-	drowning = 1,
-	liquidtype = "flowing",
-	liquid_alternative_flowing = "default:freshwaterflow",
-	liquid_alternative_source = "default:freshwater",
-	liquid_viscosity = 1,
-	--liquid_renewable = false,
-	liquid_range = 3,
-	freezemelt = "default:freshice",
-	post_effect_color = {a = 120, r = 100, g = 150, b = 200},
-	groups = {water = 3, liquid = 3, puts_out_fire = 1, not_in_creative_inventory = 1},
-	sounds = default.node_sound_water_defaults(),
-})]]
-
 minetest.register_node("default:river_water_source", {
 	description = "River Water Source",
 	inventory_image = minetest.inventorycube("default_water.png"),
@@ -886,12 +775,12 @@ minetest.register_abm({
 
 -- If Water Source near Dry Dirt, change to normal Dirt
 minetest.register_abm({
-	nodenames = {"default:dirt_with_drygrass","default:dirt_red"},
+	nodenames = {"default:dirt_with_dry_grass","default:dirt_red"},
 	neighbors = {"group:water"},
 	interval = 15,
 	chance = 2,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-		if node.name == "default:dirt_with_drygrass" then	
+		if node.name == "default:dirt_with_dry_grass" then	
 			minetest.add_node(pos,{name = "default:dirt_with_grass"})
 		elseif node.name == "default:dirt_red" then	
 			minetest.add_node(pos,{name = "default:dirt"})
@@ -997,64 +886,38 @@ minetest.register_node("default:lava_source", {
 	groups = {lava = 3, liquid = 2, hot = 3},
 })
 
---[[minetest.register_node("default:lava_flowing", {
-	description = "Flowing Lava",
-	inventory_image = minetest.inventorycube("default_lava.png"),
-	drawtype = "flowingliquid",
-	tiles = {"default_lava.png"},
-	special_tiles = {
-		{
-			name = "default_lava_flowing_animated.png",
-			backface_culling = false,
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 3.3,
-			},
-		},
-		{
-			name = "default_lava_flowing_animated.png",
-			backface_culling = true,
-			animation = {
-				type = "vertical_frames",
-				aspect_w = 16,
-				aspect_h = 16,
-				length = 3.3,
-			},
-		},
-	},
-	paramtype = "light",
-	paramtype2 = "flowingliquid",
-	light_source = 14,
-	walkable = false,
-	pointable = false,
-	diggable = false,
-	buildable_to = true,
-	is_ground_content = false,
-	drop = "",
-	drowning = 1,
-	liquidtype = "flowing",
-	liquid_alternative_flowing = "default:lava_flowing",
-	liquid_alternative_source = "default:lava_source",
-	liquid_viscosity = 7,
-	liquid_renewable = false,
-	liquid_range = 3,
-	damage_per_second = 8,
-	post_effect_color = {a = 192, r = 255, g = 64, b = 0},
-	groups = {lava = 3, liquid = 2, hot = 3, igniter = 1,
-		not_in_creative_inventory = 1},
-})]]
+--
+-- Lavacooling
+--
 
--- Lava-water cooling
+default.cool_lava_source = function(pos)
+	minetest.set_node(pos, {name = "default:obsidian"})
+	minetest.sound_play("default_cool_lava",
+		{pos = pos, max_hear_distance = 16, gain = 0.25})
+end
+
+default.cool_lava_flowing = function(pos)
+	minetest.set_node(pos, {name = "default:stone"})
+	minetest.sound_play("default_cool_lava",
+		{pos = pos, max_hear_distance = 16, gain = 0.25})
+end
 
 minetest.register_abm({
-	nodenames = {"group:lava"},
+	nodenames = {"default:lava_flowing"},
 	neighbors = {"group:water"},
-	interval = 11,
-	chance = 64,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		minetest.add_node(pos, {name = "default:obsidian"})
-		minetest.sound_play("default_cool_lava", {pos = pos,  gain = 0.25})
+	interval = 1,
+	chance = 2,
+	action = function(...)
+		default.cool_lava_flowing(...)
+	end,
+})
+
+minetest.register_abm({
+	nodenames = {"default:lava_source"},
+	neighbors = {"group:water"},
+	interval = 1,
+	chance = 2,
+	action = function(...)
+		default.cool_lava_source(...)
 	end,
 })

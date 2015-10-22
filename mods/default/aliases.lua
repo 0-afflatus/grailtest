@@ -47,18 +47,6 @@ minetest.register_alias("mapgen_sandstone", "default:sandstone")
 minetest.register_alias("mapgen_cobble", "default:cobble")
 --minetest.register_alias("mapgen_stair_cobble", "stairs:stair_cobble")
 minetest.register_alias("mapgen_mossycobble", "default:mossycobble")
+minetest.register_alias("mapgen_sandstonebrick", "default:sandstone")
+--minetest.register_alias("mapgen_stair_sandstonebrick", "stairs:stair_sandstonebrick")
 
--- Flora
-
-minetest.register_alias("mapgen_tree", "default:tree")
-minetest.register_alias("mapgen_leaves", "default:leaves")
-minetest.register_alias("mapgen_apple", "default:apple")
-minetest.register_alias("mapgen_jungletree", "default:jungletree")
-minetest.register_alias("mapgen_jungleleaves", "default:jungleleaves")
-minetest.register_alias("mapgen_junglegrass", "default:junglegrass")
-minetest.register_alias("mapgen_pine_tree", "default:pine_tree")
-minetest.register_alias("mapgen_pine_needles", "default:pine_needles")
-
--- Aliases for corrected pine node names
-minetest.register_alias("default:pinetree", "default:pine_tree")
-minetest.register_alias("default:pinewood", "default:pine_wood")
