@@ -48,6 +48,7 @@ minetest.register_node("plant:orange_tree_trunk", {
 		fixed = {-1/4, -1/2, -1/4, 1/4, 1/2, 1/4},
 	},
 	
+	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
 	groups = {tree=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},

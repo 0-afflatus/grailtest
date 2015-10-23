@@ -145,7 +145,7 @@ minetest.register_decoration({
 	sidelen = 16,
 	noise_params = {
 		offset = 0.04,
-		scale = 0.02,
+		scale = 0.01,
 		spread = {x = 250, y = 250, z = 250},
 		seed = 2,
 		octaves = 3,
@@ -286,7 +286,7 @@ minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:dirt_with_grass", "default:dirt"},
 	sidelen = 80,
-	fill_ratio = 0.09,
+	fill_ratio = 0.07,
 	biomes = {"rainforest", "rainforest_swamp"},
 	y_min = 0,
 	y_max = 40,
@@ -514,7 +514,7 @@ minetest.register_decoration({
 	sidelen = 16,
 	noise_params = {
 		offset = 0.04,
-		scale = 0.02,
+		scale = 0.015,
 		spread = {x = 250, y = 250, z = 250},
 		seed = 2,
 		octaves = 3,
