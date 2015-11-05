@@ -78,15 +78,17 @@ minetest.register_node("default:desert_cobble", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
--- Over time Cobble placed in water changes to Mossy Cobble
--- From Ethereal mod
+--
+-- Moss growth on cobble near water
+--
 minetest.register_abm({
 	nodenames = {"default:cobble"},
-	neighbors = {"default:water_source"},
-	interval = 30,
-	chance = 10,
+	neighbors = {"group:water"},
+	interval = 17,
+	chance = 200,
+	catch_up = false,
 	action = function(pos, node)
-	        minetest.add_node(pos, {name = "default:mossycobble"})
+		minetest.set_node(pos, {name = "default:mossycobble"})
 	end
 })
 
@@ -261,17 +263,38 @@ minetest.register_abm({
 	interval = 2,
 	chance = 200,
 	action = function(pos, node)
-		local above = {x = pos.x, y = pos.y+1, z = pos.z}
+		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
 		local name = minetest.get_node(above).name
 		local nodedef = minetest.registered_nodes[name]
-		if nodedef and (nodedef.sunlight_propagates or nodedef.paramtype == "light")
-				and nodedef.liquidtype == "none"
-				and (minetest.get_node_light(above) or 0) >= 13 then
+		if nodedef and (nodedef.sunlight_propagates or nodedef.paramtype == "light") and
+				nodedef.liquidtype == "none" and
+				(minetest.get_node_light(above) or 0) >= 13 then
 			if name == "default:snow" or name == "default:snowblock" then
 				minetest.set_node(pos, {name = "default:dirt_with_snow"})
 			else
 				minetest.set_node(pos, {name = "default:dirt_with_grass"})
 			end
+		end
+	end
+})
+
+
+--
+-- Grass and dry grass removed in darkness
+--
+
+minetest.register_abm({
+	nodenames = {"default:dirt_with_grass", "default:dirt_with_dry_grass"},
+	interval = 2,
+	chance = 20,
+	action = function(pos, node)
+		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
+		local name = minetest.get_node(above).name
+		local nodedef = minetest.registered_nodes[name]
+		if name ~= "ignore" and nodedef and not ((nodedef.sunlight_propagates or
+				nodedef.paramtype == "light") and
+				nodedef.liquidtype == "none") then
+			minetest.set_node(pos, {name = "default:dirt"})
 		end
 	end
 })
@@ -663,7 +686,7 @@ minetest.register_node("default:freshice", {
 	is_ground_content = false,
 	paramtype = "light",
 	freezemelt = "default:river_water_source",
-	groups = {cracky = 3, water = 1},
+	groups = {cracky = 3, water = 1, puts_out_fire = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 
@@ -674,7 +697,7 @@ minetest.register_node("default:ice", {
 	is_ground_content = false,
 	paramtype = "light",
 	freezemelt = "default:water_source",
-	groups = {cracky = 3, melts = 1, water = 1},
+	groups = {cracky = 3, melts = 1, water = 1, puts_out_fire = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 
@@ -692,7 +715,7 @@ minetest.register_node("default:snow", {
 			{-0.5, -0.5, -0.5,  0.5, -0.5+2/16, 0.5},
 		},
 	},
-	groups = {crumbly = 3,falling_node = 1},
+	groups = {crumbly = 3,falling_node = 1, puts_out_fire = 1},
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_snow_footstep", gain = 0.25},
 		dug = {name = "default_snow_footstep", gain = 0.75},
@@ -724,7 +747,7 @@ minetest.register_node("default:snowblock", {
 	description = "Snow Block",
 	tiles = {"default_snow.png"},
 	is_ground_content = true,
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, puts_out_fire = 1},
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_snow_footstep", gain = 0.25},
 		dug = {name = "default_snow_footstep", gain = 0.75},

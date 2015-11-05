@@ -57,13 +57,13 @@ minetest.register_node("tree:apple_tree_leaves", {
 		items = {
 			{
 				-- player will get sapling with 1/20 chance
-				items = {'plant:sapling'},
+				items = {'tree:apple_tree_sapling'},
 				rarity = 20,
 			},
 			{
 				-- player will get leaves only if he get no saplings,
 				-- this is because max_items is 1
-				items = {'plant:leaves'},
+				items = {'tree:apple_tree_leaves'},
 			}
 		}
 	},
@@ -144,12 +144,12 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_grass"},
 	sidelen = 16,
 	noise_params = {
-		offset = 0.04,
-		scale = 0.01,
-		spread = {x = 250, y = 250, z = 250},
+		offset = 0.02,
+		scale = 0.001,
+		spread = {x=23, y=23, z=23},
 		seed = 2,
-		octaves = 3,
-		persist = 0.66
+		octaves=1,
+		persist=0.5		
 	},
 	biomes = {"woodland"},
 	y_min = 2,
@@ -195,8 +195,8 @@ minetest.register_node("tree:jungleleaves", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {'plant:junglesapling'}, rarity = 20},
-			{items = {'plant:jungleleaves'}}
+			{items = {'tree:junglesapling'}, rarity = 20},
+			{items = {'tree:jungleleaves'}}
 		}
 	},
 	sounds = default.node_sound_leaves_defaults(),
@@ -513,12 +513,18 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
 	sidelen = 16,
 	noise_params = {
-		offset = 0.04,
-		scale = 0.015,
-		spread = {x = 250, y = 250, z = 250},
+		offset = 0.02,
+		scale = 0.001,
+		spread = {x=23, y=23, z=23},
 		seed = 2,
-		octaves = 3,
-		persist = 0.66
+		octaves=1,
+		persist=0.5	
+		--offset = 0.04,
+		--scale = 0.015,
+		--spread = {x = 250, y = 250, z = 250},
+		--seed = 2,
+		--octaves = 3,
+		--persist = 0.66
 	},
 	biomes = {"taiga", "alpine"},
 	y_min = 2,

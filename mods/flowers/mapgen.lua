@@ -105,7 +105,8 @@ end
 local function register_mushroom(name)
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:dirt_with_grass"},
+		place_on = {"default:dirt_with_grass", "default:dirt"},
+		spawn_by = {"group:water", "group:tree"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,

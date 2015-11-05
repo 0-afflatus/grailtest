@@ -299,9 +299,9 @@ minetest.register_decoration({
 		octaves = 4, 
 		persist = 0.8
 	},
-	biomes = {"grassland", "woodland", "alpine"},
+	biomes = {"grassland", "steppe", "alpine"},
 	--spawn_by = "",
-	y_min = 5,
+	y_min = 13,
 	y_max = 80,
 	decoration = {"plant:gorse"},
 	rotation = "random",
@@ -681,6 +681,7 @@ rockplant_biomes = {"tundra", "tundra_ocean", "steppe", "steppe_ocean", "grassla
 
 heath_surfaces = {
 	"default:rock",
+	"default:dirt_with_ice",
 	"default:lichen_stone",
 	"default:rock_with_lichen_2",
 	"default:rock_with_lichen_3",
@@ -690,7 +691,9 @@ heath_surfaces = {
 	"mineral:silver_stone",	
 }
 
-heath_biomes = {"tundra", "tundra_ocean", "taiga_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "woodland", "woodland_swamp", "savanna", "savanna_swamp", "rainforest_swamp", "alpine", "mountain", "sandy_shore"}
+heath_biomes_cool = {"tundra", "tundra_ocean", "taiga_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "alpine", "mountain"}
+
+heath_biomes_warm = {"grassland", "grassland_ocean", "woodland", "woodland_swamp", "savanna", "savanna_swamp", "rainforest_swamp", "sandy_shore"}
 
 minetest.register_node("plant:heath_sandwort", {
 	description = "Sandwort",
@@ -888,16 +891,35 @@ minetest.register_decoration({
 	place_on = heath_surfaces,
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.03, 
-		spread = {x = 256, y = 256, z = 256}, 
-		seed = 474, 
-		octaves = 3, 
-		persist = 1.2
+		offset = 0.02,
+		scale = 0.001,
+		spread = {x=23, y=23, z=23},
+		seed = 474,
+		octaves=1,
+		persist=0.5
 	},
 	y_min = 1,
 	y_max = 87,
-	biomes = heath_biomes,
-	decoration = {"plant:heath_green", "plant:heath_gold", "plant:heath_red", },
+	biomes = heath_biomes_cool,
+	decoration = {"plant:heath_gold", "plant:heath_red", },
+	rotation = "random",
+})
+
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = heath_surfaces,
+	sidelen = 80,
+	noise_params = {
+		offset = 0, 
+		scale = 0.01, 
+		spread = {x = 64, y = 64, z = 64}, 
+		seed = 474, 
+		octaves = 2, 
+		persist = 1.5
+	},
+	y_min = 1,
+	y_max = 87,
+	biomes = heath_biomes_warm,
+	decoration = {"plant:heath_green"},
 	rotation = "random",
 })
