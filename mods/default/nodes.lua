@@ -13,33 +13,25 @@ minetest.register_node("default:stone", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:rock", {
-	description = "Rock",
-	tiles = {"default_rock.png"},
+minetest.register_node("default:stone_with_lichen_1", {
+	description = "Lichen covered stone",
+	tiles = {"default_rock_with_lichen_1.png", "default_stone.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:cobble',
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:lichen_stone", {
-	description = "Lichen covered rock",
-	tiles = {"default_rock_with_lichen_1.png", "default_rock.png"},
+minetest.register_node("default:stone_with_lichen_2", {
+	description = "Lichen covered stone",
+	tiles = {"default_rock_with_lichen_2.png", "default_stone.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:cobble',
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("default:rock_with_lichen_2", {
-	description = "Lichen covered rock",
-	tiles = {"default_rock_with_lichen_2.png", "default_rock.png"},
-	groups = {cracky = 3, stone = 1},
-	drop = 'default:cobble',
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("default:rock_with_lichen_3", {
-	description = "Lichen covered rock",
-	tiles = {"default_rock_with_lichen_3.png", "default_rock.png"},
+minetest.register_node("default:stone_with_lichen_3", {
+	description = "Lichen covered stone",
+	tiles = {"default_rock_with_lichen_3.png", "default_stone.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:cobble',
 	sounds = default.node_sound_stone_defaults(),
@@ -93,6 +85,20 @@ minetest.register_abm({
 })
 
 --
+-- Lichen growth on stone near water
+--
+minetest.register_abm({
+	nodenames = {"default:stone"},
+	neighbors = {"group:water"},
+	interval = 17,
+	chance = 200,
+	catch_up = false,
+	action = function(pos, node)
+		minetest.set_node(pos, {name = "default:stone_with_lichen_3"})
+	end
+})
+
+--
 -- Dirt
 --
 
@@ -127,7 +133,7 @@ minetest.register_node("default:dirt_with_grass_footsteps", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_grass"},
-	interval = 2,
+	interval = 20,
 	chance = 20,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
@@ -162,7 +168,7 @@ minetest.register_node("default:dirt_with_dry_grass", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_dry_grass"},
-	interval = 2,
+	interval = 20,
 	chance = 20,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -187,11 +193,11 @@ minetest.register_node("default:permafrost", {
 minetest.register_node("default:dirt_with_ice", {
 	description = "Dirt with Ice",
 	tiles = {"default_icydirt.png", 
-		"default_dirt_yellow.png",
-		{name = "default_dirt_yellow.png^default_icydirt_side.png",
+		"default_permafrost.png",
+		{name = "default_permafrost.png^default_icydirt_side.png",
 			tileable_vertical = false}},
 	groups = {crumbly = 1},
-	drop = "default:dirt_yellow",
+	drop = "default:permafrost",
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_snow_footstep", gain = 0.15},
 		dug = {name = "default_snow_footstep", gain = 0.45},
@@ -200,7 +206,7 @@ minetest.register_node("default:dirt_with_ice", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_ice"},
-	interval = 2,
+	interval = 20,
 	chance = 20,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -216,7 +222,7 @@ minetest.register_abm({
 
 minetest.register_abm({
 	nodenames = {"default:permafrost"},
-	interval = 2,
+	interval = 20,
 	chance = 200,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -260,7 +266,7 @@ minetest.register_node("default:dirt", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt"},
-	interval = 2,
+	interval = 20,
 	chance = 200,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
@@ -285,7 +291,7 @@ minetest.register_abm({
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_grass", "default:dirt_with_dry_grass"},
-	interval = 2,
+	interval = 20,
 	chance = 20,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
@@ -313,7 +319,7 @@ minetest.register_node("default:dirt_red", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_red"},
-	interval = 2,
+	interval = 20,
 	chance = 200,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -332,7 +338,7 @@ minetest.register_abm({
 })
 
 minetest.register_node("default:dirt_yellow", {
-	description = "Dirt",
+	description = "Yellow Dirt",
 	tiles = {"default_dirt_yellow.png"},
 	is_ground_content = true,
 	groups = {crumbly = 1},
@@ -728,9 +734,11 @@ minetest.register_node("default:snow", {
 	end,
 })
 
+-- Snow melting in the sun
+-- Needs to work in conjunction with snow settling (snowdrift)
 minetest.register_abm({
 	nodenames = {"default:snow"},
-	interval = 1000,
+	interval = 600,
 	chance = 1000,
 	action = function(pos, node)
 		local pos0 = {x = pos.x-1,y = pos.y-1,z = pos.z-1}
@@ -742,6 +750,7 @@ minetest.register_abm({
 		end
 	end
 })
+
 
 minetest.register_node("default:snowblock", {
 	description = "Snow Block",
@@ -758,8 +767,8 @@ minetest.register_node("default:snowblock", {
 minetest.register_abm({
 	nodenames = {"default:dirt_with_ice", "default:snow", "default:snowblock", "default:dirt_with_snow"},
 	neighbors = {"default:water_source"},
-	interval = 15,
-	chance = 2,
+	interval = 150,
+	chance = 200,
 	action = function(pos, node)
 		local pos0 = {x = pos.x-1,y = pos.y-1,z = pos.z-1}
 		local pos1 = {x = pos.x+1,y = pos.y+1,z = pos.z+1}
@@ -800,7 +809,7 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"default:dirt_with_dry_grass","default:dirt_red"},
 	neighbors = {"group:water"},
-	interval = 15,
+	interval = 150,
 	chance = 2,
 	action = function(pos, node, active_object_count, active_object_count_wider)
 		if node.name == "default:dirt_with_dry_grass" then	

@@ -116,7 +116,7 @@ local function register_mushroom(name)
 			octaves = 3,
 			persist = 0.66
 		},
-		biomes = {"woodland", "alpine"},
+		biomes = {"woodland", "alpine", "underground"},
 		y_min = 1,
 		y_max = 31000,
 		decoration = "flowers:"..name,

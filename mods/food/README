@@ -1,0 +1,28 @@
+grail_test 0.3 mod: food
+========================
+
+This mod provides basic food recipes including a feast of nonvegan ones if you have mobs installed.
+
+APIish
+------
+
+Food preparations intended for cooking in the cauldron must use shapeless recipes to produce a cookable craft item.
+
+For example, to make vegetable stew:
+Craft a vegetable, grain,  AND {pulse OR nut OR edible_mushroom} to make prepped veg.
+The prepped veg can then be cooked in a furnace to make vegetable stew
+or you can do the thing all in one go by crafting the ingredients in a cauldron.
+
+Texture credits
+---------------
+
+rubenwardy food 2.3 (GPL 3.0 + | CC-BY-SA):
+	Cake textures and node defs
+
+VanessaE HDX-classic-32px (GPL 3.0):
+	bread
+	cake_mix
+	flour
+	
+afflatus (CC-BY-SA)
+	All other textures

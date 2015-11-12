@@ -53,7 +53,7 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = 2,
 		y_max = 77,
-		heat_point = 20,
+		heat_point = 12,
 		humidity_point = 23,
 	})
 
@@ -70,8 +70,8 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = -112,
 		y_max = 1,
-		heat_point = 20,
-		humidity_point = 23,
+		heat_point = 10,
+		humidity_point = 20,
 	})
 	
 	minetest.register_biome({
@@ -87,7 +87,7 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = 2,
 		y_max = 87,
-		heat_point = 13,
+		heat_point = 10,
 		humidity_point = 80,
 	})
 
@@ -104,7 +104,7 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = -112,
 		y_max = 1,
-		heat_point = 13,
+		heat_point = 10,
 		humidity_point = 80,
 	})
 	
@@ -156,7 +156,7 @@ function mapgen.register_biomes()
 		y_min = 2,
 		y_max = 85,
 		heat_point = 55,
-		humidity_point = 35,
+		humidity_point = 37,
 	})
 
 	minetest.register_biome({
@@ -173,7 +173,7 @@ function mapgen.register_biomes()
 		y_min = -112,
 		y_max = 1,
 		heat_point = 55,
-		humidity_point = 35,
+		humidity_point = 37,
 	})
 	
 	minetest.register_biome({
@@ -211,8 +211,6 @@ function mapgen.register_biomes()
 		humidity_point = 85,
 	})
 
-	
-
 	minetest.register_biome({
 		name = "woodland_ocean",
 		--node_dust = "",
@@ -243,7 +241,7 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = 3,
 		y_max = 55,
-		heat_point = 105,
+		heat_point = 101,
 		humidity_point = 1,
 	})
 
@@ -260,7 +258,7 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = -112,
 		y_max = 1,
-		heat_point = 105,
+		heat_point = 101,
 		humidity_point = 1,
 	})
 	
@@ -284,7 +282,7 @@ function mapgen.register_biomes()
 	minetest.register_biome({
 		name = "savanna_swamp",
 		--node_dust = "",
-		node_top = "default:dirt",
+		node_top = "default:dirt_with_grass",
 		depth_top = 1,
 		node_filler = "default:dirt",
 		depth_filler = 2,
@@ -296,7 +294,7 @@ function mapgen.register_biomes()
 		y_min = -3,
 		y_max = 1,
 		heat_point = 95,
-		humidity_point = 60,
+		humidity_point = 65,
 	})
 
 	minetest.register_biome({
@@ -329,14 +327,14 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = 2,
 		y_max = 75,
-		heat_point = 100,
+		heat_point = 101,
 		humidity_point = 85,
 	})
 
 	minetest.register_biome({
 		name = "rainforest_swamp",
 		--node_dust = "",
-		node_top = "default:dirt",
+		node_top = "default:dirt_with_grass",
 		depth_top = 1,
 		node_filler = "default:dirt",
 		depth_filler = 2,
@@ -347,7 +345,7 @@ function mapgen.register_biomes()
 		--node_river_water = "",
 		y_min = -1,
 		y_max = 1,
-		heat_point = 105,
+		heat_point = 101,
 		humidity_point = 90,
 	})
 

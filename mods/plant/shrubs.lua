@@ -188,9 +188,9 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_grass"},
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.01, 
-		spread = {x = 256, y = 256, z = 256}, 
+		offset = -0.01,
+		scale = 0.03,
+		spread = {x = 127, y = 127, z = 127}, 
 		seed = 556, 
 		octaves = 3, 
 		persist = 0.66
@@ -292,9 +292,9 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_grass"},
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.007, 
-		spread = {x = 256, y = 256, z = 256}, 
+		offset = -0.01,
+		scale = 0.03,
+		spread = {x = 127, y = 127, z = 127}, 
 		seed = 611, 
 		octaves = 4, 
 		persist = 0.8
@@ -414,12 +414,12 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_grass"},
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.007, 
-		spread = {x = 256, y = 256, z = 256}, 
+		offset = -0.015,
+		scale = 0.03,
+		spread = {x = 127, y = 127, z = 127}, 
 		seed = 715, 
 		octaves = 4, 
-		persist = 0.8
+		persist = 0.3
 	},
 	biomes = {"grassland", "woodland"},
 	--spawn_by = "",
@@ -518,12 +518,12 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_grass", "default:dirt_with_ice"},
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.02, 
-		spread = {x = 256, y = 256, z = 256}, 
+		offset = -0.01,
+		scale = 0.03,
+		spread = {x = 127, y = 127, z = 127}, 
 		seed = 330, 
 		octaves = 4, 
-		persist = 0.8
+		persist = 0.3
 	},
 	biomes = {"woodland", "alpine"},
 	--spawn_by = "",
@@ -646,12 +646,12 @@ minetest.register_decoration({
 	place_on = {"default:dirt_with_grass", "default:dirt_with_ice"},
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.005, 
-		spread = {x = 256, y = 256, z = 256}, 
+		offset = 0,
+		scale = 0.02,
+		spread = {x = 127, y = 127, z = 127}, 
 		seed = 233, 
 		octaves = 3, 
-		persist = 0.8
+		persist = 0.3
 	},
 	biomes = {"woodland", "alpine", "tundra"},
 	--spawn_by = "",
@@ -766,12 +766,12 @@ minetest.register_decoration({
 	place_on = rock_surfaces,
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.03, 
-		spread = {x = 256, y = 256, z = 256}, 
+		offset = 0,
+		scale = 0.03,
+		spread = {x = 127, y = 127, z = 127}, 
 		seed = 391, 
 		octaves = 4, 
-		persist = 0.8
+		persist = 0.3
 	},
 	y_min = 1,
 	y_max = 83,
@@ -891,13 +891,14 @@ minetest.register_decoration({
 	place_on = heath_surfaces,
 	sidelen = 80,
 	noise_params = {
-		offset = 0.02,
-		scale = 0.001,
-		spread = {x=23, y=23, z=23},
-		seed = 474,
-		octaves=1,
-		persist=0.5
-	},
+			offset = 0,
+			scale = 0.02,
+			spread = {x = 127, y = 127, z = 127},
+			seed = 474,
+			octaves = 3,
+			persist = 0.35,
+	    		flags = "eased"
+		},
 	y_min = 1,
 	y_max = 87,
 	biomes = heath_biomes_cool,
@@ -910,13 +911,14 @@ minetest.register_decoration({
 	place_on = heath_surfaces,
 	sidelen = 80,
 	noise_params = {
-		offset = 0, 
-		scale = 0.01, 
-		spread = {x = 64, y = 64, z = 64}, 
-		seed = 474, 
-		octaves = 2, 
-		persist = 1.5
-	},
+			offset = 0,
+			scale = 0.02,
+			spread = {x = 192, y = 192, z = 192},
+			seed = 537,
+			octaves = 3,
+			persist = 0.35,
+	    		flags = "eased"
+		},
 	y_min = 1,
 	y_max = 87,
 	biomes = heath_biomes_warm,

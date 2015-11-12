@@ -5,7 +5,7 @@ tree = {}
 --
 
 minetest.register_node("tree:apple_tree_trunk", {
-	description = "Tree",
+	description = "Apple Tree Trunk",
 	tiles = {"tree_apple_tree_trunk_top.png", "tree_apple_tree_trunk_top.png", "tree_apple_tree_trunk.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
@@ -16,7 +16,7 @@ minetest.register_node("tree:apple_tree_trunk", {
 })
 
 minetest.register_node("tree:apple_tree_wood", {
-	description = "Wooden Planks",
+	description = "Apple Wood Planks",
 	tiles = {"tree_apple_tree_wood.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
@@ -24,7 +24,7 @@ minetest.register_node("tree:apple_tree_wood", {
 })
 
 minetest.register_node("tree:apple_tree_sapling", {
-	description = "Sapling",
+	description = "Apple Tree Sapling",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"tree_apple_tree_sapling.png"},
@@ -43,7 +43,7 @@ minetest.register_node("tree:apple_tree_sapling", {
 })
 
 minetest.register_node("tree:apple_tree_leaves", {
-	description = "Leaves",
+	description = "Apple Tree Leaves",
 	drawtype = "allfaces_optional",
 	waving = 1,
 	visual_scale = 1.3,
@@ -145,11 +145,11 @@ minetest.register_decoration({
 	sidelen = 16,
 	noise_params = {
 		offset = 0.02,
-		scale = 0.001,
-		spread = {x=23, y=23, z=23},
+		scale = 0.003,
+		spread = {x=63, y=63, z=63},
 		seed = 2,
-		octaves=1,
-		persist=0.5		
+		octaves = 3,
+		persist = 0.35		
 	},
 	biomes = {"woodland"},
 	y_min = 2,
@@ -514,17 +514,17 @@ minetest.register_decoration({
 	sidelen = 16,
 	noise_params = {
 		offset = 0.02,
-		scale = 0.001,
-		spread = {x=23, y=23, z=23},
+		scale = 0.003,
+		spread = {x=63, y=63, z=63},
 		seed = 2,
-		octaves=1,
-		persist=0.5	
+		octaves = 3,
+		persist = 0.35,	
 		--offset = 0.04,
 		--scale = 0.015,
 		--spread = {x = 250, y = 250, z = 250},
 		--seed = 2,
 		--octaves = 3,
-		--persist = 0.66
+		--persist = 0.35
 	},
 	biomes = {"taiga", "alpine"},
 	y_min = 2,
@@ -615,7 +615,7 @@ minetest.register_decoration({
 		spread = {x = 250, y = 250, z = 250},
 		seed = 2,
 		octaves = 3,
-		persist = 0.66
+		persist = 0.6
 	},
 	biomes = {"savanna"},
 	y_min = 2,
