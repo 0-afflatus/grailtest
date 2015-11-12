@@ -48,7 +48,7 @@ minetest.register_ore({
 minetest.register_ore({ 
 	ore_type         = "blob",
 	ore              = "default:sand",
-	wherein          = {"default:stone"},
+	wherein          = {"default:stone", "default:gravel"},
 	clust_scarcity   = 25*25*25,
 	clust_size       = 5,
 	y_min            = -63,
@@ -86,7 +86,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type         = "blob",
 	ore              = "default:gravel",
-	wherein          = {"default:stone"},
+	wherein          = {"default:stone", "default:sand"},
 	clust_scarcity   = 25*25*25,
 	clust_size       = 6,
 	y_min            = -31000,

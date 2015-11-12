@@ -435,7 +435,7 @@ minetest.register_decoration({
 minetest.register_node("plant:hawthorn", {
 	description = "Hawthorn Leaves",
 	drawtype = "allfaces_optional",
-	tiles = {"plant_hawthorn.png"},
+	tiles = {"plant_hawthorn.png^[transformR180", "plant_hawthorn.png"},
 	waving = 0,
 	paramtype = "light",
 	drop = {
@@ -653,7 +653,7 @@ minetest.register_decoration({
 		octaves = 3, 
 		persist = 0.3
 	},
-	biomes = {"woodland", "alpine", "tundra"},
+	biomes = {"woodland", "alpine"},
 	--spawn_by = "",
 	y_min = 5,
 	y_max = 60,

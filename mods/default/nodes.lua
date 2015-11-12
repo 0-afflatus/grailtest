@@ -15,7 +15,7 @@ minetest.register_node("default:stone", {
 
 minetest.register_node("default:stone_with_lichen_1", {
 	description = "Lichen covered stone",
-	tiles = {"default_rock_with_lichen_1.png", "default_stone.png"},
+	tiles = {"default_stone.png^default_lichen_rust.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:cobble',
 	sounds = default.node_sound_stone_defaults(),
@@ -23,7 +23,7 @@ minetest.register_node("default:stone_with_lichen_1", {
 
 minetest.register_node("default:stone_with_lichen_2", {
 	description = "Lichen covered stone",
-	tiles = {"default_rock_with_lichen_2.png", "default_stone.png"},
+	tiles = {"default_stone.png^default_lichen_gold.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:cobble',
 	sounds = default.node_sound_stone_defaults(),
@@ -31,7 +31,7 @@ minetest.register_node("default:stone_with_lichen_2", {
 
 minetest.register_node("default:stone_with_lichen_3", {
 	description = "Lichen covered stone",
-	tiles = {"default_rock_with_lichen_3.png", "default_stone.png"},
+	tiles = {"default_stone.png^default_lichen_green.png"},
 	groups = {cracky = 3, stone = 1},
 	drop = 'default:cobble',
 	sounds = default.node_sound_stone_defaults(),
@@ -89,12 +89,48 @@ minetest.register_abm({
 --
 minetest.register_abm({
 	nodenames = {"default:stone"},
-	neighbors = {"group:water"},
+	neighbors = {"default:cloud", 
+		"default:water_flowing",
+		"default:water_source", 
+		"default:river_water_source", 
+		"default:river_water_flowing",
+		"default:dirt_with_grass"},
 	interval = 17,
 	chance = 200,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_3"})
+	end
+})
+
+--
+-- Lichen growth on stone near snow
+--
+minetest.register_abm({
+	nodenames = {"default:stone"},
+	neighbors = {"default:snow", 
+		"default:snowblock",
+		"default:dirt_with_ice"},
+	interval = 17,
+	chance = 200,
+	catch_up = false,
+	action = function(pos, node)
+		minetest.set_node(pos, {name = "default:stone_with_lichen_2"})
+	end
+})
+
+--
+-- Lichen growth on stone near ice
+--
+minetest.register_abm({
+	nodenames = {"default:stone"},
+	neighbors = {"default:freshice", 
+		"default:ice"},
+	interval = 17,
+	chance = 200,
+	catch_up = false,
+	action = function(pos, node)
+		minetest.set_node(pos, {name = "default:stone_with_lichen_1"})
 	end
 })
 
@@ -692,7 +728,7 @@ minetest.register_node("default:freshice", {
 	is_ground_content = false,
 	paramtype = "light",
 	freezemelt = "default:river_water_source",
-	groups = {cracky = 3, water = 1, puts_out_fire = 1},
+	groups = {cracky = 3, melts = 1, water = 1, puts_out_fire = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 
