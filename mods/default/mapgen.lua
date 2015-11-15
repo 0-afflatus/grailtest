@@ -9,7 +9,7 @@ function mapgen.register_biomes()
 	minetest.register_biome({
 		name = "polar",
 		node_dust = "default:snow",
-		node_top = "default:ice",
+		node_top = "default:snowblock",
 		depth_top = 1,
 		node_filler = "",
 		depth_filler = 1,
@@ -60,7 +60,7 @@ function mapgen.register_biomes()
 	minetest.register_biome({
 		name = "tundra_ocean",
 		--node_dust = "",
-		node_top = "default:gravel",
+		node_top = "",
 		depth_top = 1,
 		--node_filler = "",
 		--depth_filler = 1,
