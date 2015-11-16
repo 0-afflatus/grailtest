@@ -285,7 +285,7 @@ minetest.register_node("default:dirt_with_snow", {
 	tiles = {"default_snow.png", "default_dirt_yellow.png",
 		{name = "default_dirt_yellow.png^default_snow_side.png",
 			tileable_vertical = false}},
-	groups = {crumbly = 3, soil = 1},
+	groups = {crumbly = 2, soil = 1},
 	soil = {
 		base = "default:dirt_with_snow",
 		dry = "default:soil",
@@ -842,7 +842,7 @@ minetest.register_abm({
 	nodenames = {"default:ice", "default:snowblock", "default:snow", "default:dirt_with_snow"},
 	--nodenames = {"group:melts", "default:dirt_with_snow"},
 	--neighbors = {"group:hot"},
-	neighbors = {"fire:basic_fire", "default:lava_source", "default:lava_flowing", "default:furnace_active", "default:torch", "group:sapling"},
+	neighbors = {"fire:basic_fire", "fire:bonfire", "default:lava_source", "default:lava_flowing", "default:furnace_active", "default:torch", "group:sapling"},
 	interval = 1, -- 10
 	chance = 2,
 	catch_up = false,

@@ -854,7 +854,7 @@ minetest.register_abm({
 })
 
 dofile(minetest.get_modpath("tree").."/aliases.lua")
---dofile(minetest.get_modpath("tree").."/crafts.lua")
+dofile(minetest.get_modpath("tree").."/crafting.lua")
 
 -- Log message
 minetest.log("action", "MOD["..minetest.get_current_modname().."]: [Loaded]")

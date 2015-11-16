@@ -102,14 +102,14 @@ stairs.register_stair_and_slab("shingles_clay", "material:shingles_clay",
 	default.node_sound_wood_defaults())
 
 stairs.register_stair_and_slab("shingles_wood", "material:shingles_wood",
-	{choppy=3,oddly_breakable_by_hand=2,flammable=3,wood=1},
+	{choppy=3,oddly_breakable_by_hand=2,flammable=3},
 	{"material_shingles_wood.png"},
 	"Tiled Wooden Roof",
 	"Tiled Wooden Slab",
 	default.node_sound_wood_defaults())
 
 stairs.register_stair_and_slab("shingles_slate", "material:shingles_slate",
-	{cracky=3, stone=1},
+	{cracky=3},
 	{"material_slate.png"},
 	"Slate Roof",
 	"Slate Slab",
