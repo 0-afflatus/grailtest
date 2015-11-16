@@ -648,7 +648,7 @@ minetest.register_node("default:water_source", {
 
 minetest.register_node("default:river_water_source", {
 	description = "River Water Source",
-	inventory_image = minetest.inventorycube("default_water.png"),
+	inventory_image = minetest.inventorycube("default_water.png^[noalpha"),
 	drawtype = "liquid",
 	tiles = {
 		{
