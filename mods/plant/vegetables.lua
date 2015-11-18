@@ -380,7 +380,7 @@ minetest.register_abm({
 		
 		-- grow
 		local height = minetest.get_item_group(node.name, "onion") + 1
-		minetest.set_node(pos, {name="plant:wild_onion_"..height})
+		minetest.set_node(pos, {name="plant:onion_"..height})
 	end
 })
 

@@ -83,7 +83,7 @@ minetest.register_abm({
 		local under = minetest.get_node(pos)
 		pos.y = pos.y + 1
 		if under.name == "default:desert_sand" then
-			minetest.set_node(pos, {name = "default:dry_shrub"})
+			minetest.set_node(pos, {name = "plant:dry_shrub"})
 		elseif under.name ~= "default:dirt_with_grass" then
 			return
 		end

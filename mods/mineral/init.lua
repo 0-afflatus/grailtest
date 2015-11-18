@@ -235,14 +235,6 @@ minetest.register_node("mineral:bluestone_cobble", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-minetest.register_node("mineral:quartz", {
-	description = "Quartz",
-	tiles = {"mineral_quartz.png"},
-	groups = {cracky = 2},
-	sounds = default.node_sound_stone_defaults(),
-})
-
-
 --
 -- Crafting items
 --
