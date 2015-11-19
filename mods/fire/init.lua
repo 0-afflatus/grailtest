@@ -139,6 +139,7 @@ if minetest.setting_getbool("disable_fire") then
 		nodenames = {"fire:basic_flame"},
 		interval = 3,
 		chance = 2,
+		catch_up = false,
 		action = function(p0, node, _, _)
 			minetest.remove_node(p0)
 		end,
@@ -153,6 +154,7 @@ else
 		neighbors = {"group:puts_out_fire"},
 		interval = 3,
 		chance = 2,
+		catch_up = false,
 		action = function(p0, node, _, _)
 			minetest.remove_node(p0)
 			minetest.sound_play("fire_extinguish_flame",
@@ -167,6 +169,7 @@ else
 		neighbors = {"group:igniter"},
 		interval = 7,
 		chance = 16,
+		catch_up = false,
 		action = function(p0, node, _, _)
 			-- If there is water or stuff like that around node, don't ignite
 			if fire.flame_should_extinguish(p0) then
@@ -184,7 +187,8 @@ else
 	minetest.register_abm({
 		nodenames = {"fire:basic_flame"},
 		interval = 5,
-		chance = 16,
+		chance = 2,
+		catch_up = false,
 		action = function(p0, node, _, _)
 			-- If there are no flammable nodes around flame, remove flame
 			if not minetest.find_node_near(p0, 1, {"group:flammable"}) then
@@ -215,6 +219,7 @@ minetest.register_abm({
 	neighbors = {"air"},
 	interval = 5,
 	chance = 10,
+	catch_up = false,
 	action = function(p0, node, _, _)
 		local reg = minetest.registered_nodes[node.name]
 		if not reg or not reg.groups.igniter or reg.groups.igniter < 2 then

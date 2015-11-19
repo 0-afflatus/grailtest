@@ -998,6 +998,7 @@ minetest.register_abm({
 	neighbors = {"group:water"},
 	interval = 1,
 	chance = 2,
+	catch_up = false,
 	action = function(...)
 		default.cool_lava_flowing(...)
 	end,
@@ -1008,6 +1009,7 @@ minetest.register_abm({
 	neighbors = {"group:water"},
 	interval = 1,
 	chance = 2,
+	catch_up = false,
 	action = function(...)
 		default.cool_lava_source(...)
 	end,
