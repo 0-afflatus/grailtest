@@ -149,7 +149,7 @@ minetest.register_decoration({
 		spread = {x=63, y=63, z=63},
 		seed = 2,
 		octaves = 3,
-		persist = 0.35		
+		persist = 0.5		
 	},
 	biomes = {"woodland"},
 	y_min = 2,
@@ -518,7 +518,7 @@ minetest.register_decoration({
 		spread = {x=63, y=63, z=63},
 		seed = 2,
 		octaves = 3,
-		persist = 0.35
+		persist = 0.5
 	},
 	biomes = {"taiga", "alpine"},
 	y_min = 2,

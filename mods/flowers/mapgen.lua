@@ -97,7 +97,7 @@ local function register_flower(seed, name)
 		biomes = {"grassland", "steppe",
 			"woodland", "alpine"},
 		y_min = 1,
-		y_max = 31000,
+		y_max = 100,
 		decoration = "flowers:"..name,
 	})
 end
@@ -117,8 +117,8 @@ local function register_mushroom(name)
 			persist = 0.66
 		},
 		biomes = {"woodland", "alpine", "underground"},
-		y_min = 1,
-		y_max = 31000,
+		y_min = -100,
+		y_max = 100,
 		decoration = "flowers:"..name,
 	})
 end

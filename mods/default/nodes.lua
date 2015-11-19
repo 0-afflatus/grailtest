@@ -96,7 +96,7 @@ minetest.register_abm({
 		"default:river_water_flowing",
 		"default:dirt_with_grass"},
 	interval = 20,
-	chance = 200,
+	chance = 500,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_3"})
@@ -112,7 +112,7 @@ minetest.register_abm({
 		"default:snowblock",
 		"default:dirt_with_ice"},
 	interval = 20,
-	chance = 200,
+	chance = 500,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_2"})
@@ -127,7 +127,7 @@ minetest.register_abm({
 	neighbors = {"default:freshice", 
 		"default:ice"},
 	interval = 20,
-	chance = 200,
+	chance = 500,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_1"})
