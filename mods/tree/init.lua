@@ -854,6 +854,7 @@ minetest.register_abm({
 })
 
 dofile(minetest.get_modpath("tree").."/aliases.lua")
+dofile(minetest.get_modpath("tree").."/mistletoe.lua")
 dofile(minetest.get_modpath("tree").."/crafting.lua")
 
 -- Log message
