@@ -76,8 +76,8 @@ minetest.register_node("default:desert_cobble", {
 minetest.register_abm({
 	nodenames = {"default:cobble"},
 	neighbors = {"group:water"},
-	interval = 17,
-	chance = 200,
+	interval = 31,
+	chance = 293,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:mossycobble"})
@@ -95,8 +95,8 @@ minetest.register_abm({
 		"default:river_water_source", 
 		"default:river_water_flowing",
 		"default:dirt_with_grass"},
-	interval = 20,
-	chance = 500,
+	interval = 37,
+	chance = 499,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_3"})
@@ -111,8 +111,8 @@ minetest.register_abm({
 	neighbors = {"default:snow", 
 		"default:snowblock",
 		"default:dirt_with_ice"},
-	interval = 20,
-	chance = 500,
+	interval = 47,
+	chance = 547,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_2"})
@@ -126,8 +126,8 @@ minetest.register_abm({
 	nodenames = {"default:stone"},
 	neighbors = {"default:freshice", 
 		"default:ice"},
-	interval = 20,
-	chance = 500,
+	interval = 59,
+	chance = 557,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_1"})
@@ -169,8 +169,8 @@ minetest.register_node("default:dirt_with_grass_footsteps", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_grass"},
-	interval = 20,
-	chance = 20,
+	interval = 23,
+	chance = 23,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
@@ -205,8 +205,8 @@ minetest.register_node("default:dirt_with_dry_grass", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_dry_grass"},
-	interval = 20,
-	chance = 20,
+	interval = 37,
+	chance = 37,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -244,8 +244,8 @@ minetest.register_node("default:dirt_with_ice", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_ice"},
-	interval = 20,
-	chance = 20,
+	interval = 43,
+	chance = 43,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -261,8 +261,8 @@ minetest.register_abm({
 
 minetest.register_abm({
 	nodenames = {"default:permafrost"},
-	interval = 20,
-	chance = 200,
+	interval = 47,
+	chance = 239,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -311,8 +311,8 @@ minetest.register_node("default:dirt", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt"},
-	interval = 20,
-	chance = 200,
+	interval = 23,
+	chance = 239,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
@@ -337,8 +337,8 @@ minetest.register_abm({
 
 minetest.register_abm({
 	nodenames = {"default:dirt_with_grass", "default:dirt_with_dry_grass", "group:flora"},
-	interval = 20,
-	chance = 20,
+	interval = 19,
+	chance = 19,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}
@@ -366,8 +366,8 @@ minetest.register_node("default:dirt_red", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_red"},
-	interval = 20,
-	chance = 200,
+	interval = 37,
+	chance = 271,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -400,8 +400,8 @@ minetest.register_node("default:dirt_yellow", {
 
 minetest.register_abm({
 	nodenames = {"default:dirt_yellow"},
-	interval = 60,
-	chance = 200,
+	interval = 59,
+	chance = 269,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y+1, z = pos.z}
@@ -445,8 +445,8 @@ minetest.register_node("default:soil_wet", {
 
 minetest.register_abm({
 	nodenames = {"group:field"},
-	interval = 15,
-	chance = 4,
+	interval = 17,
+	chance = 5,
 	catch_up = false,
 	action = function(pos, node)
 		local n_def = minetest.registered_nodes[node.name] or nil
@@ -790,22 +790,23 @@ minetest.register_node("default:snow", {
 })
 
 -- Snow melting in the sun
---[[ Needs to work in conjunction with snow settling (snowdrift)
+-- Needs to work in conjunction with snow settling (snowdrift)
 minetest.register_abm({
 	nodenames = {"default:snow"},
-	interval = 60,
-	chance = 600,
+	neighbors = {"air"},
+	interval = 113,
+	chance = 601,
 	catch_up = false,
 	action = function(pos, node)
 		local pos0 = {x = pos.x-1,y = pos.y-1,z = pos.z-1}
 		local pos1 = {x = pos.x+1,y = pos.y+1,z = pos.z+1}
 		local freezing = #minetest.find_nodes_in_area(pos0, pos1, "group:melts")
 
-		if (minetest.get_node_light(pos) or 0) >= 13 and freezing < math.random(1,10) then
+		if (minetest.get_node_light(pos) or 0) > 13 and freezing < math.random(1,7) then
 			minetest.set_node(pos, {name = "air"})
 		end
 	end
-})]]
+})
 
 
 minetest.register_node("default:snowblock", {
@@ -823,8 +824,8 @@ minetest.register_node("default:snowblock", {
 minetest.register_abm({
 	nodenames = {"default:dirt_with_ice", "default:snow", "default:snowblock", "default:dirt_with_snow"},
 	neighbors = {"default:water_source"},
-	interval = 150,
-	chance = 200,
+	interval = 157,
+	chance = 313,
 	catch_up = false,
 	action = function(pos, node)
 		local pos0 = {x = pos.x-1,y = pos.y-1,z = pos.z-1}
@@ -840,16 +841,11 @@ minetest.register_abm({
 -- If Heat Source near Ice or Snow then melt
 minetest.register_abm({
 	nodenames = {"default:ice", "default:snowblock", "default:snow", "default:dirt_with_snow"},
-	--nodenames = {"group:melts", "default:dirt_with_snow"},
-	--neighbors = {"group:hot"},
 	neighbors = {"fire:basic_fire", "fire:bonfire", "default:lava_source", "default:lava_flowing", "default:furnace_active", "default:torch", "group:sapling"},
-	interval = 1, -- 10
-	chance = 2,
+	interval = 11,
+	chance = 11,
 	catch_up = false,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-
-		--print ("NODE:", string.split(node.name, ":")[1])
-
 		if node.name == "default:ice" or node.name == "default:snowblock" then
 			minetest.add_node(pos,{name = "default:water_source"})
 		elseif node.name == "default:snow" then
@@ -867,7 +863,7 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"default:dirt_with_dry_grass","default:dirt_red"},
 	neighbors = {"group:water"},
-	interval = 150,
+	interval = 149,
 	chance = 2,
 	catch_up = false,
 	action = function(pos, node, active_object_count, active_object_count_wider)
