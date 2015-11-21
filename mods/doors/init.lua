@@ -435,9 +435,9 @@ doors.register_door("doors:door_glass", {
 minetest.register_craft({
 	output = "doors:door_glass",
 	recipe = {
-		{"default:glass", "default:glass"},
-		{"default:glass", "default:glass"},
-		{"default:glass", "default:glass"}
+		{"material:glass", "material:glass"},
+		{"material:glass", "material:glass"},
+		{"material:glass", "material:glass"}
 	}
 })
 
@@ -454,9 +454,9 @@ doors.register_door("doors:door_obsidian_glass", {
 minetest.register_craft({
 	output = "doors:door_obsidian_glass",
 	recipe = {
-		{"default:obsidian_glass", "default:obsidian_glass"},
-		{"default:obsidian_glass", "default:obsidian_glass"},
-		{"default:obsidian_glass", "default:obsidian_glass"}
+		{"material:obsidian_glass", "material:obsidian_glass"},
+		{"material:obsidian_glass", "material:obsidian_glass"},
+		{"material:obsidian_glass", "material:obsidian_glass"}
 	}
 })
 

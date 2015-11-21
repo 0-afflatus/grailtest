@@ -21,22 +21,22 @@ Mods that are known to work, albeit with limited support:
 Recommended:
 * Mobs Redo by tenplus1, based on PilzAdam's Simple Mobs. https://github.com/tenplus1/mobs
 * areas
+* fachwerk
 * item_frames
+* locked_sign
 * markers
 * names_per_ip
 * no_bad_names
 * paintings
 * player_textures
-* teleporter
+* teleporter + db
 * unified_inventory
 
 Also compatible-ish:
 * 3d_armor
 * beds
-* fachwerk
 * farming_plus
 * inventory_plus
-* locked_sign
 * sedimentology
 * simple_skins
 
@@ -73,7 +73,7 @@ The development of grail_test has tended to roughly follow evolution. It feature
 
 Several features from darkages, cottages and moreblocks have either been incorporated or inspired reworking. I have also looked at and incorporated code and ideas from Carbone, ethereal, adventuretest and Dreambuilder.
 
-One of the aims of the game is increased magical pseudo-realism; that is, things like crafting recipes should be logical and believable given the fantastic nature of the game-world.
+One of the aims of the game is increased magical pseudo-realism; that is, things like crafting recipes should be logical and believable given the fantastic nature of the game-world. It is also intended to provide the player with a sense of progression through awards and earnable "power-ups" (limited privs). It is planned to increase the challenge of survival through hunger, mobs and natural disasters.
 
 License of source code
 ----------------------
