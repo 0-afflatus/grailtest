@@ -90,9 +90,9 @@ stairs.register_stair_and_slab("material_glass_obsidian", "material:glass_obsidi
 	"Obsidian Glass slab",
 	default.node_sound_glass_defaults())
 
---
+--[[
 -- Tiles & Shingles
---
+-- replaced with slopes
 
 stairs.register_stair_and_slab("shingles_clay", "material:shingles_clay",
 	{cracky=3},
@@ -115,7 +115,7 @@ stairs.register_stair_and_slab("shingles_slate", "material:shingles_slate",
 	"Slate Slab",
 	default.node_sound_wood_defaults())
 
---
+]]--
 	
 stairs.register_stair_and_slab("stone_tile", "material:stone_tile",
 	{cracky=3},

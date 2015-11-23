@@ -108,7 +108,7 @@ minetest.register_abm({
 --
 minetest.register_abm({
 	nodenames = {"default:stone"},
-	neighbors = {"default:snow", 
+	neighbors = {
 		"default:snowblock",
 		"default:dirt_with_ice"},
 	interval = 47,
