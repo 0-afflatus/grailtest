@@ -252,6 +252,7 @@ end
 
 function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
 		desc_stair, desc_slab, sounds)
+	groups["not_in_creative_inventory"] = 1
 	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds)
 	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
 end
