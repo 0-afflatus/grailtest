@@ -14,10 +14,11 @@ minetest.register_alias("gravel", "default:gravel")
 
 minetest.register_alias("farming:soil_wet", "default:soil_wet")
 
-minetest.register_alias("tree", "default:tree")
-minetest.register_alias("leaves", "default:leaves")
-minetest.register_alias("sapling", "default:sapling")
-minetest.register_alias("jungletree", "default:jungletree")
+--minetest.register_alias("tree", "default:tree")
+--minetest.register_alias("leaves", "default:leaves")
+--minetest.register_alias("sapling", "default:sapling")
+--minetest.register_alias("jungletree", "default:jungletree")
+--minetest.register_alias("apple", "default:apple")
 
 minetest.register_alias("cloud", "default:cloud")
 minetest.register_alias("snow", "default:snow")
@@ -25,7 +26,6 @@ minetest.register_alias("water_flowing", "default:water_flowing")
 minetest.register_alias("water_source", "default:water_source")
 minetest.register_alias("lava_flowing", "default:lava_flowing")
 minetest.register_alias("lava_source", "default:lava_source")
-minetest.register_alias("apple", "default:apple")
 
 minetest.register_alias("weather:snow_cover", "default:snow")
 
@@ -49,4 +49,5 @@ minetest.register_alias("mapgen_cobble", "default:cobble")
 minetest.register_alias("mapgen_mossycobble", "default:mossycobble")
 minetest.register_alias("mapgen_sandstonebrick", "default:sandstone")
 --minetest.register_alias("mapgen_stair_sandstonebrick", "stairs:stair_sandstonebrick")
+
 

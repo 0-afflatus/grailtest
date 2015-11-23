@@ -139,24 +139,6 @@ function tree.grow_new_apple_tree(pos)
 		path, 0, nil, false)
 end
 
-minetest.register_decoration({
-	deco_type = "schematic",
-	place_on = {"default:dirt_with_grass"},
-	sidelen = 16,
-	noise_params = {
-		offset = 0.02,
-		scale = 0.003,
-		spread = {x=63, y=63, z=63},
-		seed = 2,
-		octaves = 3,
-		persist = 0.5		
-	},
-	biomes = {"woodland"},
-	y_min = 2,
-	y_max = 40,
-	schematic = minetest.get_modpath("tree").."/schematics/apple_tree.mts",
-	flags = "place_center_x, place_center_z",
-})
 
 --
 -- Jungle Tree
@@ -281,19 +263,6 @@ function tree.grow_new_jungle_tree(pos)
 	minetest.place_schematic({x = pos.x - 2, y = pos.y - 1, z = pos.z - 2},
 		path, 0, nil, false)
 end
-
-minetest.register_decoration({
-	deco_type = "schematic",
-	place_on = {"default:dirt_with_grass", "default:dirt"},
-	sidelen = 80,
-	fill_ratio = 0.07,
-	biomes = {"rainforest", "rainforest_swamp"},
-	y_min = 0,
-	y_max = 40,
-	schematic = minetest.get_modpath("tree").."/schematics/jungle_tree.mts",
-	flags = "place_center_x, place_center_z",
-	rotation = "random",
-})
 
 --
 -- Pine Tree
@@ -508,25 +477,6 @@ function tree.grow_new_pine_tree(pos)
 		path, 0, nil, false)
 end
 
-minetest.register_decoration({
-	deco_type = "schematic",
-	place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
-	sidelen = 16,
-	noise_params = {
-		offset = 0.02,
-		scale = 0.003,
-		spread = {x=63, y=63, z=63},
-		seed = 2,
-		octaves = 3,
-		persist = 0.5
-	},
-	biomes = {"taiga", "alpine"},
-	y_min = 2,
-	y_max = 80,
-	schematic = minetest.get_modpath("tree").."/schematics/pine_tree.mts",
-	flags = "place_center_x, place_center_z",
-})
-
 --
 -- Acacia
 --
@@ -599,25 +549,82 @@ function tree.grow_new_acacia_tree(pos)
 		path, random, nil, false)
 end
 
-minetest.register_decoration({
-	deco_type = "schematic",
-	place_on = {"default:dirt_with_dry_grass"},
-	sidelen = 80,
-	noise_params = {
-		offset = 0,
-		scale = 0.003,
-		spread = {x = 250, y = 250, z = 250},
-		seed = 2,
-		octaves = 3,
-		persist = 0.6
-	},
-	biomes = {"savanna"},
-	y_min = 2,
-	y_max = 60,
-	schematic = minetest.get_modpath("tree").."/schematics/acacia_tree.mts",
-	flags = "place_center_x, place_center_z",
-	rotation = "random",
-})
+-- Mapgen
+
+local mg_params = minetest.get_mapgen_params()
+
+if mg_params.mgname ~= "v6" then
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = 0.02,
+			scale = 0.003,
+			spread = {x=63, y=63, z=63},
+			seed = 2,
+			octaves = 3,
+			persist = 0.5		
+		},
+		biomes = {"woodland"},
+		y_min = 2,
+		y_max = 40,
+		schematic = minetest.get_modpath("tree").."/schematics/apple_tree.mts",
+		flags = "place_center_x, place_center_z",
+	})
+
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass", "default:dirt"},
+		sidelen = 80,
+		fill_ratio = 0.07,
+		biomes = {"rainforest", "rainforest_swamp"},
+		y_min = 0,
+		y_max = 40,
+		schematic = minetest.get_modpath("tree").."/schematics/jungle_tree.mts",
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+	})
+
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_snow", "default:dirt_with_grass"},
+		sidelen = 16,
+		noise_params = {
+			offset = 0.02,
+			scale = 0.003,
+			spread = {x=63, y=63, z=63},
+			seed = 2,
+			octaves = 3,
+			persist = 0.5
+		},
+		biomes = {"taiga", "alpine"},
+		y_min = 2,
+		y_max = 80,
+		schematic = minetest.get_modpath("tree").."/schematics/pine_tree.mts",
+		flags = "place_center_x, place_center_z",
+	})
+
+	minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_dry_grass"},
+		sidelen = 80,
+		noise_params = {
+			offset = 0,
+			scale = 0.003,
+			spread = {x = 250, y = 250, z = 250},
+			seed = 2,
+			octaves = 3,
+			persist = 0.6
+		},
+		biomes = {"savanna"},
+		y_min = 2,
+		y_max = 60,
+		schematic = minetest.get_modpath("tree").."/schematics/acacia_tree.mts",
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+	})
+end
 
 --
 -- Grow trees from saplings
