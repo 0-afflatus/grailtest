@@ -253,3 +253,13 @@ minetest.register_abm({
 		meta:set_string("infotext", infotext)
 	end,
 })
+
+minetest.register_craft({
+	output = 'equipment:cauldron',
+	recipe = {
+		{'group:metal', '', 'group:metal'},
+		{'group:metal', '', 'group:metal'},
+		{'group:metal', 'group:metal', 'group:metal'},
+	}
+})
+
