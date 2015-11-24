@@ -15,9 +15,15 @@ minetest.register_node("equipment:panel_wood", {
 })
 
 minetest.register_craft({
-	output = 'equipment:panel_wood 16',
+	output = 'equipment:panel_wood 10',
 	recipe = {
 		{'group:wood', 'group:wood', },
 		{'group:wood', 'group:wood', },
 	}
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "equipment:panel_wood",
+	burntime = 10,
 })
