@@ -56,7 +56,7 @@ minetest.register_node("default:mossycobble", {
 minetest.register_node("default:desert_stone", {
 	description = "Desert Stone",
 	tiles = {"default_desert_stone.png"},
-	groups = {cracky = 3, stone = 1},
+	groups = {cracky = 3},
 	drop = 'default:desert_cobble',
 	legacy_mineral = true,
 	sounds = default.node_sound_stone_defaults(),
@@ -66,7 +66,7 @@ minetest.register_node("default:desert_cobble", {
 	description = "Desert Cobblestone",
 	tiles = {"default_desert_cobble.png"},
 	is_ground_content = false,
-	groups = {cracky = 3, stone = 2},
+	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -110,9 +110,9 @@ minetest.register_abm({
 	nodenames = {"default:stone"},
 	neighbors = {
 		"default:snowblock",
-		"default:dirt_with_ice"},
-	interval = 47,
-	chance = 547,
+		"default:dirt_with_snow"},
+	interval = 79,
+	chance = 733,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_2"})
@@ -125,9 +125,10 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"default:stone"},
 	neighbors = {"default:freshice", 
-		"default:ice"},
-	interval = 59,
-	chance = 557,
+		"default:ice",
+		"default:dirt_with_ice"},
+	interval = 127,
+	chance = 937,
 	catch_up = false,
 	action = function(pos, node)
 		minetest.set_node(pos, {name = "default:stone_with_lichen_1"})

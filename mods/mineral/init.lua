@@ -185,7 +185,7 @@ minetest.register_node("mineral:white_stone", {
 	description = "White Stone",
 	tiles = {"mineral_white_stone.png"},
 	is_ground_content = false,
-	groups = {cracky = 3, stone = 1},
+	groups = {cracky = 3},
 	drop = "mineral:white_cobble",
 	sounds = default.node_sound_stone_defaults(),
 })
@@ -194,7 +194,7 @@ minetest.register_node("mineral:white_cobble", {
 	description = "White Cobble",
 	tiles = {"mineral_white_cobble.png"},
 	is_ground_content = false,
-	groups = {cracky = 3, stone = 2},
+	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
 

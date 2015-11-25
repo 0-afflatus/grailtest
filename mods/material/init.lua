@@ -27,7 +27,7 @@ minetest.register_node("material:brick", {
 	description = "Brick",
 	tiles = {"material_brick.png"},
 	paramtype2 = "facedir",
-	groups = {cracky=2, stone=1},
+	groups = {cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -43,7 +43,7 @@ minetest.register_node("material:desert_stone_brick", {
 	description = "Desert Stone Brick",
 	tiles = {"material_desert_stone_brick.png"},
 	paramtype2 = "facedir",
-	groups = {cracky=2, stone=1},
+	groups = {cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -118,7 +118,7 @@ minetest.register_node("material:shingles_slate", {
 	description = "Roof Slates",
 	tiles = {"material_slate.png"},
 	paramtype2 = "facedir",
-	groups = {cracky=3, stone=1},
+	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
