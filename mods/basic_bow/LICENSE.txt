@@ -1,0 +1,41 @@
+
+=======================================
+All code is from the Minetest Mod - Simple Shooter [shooter]
+License Source Code: 2013 Stuart Jones - LGPL v2.1
+
+Additional credit for code ideas taken from other mods:
+-PilzAdam [throwing] for the throwing physics
+
+License Textures: Stuart Jones - WTFPL
+-basic_bow_hit.png
+-basic_bow_arrow_uv.png
+
+License Textures (from original throwing mod):  PilzAdams - WTFPL
+-basic_bow_arrow_inv.png
+-basic_bow_inv.png
+-basic_bow_loaded.png
+
+License Textures (alternates):  Nubilite - WTFPL ???
+-basic_bow_arrow_inv.png
+-basic_bow_inv.png
+-basic_bow_loaded.png
+
+Licence Models: Stuart Jones - CC-BY-SA 3.0
+-basic_bow_arrow.b3d
+-basic_bow_arrow.blend
+
+Licence Models: p0ss
+(http://opengameart.org/content/training-target)
+-trainingtarget.blend
+-trainingtarget.obj
+
+License Sounds:
+arrow sounds by qubodup (http://opengameart.org/) :
+-basic_bow_arrow.ogg
+CC-BY-SA 3.0
+
+arrow sounds by artisticdude (http://opengameart.org/) :
+-basic_bow_throw.ogg
+CC-BY-SA 3.0
+
+anything not mentioned by name : WTFPL

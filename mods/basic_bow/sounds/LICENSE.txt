@@ -1,0 +1,9 @@
+License Sounds:
+
+arrow sounds by qubodup (http://opengameart.org/) :
+-basic_bow_arrow.ogg
+CC-BY-SA 3.0
+
+arrow sounds by artisticdude (http://opengameart.org/) :
+-basic_bow_throw.ogg
+CC-BY-SA 3.0

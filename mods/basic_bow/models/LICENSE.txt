@@ -1,0 +1,10 @@
+
+
+Licence Models: Stuart Jones - CC-BY-SA 3.0
+-basic_bow_arrow.b3d
+-basic_bow_arrow.blend
+
+Licence Models: p0ss
+(http://opengameart.org/content/training-target)
+-trainingtarget.blend
+-trainingtarget.obj

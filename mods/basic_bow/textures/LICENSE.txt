@@ -1,0 +1,9 @@
+License Textures:  
+
+Nubilite - [WTFPL]
+  basic_bow_arrow_inv.png
+  basic_bow_inv.png
+  basic_bow_loaded.png
+
+Stuart Jones - WTFPL
+  basic_bow_hit.png

@@ -13,6 +13,30 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = 'bucket:bucket_empty 1',
+	recipe = {
+		{'mineral:tin_ingot', '', 'mineral:tin_ingot'},
+		{'', 'mineral:tin_ingot', ''},
+	}
+})
+
+minetest.register_craft({
+	output = 'bucket:bucket_empty 1',
+	recipe = {
+		{'mineral:copper_ingot', '', 'mineral:copper_ingot'},
+		{'', 'mineral:copper_ingot', ''},
+	}
+})
+
+minetest.register_craft({
+	output = 'bucket:bucket_empty 1',
+	recipe = {
+		{'mineral:bronze_ingot', '', 'mineral:bronze_ingot'},
+		{'', 'mineral:bronze_ingot', ''},
+	}
+})
+
 bucket = {}
 bucket.liquids = {}
 
