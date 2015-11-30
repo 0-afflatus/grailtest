@@ -1,9 +1,9 @@
 -- These should be set by server admin
 
-local office = {x=-18, y=3, z=-23}
-local office_admin = {x=-23, y=3, z=-23}
-local court = {x=-34, y=-2, z=-68}
-local court_admin = {x=-34, y=-2, z=-68}
+local office = {x=-6, y=12, z=-16}
+local office_admin = {x=-2, y=12, z=-16}
+local court = {x=-13, y=14, z=-11}
+local court_admin = {x=-22, y=14, z=-11}
 local prison = {x=0, y=-23000, z=0}
 local prison_admin = {x=19, y=-23000, z=19}
 

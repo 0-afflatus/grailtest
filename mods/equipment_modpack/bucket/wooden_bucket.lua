@@ -114,7 +114,9 @@ minetest.register_craftitem("bucket:wooden_empty", {
 		local node = minetest.get_node(pointed_thing.under)
 		local liquiddef = bucket.contents[node.name]
 		local item_count = user:get_wielded_item():get_count()
-		if node.name == "default:lava" or node.name == "default:lava_flowing" or node.name == "default:lava_source" then
+		if node.name == "default:lava" or 
+				node.name == "default:lava_flowing" or 
+				node.name == "default:lava_source" then
 			-- remove bucket from inventory
 			-- place fire on top of node
 			local on_top = vector.add(pointed_thing.above,{x=0,y=1,z=0}) 
@@ -135,7 +137,7 @@ minetest.register_craftitem("bucket:wooden_empty", {
 			-- check if holding more than 1 empty bucket
 			if item_count > 1 then
 
-				-- if space in inventory add filled bucked, otherwise drop as item
+				-- if space in inventory add filled bucket, otherwise drop as item
 				local inv = user:get_inventory()
 				if inv:room_for_item("main", {name=liquiddef.itemname}) then
 					inv:add_item("main", liquiddef.itemname)
