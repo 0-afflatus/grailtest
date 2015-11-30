@@ -69,31 +69,31 @@ fachwerk.register_fachwerk = function( basename, texture, description, craft_fro
 
 	-- yields 2; after all we did add a lot of wood
 	minetest.register_craft({
-		output = "fachwerk:"..basename.." 2",
-		recipe = { { "group:wood","group:wood","group:wood" },
-			{ "group:wood", craft_from,"group:wood" },
-			{ "group:wood","group:wood","group:wood" },
+		output = "fachwerk:"..basename.." 5",
+		recipe = { { "group:stick",craft_from,"group:stick" },
+			{ craft_from, craft_from,craft_from },
+			{ "group:stick",craft_from,"group:stick" },
 		} });
 		
 	minetest.register_craft({
-		output = "fachwerk:"..basename.."_cross 2",
-		recipe = { { "group:wood",craft_from,"group:wood" },
-			{ craft_from, "group:wood",craft_from },
-			{ "group:wood",craft_from,"group:wood" },
+		output = "fachwerk:"..basename.."_cross 4",
+		recipe = { { "group:stick",craft_from,"group:stick" },
+			{ craft_from, "group:stick",craft_from },
+			{ "group:stick",craft_from,"group:stick" },
 		} });
 	
 	minetest.register_craft({
-		output = "fachwerk:"..basename.."_1 2",
-		recipe = { { craft_from,"group:wood", craft_from},
+		output = "fachwerk:"..basename.."_1 6",
+		recipe = { { craft_from,"group:stick", craft_from},
 			{ craft_from, craft_from, craft_from},
-			{ "group:wood", craft_from, craft_from},
+			{ "group:stick", craft_from, craft_from},
 		} });
 		
 	minetest.register_craft({
-		output = "fachwerk:"..basename.."_2 2",
-		recipe = { { craft_from, craft_from,"group:wood"},
+		output = "fachwerk:"..basename.."_2 6",
+		recipe = { { craft_from, craft_from,"group:stick"},
 			{ craft_from, craft_from, craft_from },
-			{  craft_from,"group:wood" ,craft_from },
+			{  craft_from,"group:stick" ,craft_from },
 		} });
 	
 	-- chain of craft receipes to convert nodes into each other

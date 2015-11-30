@@ -3,7 +3,7 @@ fachwerk.register_fachwerk( 'brick',       'default_brick.png',       'bricks', 
 fachwerk.register_fachwerk( 'stone_brick', 'default_stone_brick.png', 'stone bricks', 'default:stonebrick' );
 
 fachwerk.register_fachwerk( 'cobble',      'default_cobble.png',      'cobble',       'default:cobble' );
-fachwerk.register_fachwerk( 'wood',        'default_wood.png^[transformR90',        'wood',         'default:wood' );
+fachwerk.register_fachwerk( 'wood',        'default_wood.png^[transformR90',        'wood',         'group:wood' );
 --fachwerk.register_fachwerk( 'stone',       'default_stone.png',       'stone',        'default:stone' );
 
 --optional fachwerk types you can enable if you like
