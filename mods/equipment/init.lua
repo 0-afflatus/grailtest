@@ -2,7 +2,6 @@
 equipment = {}
 
 -- Load files
-dofile(minetest.get_modpath("equipment").."/barrel.lua")
 dofile(minetest.get_modpath("equipment").."/bench.lua")
 dofile(minetest.get_modpath("equipment").."/books.lua")
 dofile(minetest.get_modpath("equipment").."/cauldron.lua")

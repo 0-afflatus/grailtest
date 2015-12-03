@@ -226,3 +226,5 @@ minetest.register_craft( {
 	recipe = "vessels:steel_bottle",
 })
 
+dofile(minetest.get_modpath("vessels").."/barrel.lua")
+minetest.log("action", "MOD["..minetest.get_current_modname().."]: [Loaded]")

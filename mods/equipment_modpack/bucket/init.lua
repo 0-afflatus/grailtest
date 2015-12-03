@@ -215,3 +215,4 @@ minetest.register_craft({
 })
 
 dofile(minetest.get_modpath("bucket").."/wooden_bucket.lua")
+minetest.log("action", "MOD["..minetest.get_current_modname().."]: [Loaded]")

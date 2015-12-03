@@ -10,7 +10,17 @@ local prison_admin = {x=19, y=-23000, z=19}
 -- player_exists()from CommonLib
 --	by Rubenwardy
 
-function command:player_exists( name )
+function command:is_in(context, search_term)
+
+	for k, value in ipairs(context) do 
+		if value == search_term then
+			return k
+		end
+	end
+	return false
+end
+
+function command:player_exists(name)
 	local privs = minetest.get_player_privs( name );
 	if( not( privs )) then
 		return false;

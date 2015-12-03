@@ -4,23 +4,25 @@
 
 food = {}
 
-local protein = {
+food.protein = {
 	"group:pulse",
 	"group:nut",
 	"group:edible_mushroom",
 }
 
-local water = {
+food.water = {
 	"bucket:bucket_water",
+	"bucket:bucket_river_water",
 	"bucket:wooden_water",
-	"bucket:wooden_freshwater",
+	"bucket:wooden_river_water",
 	"group:water",
 }
 
-local water_replacements = {
+food.water_replacements = {
 	{"bucket:bucket_water","bucket:bucket_empty"},
+	{"bucket:bucket_river_water","bucket:bucket_empty"},
 	{"bucket:wooden_water","bucket:wooden_empty"},
-	{"bucket:wooden_freshwater","bucket:wooden_empty"},
+	{"bucket:wooden_river_water","bucket:wooden_empty"},
 }
 
 --
@@ -130,7 +132,7 @@ minetest.register_craftitem("food:stew_vegetable_cooked", {
 	on_use = minetest.item_eat(9)
 })
 
-for _,protein in ipairs(protein) do
+for _,protein in ipairs(food.protein) do
 	minetest.register_craft({
 	type = "shapeless",
 	output = "food:stew_vegetable",
@@ -180,11 +182,11 @@ minetest.register_craftitem("food:porridge_cooked", {
 	on_use = minetest.item_eat(4)
 })
 
-for _,water in ipairs(water) do
+for _,water in ipairs(food.water) do
 	minetest.register_craft({
 		type = "shapeless",
 		output = "food:porridge",
-		replacements = water_replacements,
+		replacements = food.water_replacements,
 		recipe = {"group:grain", water, "group:grain"},
 	})
 end
@@ -231,11 +233,11 @@ minetest.register_craftitem("food:soup_vegetable_cooked", {
 	on_use = minetest.item_eat(7)
 })
 
-for _,water in ipairs(water) do
+for _,water in ipairs(food.water) do
 	minetest.register_craft({
 		type = "shapeless",
 		output = "food:soup_vegetable",
-		replacements = water_replacements,
+		replacements = food.water_replacements,
 		recipe = {"group:vegetable", water, "group:vegetable"},
 	})
 end
@@ -246,6 +248,8 @@ minetest.register_craft({
 	recipe = "food:soup_vegetable",
 	cooktime = 10,
 })
+
+dofile(minetest.get_modpath("food").."/drinks.lua")
 
 --
 -- Animal Produce
