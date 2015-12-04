@@ -21,20 +21,18 @@ Mods that are known to work, albeit with limited support:
 Recommended:
 * Mobs Redo by tenplus1, based on PilzAdam's Simple Mobs. https://github.com/tenplus1/mobs
 * areas
-* fachwerk
-* item_frames
-* locked_sign
+* chatplus
+* explore_map
+* mapfix
 * markers
 * names_per_ip
 * no_bad_names
-* paintings
 * player_textures
-* teleporter + db
 * unified_inventory
+* world_edit
 
 Also compatible-ish:
 * 3d_armor
-* beds
 * farming_plus
 * inventory_plus
 * sedimentology
