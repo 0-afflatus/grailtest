@@ -20,6 +20,8 @@ the /set command ingame.
 
 License of source code, textures: WTFPL
 ---------------------------------------
+Textures by Napiophelios from MTCORE32px [CC BY-SA 3.0]
+
 (c) Copyright BlockMen (2014-2015)
 
 

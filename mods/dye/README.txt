@@ -5,6 +5,8 @@ See init.lua for documentation.
 
 License of source code and media files:
 ---------------------------------------
+Textures: Napophelois from MTCORE32px (CC BY-SA 3.0)
+
 Copyright (C) 2012 Perttu Ahola (celeron55) <celeron55@gmail.com>
 
 This program is free software. It comes without any warranty, to

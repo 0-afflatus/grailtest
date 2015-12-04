@@ -13,7 +13,13 @@ http://sam.zoy.org/wtfpl/COPYING for more details.
 
 License of media (textures and sounds)
 --------------------------------------
-WTFPL
+Napophelois from MTCORE32px (CC BY-SA 3.0):
+	flowers_dandelion_white.png
+	flowers_dandelion_yellow.png
+	flowers_geranium.png
+	flowers_rose.png
+	flowers_tulip.png
+	flowers_viola.png
 
 Gambit (WTFPL):
     flowers_mushroom_*.png

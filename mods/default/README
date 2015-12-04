@@ -40,9 +40,7 @@ Napophelois MTCORE32px (CC BY-SA 3.0):
   default_acacia_tree_top.png
   default_acacia_wood.png
   default_coal_block.png
-  default_desert_cobble.png
   default_desert_stone_brick.png
-  default_desert_stone.png
   default_footprint.png
   default_grass_dry.png
   default_grass_dry_side.png
@@ -57,6 +55,7 @@ Napophelois MTCORE32px (CC BY-SA 3.0):
   default_pine_tree_top.png
   default_pine_wood.png
   default_stone.png
+  default_sand.png
   default_wood.png
 
 jojoa1997 (WTFPL):
@@ -65,6 +64,7 @@ jojoa1997 (WTFPL):
 VanessaE (WTFPL):
   bubble.png
   default_desert_sand.png
+  default_desert_cobble.png
   default_desert_stone.png
   default_grass_*.png
   default_sand.png
