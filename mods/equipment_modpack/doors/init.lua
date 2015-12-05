@@ -460,6 +460,45 @@ minetest.register_craft({
 	}
 })
 
+doors.register_door("doors:door_metal_bar", {
+	description = "Metal barred door",
+	inventory_image = "doors_metal_bar_inv.png",
+	groups = {choppy=3, cracky=3, oddly_breakable_by_hand=1, flammable=2, door=1},
+	tiles_bottom = {"doors_metal_bar_b.png", "doors_grey.png"},
+	tiles_top = {"doors_metal_bar_a.png", "doors_grey.png"},
+	only_placer_can_open = true,
+	sounds = default.node_sound_wood_defaults(),
+	sunlight = false
+})
+
+minetest.register_craft({
+	output = "doors:door_metal_bar",
+	recipe = {
+		{"xpanes:bar", "xpanes:bar"},
+		{"xpanes:bar", "xpanes:bar"},
+		{"xpanes:bar", "xpanes:bar"}
+	}
+})
+
+doors.register_door("doors:door_rust_bar", {
+	description = "Rusty barred door",
+	inventory_image = "doors_rust_bar_inv.png",
+	groups = {choppy=3, cracky=3, oddly_breakable_by_hand=1, flammable=2, door=1},
+	tiles_bottom = {"doors_rust_bar_b.png", "doors_rust.png"},
+	tiles_top = {"doors_rust_bar_a.png", "doors_rust.png"},
+	only_placer_can_open = true,
+	sounds = default.node_sound_wood_defaults(),
+	sunlight = false
+})
+
+minetest.register_craft({
+	output = "doors:door_rust_bar",
+	recipe = {
+		{"xpanes:rust_bar", "xpanes:rust_bar"},
+		{"xpanes:rust_bar", "xpanes:rust_bar"},
+		{"xpanes:rust_bar", "xpanes:rust_bar"}
+	}
+})
 
 ----trapdoor----
 

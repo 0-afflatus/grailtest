@@ -196,6 +196,15 @@ minetest.register_craft({
 -- Tiles
 
 minetest.register_craft({
+	output = "material:wood_tile 6",
+	recipe = {
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+		{"group:wood", "group:wood", "group:wood"},
+	}
+})
+
+minetest.register_craft({
 	output = "material:white_stone_tile 6",
 	recipe = {
 		{"mineral:white_stone", "mineral:white_stone", "mineral:white_stone"},
@@ -328,6 +337,15 @@ minetest.register_craft({
 	recipe = {
 		{"material:whitestone_brick", "material:basalt_brick"},
 		{"material:basalt_brick", "material:whitestone_brick"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:stone_rune 6",
+	recipe = {
+		{"material:stone_tile", "material:stone_tile", "material:stone_tile"},
+		{"material:stone_tile", "", "material:stone_tile"},
+		{"material:stone_tile", "material:stone_tile", "material:stone_tile"}
 	}
 })
 

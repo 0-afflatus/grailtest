@@ -11,6 +11,7 @@ dofile(minetest.get_modpath("plant").."/cacti.lua")
 dofile(minetest.get_modpath("plant").."/shrubs.lua")
 dofile(minetest.get_modpath("plant").."/vegetables.lua")
 dofile(minetest.get_modpath("plant").."/sealife.lua")
+dofile(minetest.get_modpath("plant").."/flowerpots.lua")
 dofile(minetest.get_modpath("plant").."/aliases.lua")
 dofile(minetest.get_modpath("plant").."/crafts.lua")
 

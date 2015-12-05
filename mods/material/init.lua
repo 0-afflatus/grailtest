@@ -124,6 +124,13 @@ minetest.register_node("material:shingles_slate", {
 
 -- Tiles
 
+minetest.register_node("material:wood_tile", {
+	description = "Wood Tile",
+	tiles = {"material_wood_tile.png"},
+	groups = {choppy = 1, wood = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults()
+})
+
 minetest.register_node("material:stone_tile", {
 	description = "Stone Tile",
 	tiles = {"material_stone_tile.png"},
@@ -231,7 +238,12 @@ minetest.register_node("material:basalt_chequer", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
+minetest.register_node("material:stone_rune", {
+	description = "Stone Rune",
+	tiles = {"material_stone_rune.png"},
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
 
 
 -- Glass
@@ -375,6 +387,7 @@ material.dyes = {
 dofile(minetest.get_modpath("material").."/reed.lua")
 dofile(minetest.get_modpath("material").."/bones.lua")
 dofile(minetest.get_modpath("material").."/stairs.lua")
+dofile(minetest.get_modpath("material").."/xwall.lua")
 dofile(minetest.get_modpath("material").."/crafting.lua")
 dofile(minetest.get_modpath("material").."/aliases.lua")
 

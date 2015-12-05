@@ -169,7 +169,7 @@ xpanes.register_pane("pane", {
 })
 
 xpanes.register_pane("bar", {
-	description = "Iron bar",
+	description = "Iron bars",
 	textures = {"xpanes_bar.png","xpanes_bar.png","xpanes_space.png"},
 	inventory_image = "xpanes_bar.png",
 	wield_image = "xpanes_bar.png",
@@ -178,6 +178,39 @@ xpanes.register_pane("bar", {
 	recipe = {
 		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
 		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}
+	}
+})
+
+xpanes.register_pane("rust_bar", {
+	description = "Rusty iron bars",
+	tiles = {"xpanes_rust_bar.png"},
+	drawtype = "airlike",
+	paramtype = "light",
+	textures = {"xpanes_rust_bar.png", "xpanes_rust_bar.png", "xpanes_space.png"},
+	inventory_image = "xpanes_rust_bar.png",
+	wield_image = "xpanes_rust_bar.png",
+	groups = {cracky=3, oddly_breakable_by_hand=2, pane=1},
+	recipe = {
+		{"", "default:dirt", ""},
+		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
+		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}
+	}
+})
+
+xpanes.register_pane("wood_frame", {
+	description = "Wood Frame",
+	tiles = {"xpanes_wood_frame.png"},
+	drawtype = "airlike",
+	paramtype = "light",
+	textures = {"xpanes_wood_frame.png", "xpanes_wood_frame.png", "xpanes_space.png"},
+	inventory_image = "xpanes_wood_frame.png",
+	wield_image = "xpanes_wood_frame.png",
+	groups = {choppy=3, oddly_breakable_by_hand=2, pane=1, flammable=3},
+	sounds = default.node_sound_wood_defaults(),
+	recipe = {
+		{"group:wood", "group:stick", "group:wood"},
+		{"group:stick", "group:stick", "group:stick"},
+		{"group:wood", "group:stick", "group:wood"}
 	}
 })
 
