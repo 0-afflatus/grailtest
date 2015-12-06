@@ -255,7 +255,7 @@ function food.register_drink(defn)
 		stack_max = 1,
 		selection_box = {
 			type = "fixed",
-			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+			fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2}
 		},
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
 		sounds = default.node_sound_glass_defaults(),
@@ -567,7 +567,7 @@ minetest.register_node("food:glass_water", {
 	stack_max = 1,
 	selection_box = {
 		type = "fixed",
-		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2}
 	},
 	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),

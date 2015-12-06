@@ -66,7 +66,7 @@ minetest.register_node("plant:carrot_1", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+3/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -82,7 +82,7 @@ minetest.register_node("plant:carrot_2", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+5/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -98,7 +98,7 @@ minetest.register_node("plant:carrot_3", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+12/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -118,14 +118,14 @@ minetest.register_node("plant:carrot", {
 			{ items = {'plant:carrot_item'}, rarity = 5 }
 		}
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flower=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flower = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
 minetest.register_craftitem("plant:carrot_item", {
 	description = "Carrot",
 	inventory_image = "plant_carrot.png",
-	groups = {vegetable=1, salad=1},
+	groups = {vegetable = 1, salad = 1},
 	on_use = minetest.item_eat(3),
 })
 
@@ -161,7 +161,7 @@ minetest.register_node("plant:beet_1", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+3/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -177,7 +177,7 @@ minetest.register_node("plant:beet_2", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+5/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -193,7 +193,7 @@ minetest.register_node("plant:beet_3", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+12/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -216,21 +216,21 @@ minetest.register_node("plant:beet", {
 			{ items = {'plant:beetroot'}, rarity = 5 }
 		}
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flower=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flower = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
 minetest.register_craftitem("plant:beetroot", {
 	description = "Beetroot",
 	inventory_image = "plant_beetroot.png",
-	groups = {vegetable=1, salad=1},
+	groups = {vegetable = 1, salad = 1},
 	on_use = minetest.item_eat(3),
 })
 
 minetest.register_craftitem("plant:beet_leaves", {
 	description = "Beet Greens",
 	inventory_image = "plant_beet_leaves.png",
-	groups = {vegetable=1, salad=1},
+	groups = {vegetable = 1, salad = 1},
 	on_use = minetest.item_eat(2),
 })
 
@@ -246,7 +246,7 @@ plant:grow_veg("plant:beet", {"plant:beet_1", "plant:beet_2", "plant:beet_3"}, 6
 -- Wild Onion Plant
 minetest.register_craftitem("plant:wild_onion_plant", {
 	description = "Wild Onion",
-	groups = {not_in_creative_inventory=1, vegetable=1},
+	groups = {not_in_creative_inventory = 1, vegetable = 1},
 	inventory_image = "plant_wild_onion.png",
 	on_use = minetest.item_eat(2),
 	on_place = function(itemstack, placer, pointed_thing)
@@ -265,11 +265,11 @@ minetest.register_node("plant:onion_1", {
 	buildable_to = true,
 	drop = {
 		items = {
-			{items = {"plant:wild_onion_plant 1"},rarity=1},
+			{items = {"plant:wild_onion_plant 1"},rarity = 1},
 			}
 	},
 	selection_box = {type = "fixed",fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,onion=1,growing=1,not_in_creative_inventory=1},
+	groups = {snappy=3,flammable=2,plant = 1,attached_node = 1,onion = 1,growing = 1,not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 minetest.register_alias("plant:wild_onion_1", "plant:onion_1")
@@ -283,11 +283,11 @@ minetest.register_node("plant:onion_2", {
 	buildable_to = true,
 	drop = {
 		items = {
-			{items = {"plant:wild_onion_plant 1"},rarity=1},
+			{items = {"plant:wild_onion_plant 1"},rarity = 1},
 		}
 	},
 	selection_box = {type = "fixed",fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,onion=2,growing=1,not_in_creative_inventory=1},
+	groups = {snappy=3,flammable=2,plant = 1,attached_node = 1,onion=2,growing = 1,not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 minetest.register_alias("plant:wild_onion_2", "plant:onion_2")
@@ -302,12 +302,12 @@ minetest.register_node("plant:onion_3", {
 	is_ground_content = true,
 	drop = {
 		items = {
-			{items = {"plant:wild_onion_plant 1"},rarity=1},
+			{items = {"plant:wild_onion_plant 1"},rarity = 1},
 			{items = {"plant:wild_onion_plant 2"},rarity=3},
 			}
 	},
 	selection_box = {type = "fixed",fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,onion=3,growing=1,not_in_creative_inventory=1},
+	groups = {snappy=3,flammable=2,plant = 1,attached_node = 1,onion=3,growing = 1,not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 minetest.register_alias("plant:wild_onion_3", "plant:onion_3")
@@ -321,12 +321,12 @@ minetest.register_node("plant:onion_4", {
 	buildable_to = true,
 	drop = {
 		items = {
-			{items = {"plant:wild_onion_plant 1"},rarity=1},
+			{items = {"plant:wild_onion_plant 1"},rarity = 1},
 			{items = {"plant:wild_onion_plant 3"},rarity=3},
 			}
 	},
 	selection_box = {type = "fixed",fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,onion=4,growing=1,not_in_creative_inventory=1},
+	groups = {snappy=3,flammable=2,plant = 1,attached_node = 1,onion=4,growing = 1,not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 minetest.register_alias("plant:wild_onion_4", "plant:onion_4")
@@ -340,12 +340,12 @@ minetest.register_node("plant:onion_5", {
 	buildable_to = true,
 	drop = {
 		items = {
-			{items = {"plant:wild_onion_plant 2"},rarity=1},
+			{items = {"plant:wild_onion_plant 2"},rarity = 1},
 			{items = {"plant:wild_onion_plant 3"},rarity=2},
 			}
 	},
 	selection_box = {type = "fixed",fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,onion=5,not_in_creative_inventory=1},
+	groups = {snappy=3,flammable=2,plant = 1,attached_node = 1,onion=5,not_in_creative_inventory = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 minetest.register_alias("plant:wild_onion_5", "plant:onion_5")
@@ -416,7 +416,7 @@ minetest.register_node("plant:beans_1", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+5/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -432,7 +432,7 @@ minetest.register_node("plant:beans_2", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+8/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -448,7 +448,7 @@ minetest.register_node("plant:beans_3", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+13/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -468,14 +468,14 @@ minetest.register_node("plant:beans", {
 			{ items = {'plant:beans_item'}, rarity = 5 }
 		}
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
 minetest.register_craftitem("plant:beans_item", {
 	description = "Bean Pods",
 	inventory_image = "plant_beans_pods.png",
-	groups = {vegetable=1, salad=1, pulse=1},
+	groups = {vegetable = 1, salad = 1, pulse = 1},
 	on_use = minetest.item_eat(4),
 })
 
@@ -511,7 +511,7 @@ minetest.register_node("plant:fathen_1", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+5/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -527,7 +527,7 @@ minetest.register_node("plant:fathen_2", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+8/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1, plant = 1, flora = 1, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -543,7 +543,7 @@ minetest.register_node("plant:fathen_3", {
 			{-0.5, -0.5, -0.5, 0.5, -0.5+13/16, 0.5}
 		},
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -563,14 +563,14 @@ minetest.register_node("plant:fathen", {
 			{ items = {'plant:fathen_leaves'}, rarity = 5 }
 		}
 	},
-	groups = {snappy=3, flammable=2, not_in_creative_inventory=1,plant=1,flora=1,attached_node=1},
+	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
 minetest.register_craftitem("plant:fathen_leaves", {
 	description = "Fat Hen Greens",
 	inventory_image = "plant_fathen_leaves.png",
-	groups = {vegetable=1, salad=1},
+	groups = {vegetable = 1, salad = 1},
 	on_use = minetest.item_eat(2),
 })
 

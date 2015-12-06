@@ -1,16 +1,3 @@
-local water = {
-	"bucket:bucket_water",
-	"bucket:wooden_water",
-	"bucket:wooden_freshwater",
-	"group:water",
-}
-
-local water_replacements = {
-	{"bucket:bucket_water","bucket:bucket_empty"},
-	{"bucket:wooden_water","bucket:wooden_empty"},
-	{"bucket:wooden_freshwater","bucket:wooden_empty"},
-}
-
 --
 -- Unicorn Soup
 --
@@ -32,9 +19,21 @@ minetest.register_craftitem("food:soup_unicorn", {
 	end,
 })
 
-minetest.register_craftitem("food:soup_unicorn_cooked", {
+minetest.register_node("food:soup_unicorn_cooked", {
 	description = "Hot unicorn Soup",
 	inventory_image = "food_unicorn_soup_hot.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_unicorn_soup_hot.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 
@@ -46,11 +45,11 @@ minetest.register_craftitem("food:soup_unicorn_cooked", {
 	on_use = minetest.item_eat(15)
 })
 
-for _,water in ipairs(water) do
+for _,water in ipairs(food.water) do
 	minetest.register_craft({
 		type = "shapeless",
 		output = "food:soup_unicorn",
-		replacements = water_replacements,
+		replacements = food.water_replacements,
 		recipe = {"group:vegetable", water, "mineral:obsidian_shard"},
 	})
 end
@@ -83,9 +82,21 @@ minetest.register_craftitem("food:soup_chicken", {
 	end,
 })
 
-minetest.register_craftitem("food:soup_chicken_cooked", {
+minetest.register_node("food:soup_chicken_cooked", {
 	description = "Hot chicken Soup",
 	inventory_image = "food_chicken_soup_hot.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_chicken_soup_hot.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 
@@ -97,11 +108,11 @@ minetest.register_craftitem("food:soup_chicken_cooked", {
 	on_use = minetest.item_eat(13)
 })
 
-for _,water in ipairs(water) do
+for _,water in ipairs(food.water) do
 	minetest.register_craft({
 		type = "shapeless",
 		output = "food:soup_chicken",
-		replacements = water_replacements,
+		replacements = food.water_replacements,
 		recipe = {"group:vegetable", water, "mobs:chicken_raw"},
 	})
 end
@@ -134,9 +145,21 @@ minetest.register_craftitem("food:stew_meat", {
 	end,
 })
 
-minetest.register_craftitem("food:stew_meat_cooked", {
+minetest.register_node("food:stew_meat_cooked", {
 	description = "Hot Meat Stew",
 	inventory_image = "food_meat_stew_hot.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_meat_stew_hot.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 
@@ -252,18 +275,18 @@ minetest.register_craftitem("food:fruitcake_mix", {
 	inventory_image = "food_cake_mix.png"
 })
 
-for _,water in ipairs(water) do
+for _,water in ipairs(food.water) do
 	minetest.register_craft({
 		type = "shapeless",
 		output = "food:cake_mix",
-		replacements = water_replacements,
-		recipe = {"food:flour",water,"mobs:egg"}
+		replacements = food.water_replacements,
+		recipe = {"food:flour", water, "mobs:egg"}
 	})
 		minetest.register_craft({
 		type = "shapeless",
 		output = "food:fruitcake_mix",
-		replacements = water_replacements,
-		recipe = {"food:flour",water,"mobs:egg","group:fruit"}
+		replacements = food.water_replacements,
+		recipe = {"food:flour", water, "mobs:egg", "group:fruit"}
 	})
 end
 
