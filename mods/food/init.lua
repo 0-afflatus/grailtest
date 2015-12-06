@@ -11,10 +11,7 @@ food.protein = {
 }
 
 food.water = {
-	"bucket:bucket_water",
-	"bucket:bucket_river_water",
-	"bucket:wooden_water",
-	"bucket:wooden_river_water",
+	"group:water_bucket",
 	"group:water",
 }
 
@@ -40,9 +37,21 @@ minetest.register_craft({
 	recipe = {"group:grain","group:grain","group:grain"}
 })
 
-minetest.register_craftitem("food:bread", {
+minetest.register_node("food:bread", {
 	description = "Bread",
 	inventory_image = "food_bread.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_bread.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 	on_use = minetest.item_eat(4),
 })
 
@@ -57,9 +66,21 @@ minetest.register_craft({
 -- Salad
 --
 
-minetest.register_craftitem("food:salad", {
+minetest.register_node("food:salad", {
 	description = "Salad",
 	inventory_image = "food_salad.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_salad.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 	
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 
@@ -71,9 +92,21 @@ minetest.register_craftitem("food:salad", {
 	on_use = minetest.item_eat(6)
 })
 
-minetest.register_craftitem("food:salad_fruit", {
+minetest.register_node("food:salad_fruit", {
 	description = "Fruit Salad",
 	inventory_image = "food_fruit_salad.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_fruit_salad.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 	
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 
@@ -118,9 +151,21 @@ minetest.register_craftitem("food:stew_vegetable", {
 	end,
 })
 
-minetest.register_craftitem("food:stew_vegetable_cooked", {
+minetest.register_node("food:stew_vegetable_cooked", {
 	description = "Hot Vegetable Stew",
 	inventory_image = "food_veg_stew_hot.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_veg_stew_hot.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 	
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 
@@ -168,9 +213,21 @@ minetest.register_craftitem("food:porridge", {
 	end,
 })
 
-minetest.register_craftitem("food:porridge_cooked", {
+minetest.register_node("food:porridge_cooked", {
 	description = "Hot Porridge",
 	inventory_image = "food_porridge_hot.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_porridge_hot.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 	
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 
@@ -219,9 +276,21 @@ minetest.register_craftitem("food:soup_vegetable", {
 	end,
 })
 
-minetest.register_craftitem("food:soup_vegetable_cooked", {
+minetest.register_node("food:soup_vegetable_cooked", {
 	description = "Hot Vegetable Soup",
 	inventory_image = "food_veg_soup_hot.png",
+	drawtype = "plantlike",
+	visual_scale = 0.75,
+	tiles = {"food_veg_soup_hot.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	is_ground_content = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, -0.3, 0.2}
+	},
+	groups = {dig_immediate = 3},
 	
 	on_drop = function(itemstack, dropper, pos)
 		minetest.chat_send_player(dropper:get_player_name(), 

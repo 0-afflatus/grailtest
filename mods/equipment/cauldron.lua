@@ -109,9 +109,9 @@ minetest.register_node("equipment:cauldron", {
 minetest.register_node("equipment:cauldron_active", {
 	description = "Cauldron",
 	tiles = {
-		"equipment_cauldron_inner_full.png^equipment_cauldron_top.png", "equipment_cauldron_bottom.png",
-		"equipment_cauldron_side.png", "equipment_cauldron_side.png",
-		"equipment_cauldron_side.png", "equipment_cauldron_side.png",
+		{ name = "equipment_cauldron_top_anim_soup.png",
+			animation = {type="vertical_frames", length=3.0} },
+		"equipment_cauldron_side.png"
 	},
 	paramtype2 = "facedir",
 	drop = "equipment:cauldron",
