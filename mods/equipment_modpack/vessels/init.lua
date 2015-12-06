@@ -136,6 +136,7 @@ minetest.register_craft( {
 	}
 })
 
+--[[
 minetest.register_node("vessels:beaker", {
 	description = "Beaker (empty)",
 	drawtype = "plantlike",
@@ -161,6 +162,7 @@ minetest.register_craft( {
 		{ "mineral:clay_lump", "mineral:clay_lump", "mineral:clay_lump" }
 	}
 })
+]]
 
 minetest.register_node("vessels:steel_bottle", {
 	description = "Heavy Steel Bottle (empty)",

@@ -21,7 +21,7 @@ food.drinks = {
 }
 
 function food.register_drink(defn)
-	
+	local nutrition = 2
 	minetest.register_node("food:"..defn.name, {
 		description = defn.desc,
 		inventory_image = minetest.inventorycube("food_juice_"..defn.colour..".png^[noalpha"),
@@ -167,8 +167,36 @@ function food.register_drink(defn)
 			type = "fixed",
 			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 		},
-		groups = {dig_immediate = 3, attached_node = 1},
+		groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 		sounds = default.node_sound_glass_defaults(),
+		on_use = function(itemstack, user, pointed_thing)
+			replace_with_item = "vessels:glass_bottle"
+			if pointed_thing.under  then
+				target = minetest.get_node(pointed_thing.under)
+				if target.name == "vessels:drinking_glass" then
+					minetest.set_node(pointed_thing.under, {name="food:glass_"..defn.name})
+					if itemstack:take_item() ~= nil then
+						if itemstack:is_empty() then
+							itemstack:add_item(replace_with_item)
+						else
+							local inv = user:get_inventory()
+							if inv:room_for_item("main", {name=replace_with_item}) then
+								inv:add_item("main", replace_with_item)
+							else
+								local pos = user:getpos()
+								pos.y = math.floor(pos.y + 0.5)
+								minetest.add_item(pos, replace_with_item)
+							end
+						end
+					end
+				else
+					minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+				end
+			else
+				minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+			end
+			return itemstack
+		end
 	})
 
 	minetest.register_craft( {
@@ -229,10 +257,11 @@ function food.register_drink(defn)
 			type = "fixed",
 			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 		},
-		groups = {dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
+		groups = {vessel = 1, dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
 		sounds = default.node_sound_glass_defaults(),
+		on_use = minetest.item_eat(nutrition, "vessels:drinking_glass"),
 	})
-
+--[[
 	minetest.register_node("food:beaker_"..defn.name, {
 		description = "Beaker of "..defn.desc,
 		drawtype = "plantlike",
@@ -247,10 +276,10 @@ function food.register_drink(defn)
 			type = "fixed",
 			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 		},
-		groups = {dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
+		groups = {vessel = 1, dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
 		sounds = default.node_sound_defaults(),
 	})
-
+]]
 	minetest.register_node("food:flask_"..defn.name, {
 		description = "Flask of "..defn.desc,
 		drawtype = "plantlike",
@@ -265,8 +294,36 @@ function food.register_drink(defn)
 			type = "fixed",
 			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 		},
-		groups = {dig_immediate = 3, attached_node = 1},
+		groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 		sounds = default.node_sound_defaults(),
+		on_use = function(itemstack, user, pointed_thing)
+			replace_with_item = "vessels:steel_bottle"
+			if pointed_thing.under  then
+				target = minetest.get_node(pointed_thing.under)
+				if target.name == "vessels:drinking_glass" then
+					minetest.set_node(pointed_thing.under, {name="food:glass_"..defn.name})
+					if itemstack:take_item() ~= nil then
+						if itemstack:is_empty() then
+							itemstack:add_item(replace_with_item)
+						else
+							local inv = user:get_inventory()
+							if inv:room_for_item("main", {name=replace_with_item}) then
+								inv:add_item("main", replace_with_item)
+							else
+								local pos = user:getpos()
+								pos.y = math.floor(pos.y + 0.5)
+								minetest.add_item(pos, replace_with_item)
+							end
+						end
+					end
+				else
+					minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+				end
+			else
+				minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+			end
+			return itemstack
+		end
 	})
 
 	minetest.register_craft( {
@@ -430,8 +487,36 @@ minetest.register_node("food:bottle_water", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
-	groups = {dig_immediate = 3, attached_node = 1},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
+	on_use = function(itemstack, user, pointed_thing)
+		replace_with_item = "vessels:glass_bottle"
+		if pointed_thing.under  then
+			target = minetest.get_node(pointed_thing.under)
+			if target.name == "vessels:drinking_glass" then
+				minetest.set_node(pointed_thing.under, {name="food:glass_water"})
+				if itemstack:take_item() ~= nil then
+					if itemstack:is_empty() then
+						itemstack:add_item(replace_with_item)
+					else
+						local inv = user:get_inventory()
+						if inv:room_for_item("main", {name=replace_with_item}) then
+							inv:add_item("main", replace_with_item)
+						else
+							local pos = user:getpos()
+							pos.y = math.floor(pos.y + 0.5)
+							minetest.add_item(pos, replace_with_item)
+						end
+					end
+				end
+			else
+				minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+			end
+		else
+			minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+		end
+		return itemstack
+	end
 })
 
 for _,water in ipairs(food.water) do
@@ -484,10 +569,12 @@ minetest.register_node("food:glass_water", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
-	groups = {dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
+	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
+	on_use = minetest.item_eat(1, "vessels:drinking_glass"),
 })
 
+--[[
 minetest.register_node("food:beaker_water", {
 	description = "Beaker of water",
 	drawtype = "plantlike",
@@ -502,9 +589,11 @@ minetest.register_node("food:beaker_water", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
-	groups = {dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
+	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_defaults(),
+	on_use = minetest.item_eat(1, "vessels:beaker"),
 })
+]]
 
 minetest.register_node("food:flask_water", {
 	description = "Flask of water",
@@ -520,8 +609,37 @@ minetest.register_node("food:flask_water", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
-	groups = {dig_immediate = 3, attached_node = 1},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_defaults(),
+	on_use = function(itemstack, user, pointed_thing)
+		replace_with_item = "vessels:steel_bottle"
+		if pointed_thing.under  then
+			target = minetest.get_node(pointed_thing.under)
+			if target.name == "vessels:drinking_glass" then
+				minetest.set_node(pointed_thing.under, {name="food:glass_water"})
+				if itemstack:take_item() ~= nil then
+					if itemstack:is_empty() then
+						itemstack:add_item(replace_with_item)
+					else
+						local inv = user:get_inventory()
+						if inv:room_for_item("main", {name=replace_with_item}) then
+							inv:add_item("main", replace_with_item)
+						else
+							local pos = user:getpos()
+							pos.y = math.floor(pos.y + 0.5)
+							minetest.add_item(pos, replace_with_item)
+						end
+					end
+				end
+			else
+				minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+			end
+		else
+			minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+		end
+		return itemstack
+	end
+
 })
 
 for _,water in ipairs(food.water) do
