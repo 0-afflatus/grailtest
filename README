@@ -98,7 +98,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 License of media (textures and sounds)
 --------------------------------------
 menu/background.png and menu/icon.png
-Copyright (C) 2014-2015 afflatus, Tim Hall <afflatus@pathilorra.co.uk>
+Copyright (C) 2014-2015 afflatus, Tim Hawthorn <afflatus@pathilorra.co.uk>
 
 Based on original minetest_game media:
 Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
@@ -110,5 +110,5 @@ http://creativecommons.org/licenses/by-sa/3.0/
 Gratitude
 ---------
 
-To crabman77 for additional code.
+To crabman77 and melzua for additional code.
 To CCD, DC_gaming, AllisonB, Xanthin, h70, dvn, brandin and all the other regular players for game testing.
