@@ -595,7 +595,7 @@ minetest.register_node("default:water_flowing", {
 	liquid_alternative_source = "default:water_source",
 	liquid_viscosity = 1,
 	freezemelt = "default:snow",
-	post_effect_color = {a = 120, r = 30, g = 35, b = 40},
+	post_effect_color = {a = 108, r = 30, g = 35, b = 40},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_water_defaults(),
 })
@@ -642,7 +642,7 @@ minetest.register_node("default:water_source", {
 	liquid_alternative_source = "default:water_source",
 	liquid_viscosity = 1,
 	freezemelt = "default:ice",
-	post_effect_color = {a = 120, r = 30, g = 35, b = 40},
+	post_effect_color = {a = 108, r = 30, g = 35, b = 40},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1, freezes = 1, melt_around = 1},
 	sounds = default.node_sound_water_defaults(),
 })
@@ -689,7 +689,7 @@ minetest.register_node("default:river_water_source", {
 	liquid_viscosity = 1,
 	liquid_renewable = false,
 	liquid_range = 2,
-	post_effect_color = {a = 120, r = 30, g = 76, b = 90},
+	post_effect_color = {a = 108, r = 30, g = 76, b = 90},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1},
 })
 
@@ -736,7 +736,7 @@ minetest.register_node("default:river_water_flowing", {
 	liquid_viscosity = 1,
 	liquid_renewable = false,
 	liquid_range = 2,
-	post_effect_color = {a = 120, r = 30, g = 76, b = 90},
+	post_effect_color = {a = 108, r = 30, g = 76, b = 90},
 	groups = {water = 3, liquid = 3, puts_out_fire = 1,
 		not_in_creative_inventory = 1},
 })

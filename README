@@ -42,12 +42,10 @@ Mods designed for other games may not work as expected.
 
 Purpose
 -------
-
 Find the Grail.
 
 Gameplay
 --------
-
 "The theme of the Grail is the bringing of life into what is known as the wasteland." ~ Joseph Campbell. 
 
 "You can't expect to wield supreme executive power just because some watery tart threw a sword at you." ~ Dennis, Monty Python and the Holy Grail.
@@ -66,7 +64,6 @@ Gameplay
 
 Development
 -----------
-
 The development of grail_test has tended to roughly follow evolution. It features a stripped-down core, which only really provides the raw elements and a bit of legacy support. Game Universe specific features have been stripped out into minerals, materials, food, tools and equipment mods. These were re-introduced in sequence in order to get the chain of dependencies right. The game also provides legacy support for farming and moreores. The tech level of the core game is not intended to progress beyond Archimedean simple machines.
 
 Several features from darkages, cottages and moreblocks have either been incorporated or inspired reworking. I have also looked at and incorporated code and ideas from Carbone, ethereal, adventuretest and Dreambuilder.
@@ -75,7 +72,7 @@ One of the aims of the game is increased magical pseudo-realism; that is, things
 
 License of source code
 ----------------------
-Copyright (C) 2014-2015 afflatus, Tim Hall <afflatus@pathilorra.co.uk>
+Copyright (C) 2014-2015 afflatus, Tim Hawthorn <afflatus@pathilorra.co.uk>
 
 Based on minetest_game:
 Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
@@ -109,6 +106,4 @@ http://creativecommons.org/licenses/by-sa/3.0/
 
 Gratitude
 ---------
-
-To crabman77 and melzua for additional code.
-To CCD, DC_gaming, AllisonB, Xanthin, h70, dvn, brandin and all the other regular players for game testing.
+To all the regular players for game testing.

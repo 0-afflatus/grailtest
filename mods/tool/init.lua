@@ -525,7 +525,7 @@ minetest.register_tool("tool:shovel_steel", {
 })
 
 --
--- Staves
+--[[ Staves
 --
 
 minetest.register_tool("tool:staff_wood", {
@@ -654,7 +654,7 @@ minetest.register_tool("tool:staff_amethyst", {
 	return itemstack
 	end,
 })
-
+]]
 --
 -- Swords
 --
