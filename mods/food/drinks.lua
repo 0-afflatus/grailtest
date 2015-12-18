@@ -170,9 +170,9 @@ function food.register_drink(defn)
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 		sounds = default.node_sound_glass_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
-			replace_with_item = "vessels:glass_bottle"
+			local replace_with_item = "vessels:glass_bottle"
 			if pointed_thing.under  then
-				target = minetest.get_node(pointed_thing.under)
+				local target = minetest.get_node(pointed_thing.under)
 				if target.name == "vessels:drinking_glass" then
 					minetest.set_node(pointed_thing.under, {name="food:glass_"..defn.name})
 					if itemstack:take_item() ~= nil then
@@ -297,9 +297,9 @@ function food.register_drink(defn)
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 		sounds = default.node_sound_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
-			replace_with_item = "vessels:steel_bottle"
+			local replace_with_item = "vessels:steel_bottle"
 			if pointed_thing.under  then
-				target = minetest.get_node(pointed_thing.under)
+				local target = minetest.get_node(pointed_thing.under)
 				if target.name == "vessels:drinking_glass" then
 					minetest.set_node(pointed_thing.under, {name="food:glass_"..defn.name})
 					if itemstack:take_item() ~= nil then
@@ -490,9 +490,9 @@ minetest.register_node("food:bottle_water", {
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 	on_use = function(itemstack, user, pointed_thing)
-		replace_with_item = "vessels:glass_bottle"
+		local replace_with_item = "vessels:glass_bottle"
 		if pointed_thing.under  then
-			target = minetest.get_node(pointed_thing.under)
+			local target = minetest.get_node(pointed_thing.under)
 			if target.name == "vessels:drinking_glass" then
 				minetest.set_node(pointed_thing.under, {name="food:glass_water"})
 				if itemstack:take_item() ~= nil then
@@ -612,9 +612,9 @@ minetest.register_node("food:flask_water", {
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_defaults(),
 	on_use = function(itemstack, user, pointed_thing)
-		replace_with_item = "vessels:steel_bottle"
+		local replace_with_item = "vessels:steel_bottle"
 		if pointed_thing.under  then
-			target = minetest.get_node(pointed_thing.under)
+			local target = minetest.get_node(pointed_thing.under)
 			if target.name == "vessels:drinking_glass" then
 				minetest.set_node(pointed_thing.under, {name="food:glass_water"})
 				if itemstack:take_item() ~= nil then
