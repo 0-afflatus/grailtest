@@ -176,8 +176,9 @@ xpanes.register_pane("bar", {
 	groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3, pane=1},
 	sounds = default.node_sound_stone_defaults(),
 	recipe = {
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}
+		{"default:steel_ingot", "", "default:steel_ingot"},
+		{"default:steel_ingot", "", "default:steel_ingot"},
+		{"default:steel_ingot", "", "default:steel_ingot"}
 	}
 })
 
@@ -191,9 +192,9 @@ xpanes.register_pane("rust_bar", {
 	wield_image = "xpanes_rust_bar.png",
 	groups = {cracky=3, oddly_breakable_by_hand=2, pane=1},
 	recipe = {
-		{"", "default:dirt", ""},
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}
+		{"default:steel_ingot", "", "default:steel_ingot"},
+		{"default:steel_ingot", "default:dirt", "default:steel_ingot"},
+		{"default:steel_ingot", "", "default:steel_ingot"}
 	}
 })
 
