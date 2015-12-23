@@ -144,6 +144,8 @@ local fermentable = {
 	['food:apple'] = 'food:cider',
 	['food:barley_water'] = 'food:beer',
 	['food:gorse'] = 'food:gorse_beer',
+	['food:honey'] = 'food:mead',
+	['food:milk'] = 'mobs:cheese',
 }
 
 minetest.register_abm({
@@ -156,9 +158,11 @@ minetest.register_abm({
 		local inv = meta:get_inventory()
 		local invstack = inv:get_stack("main", 1)
 		local contents = invstack:get_name()
+		local item_count = invstack:get_count()
 		
 		-- Swap nodes
 		invstack:replace(fermentable[contents] or contents)
+		invstack:set_count(item_count)
 		inv:set_stack("main", 1, invstack)
 		
 		-- Update infotext

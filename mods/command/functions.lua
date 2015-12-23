@@ -91,12 +91,12 @@ function command.welcome(player)
 			"that stands on the borders between the lands of the ",
 			"living and the lands of the dead.",
 			"",
-			"Player killing isn't allowed but you have to survive against",
-			"monsters, using crafting, building and your ingenuity. ",
+			"Player killing isn't allowed but you have to survive ",
+			"against monsters, using crafting, building and skill. ",
 			"Your  first task is to gather resources to build a shelter.",
 			"",
-			"Go find a tree and chop some wood, then you can make a ",
-			"pick and go mining. There is a playguide at: ",
+			"Go find a tree and chop some wood, then you can make ",
+			"a pick and go mining. There is a playguide at: ",
 			"http://grailtest.pathilorra.co.uk/playguide.html",
 			"",
 			"Admins are called Wizards here. Hassling for privs or chat ",
@@ -113,7 +113,7 @@ function command.welcome(player)
 	table.insert(fs, "size[8,11]")
 	table.insert(fs, "background[0,0;8,11;ui_form_bg.png]")
 	table.insert(fs, "image[6.7,0.5;1,1;ui_icon.png]")
-	table.insert(fs, "image[6.7,2;1,2;character_1_preview.png]")
+	table.insert(fs, "image[6.3,2;2,2;character_1_preview.png]")
 	table.insert(fs, "image[6.7,4.5;1,1;tree_apple_tree_sapling.png]")
 	table.insert(fs, "image[6.7,6.5;1,1;tool_staff_ruby.png]")
 	table.insert(fs, "image[6.7,8.5;1,1;ui_craftguide_icon.png]")

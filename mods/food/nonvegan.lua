@@ -304,3 +304,331 @@ minetest.register_craft({
 	recipe = "food:fruitcake_mix"
 })
 
+--
+-- Drinks
+--
+
+food.register_drink({
+	name = "honey",
+	desc = "Honey Juice",
+	colour = "mead",
+	colouring = {a = 120, r = 90, g = 60, b = 0},
+	flavour = "mobs:honey",
+	groups = {},
+})
+
+food.register_drink({
+	name = "mead",
+	desc = "Mead",
+	colour = "mead",
+	colouring = {a = 120, r = 90, g = 60, b = 0},
+	flavour = "none",
+	groups = {},
+})
+
+food.milk = {
+	"mobs:bucket_milk",
+	"mobs:pail_milk",
+}
+
+food.milk_replacements = {
+	{"mobs:bucket_milk","bucket:bucket_empty"},
+	{"mobs:pail_milk","bucket:wooden_empty"},
+}
+
+minetest.register_node("food:milk_flowing", {
+	description = "Flowing milk",
+	inventory_image = minetest.inventorycube("food_milk.png"),
+	drawtype = "flowingliquid",
+	tiles = {"food_milk.png"},
+	special_tiles = {
+		{
+			name = "food_milk_flowing_animated.png",
+			backface_culling = false,
+			animation = {
+				type     = "vertical_frames", 
+				aspect_w = 16, 
+				aspect_h = 16, 
+				length   = 0.8,
+			}
+		},
+		{
+			name = "food_milk_flowing_animated.png",
+			backface_culling = true,
+			animation = {
+				type     = "vertical_frames", 
+				aspect_w = 16, 
+				aspect_h = 16, 
+				length   = 0.8,
+			}
+		},
+	},
+	--alpha = 0,
+	paramtype = "light",
+	paramtype2 = "flowingliquid",
+	walkable = false,
+	pointable = false,
+	diggable = false,
+	buildable_to = true,
+	is_ground_content = false,
+	drop = "",
+	drowning = 1,
+	liquidtype = "flowing",
+	liquid_alternative_flowing = "food:milk_flowing",
+	liquid_alternative_source = "food:milk",
+	liquid_viscosity = 3,
+	post_effect_color = {a = 127, r = 255, g = 255, b = 255},
+	groups = {milk = 3, liquid = 3, puts_out_fire = 1, not_in_creative_inventory = 1},
+	sounds = default.node_sound_water_defaults(),
+})
+
+minetest.register_node("food:milk", {
+	description = "milk",
+	inventory_image = minetest.inventorycube("food_milk.png"),
+	drawtype = "liquid",
+	tiles = {
+		{
+			name = "food_milk_animated.png", 
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 2.0,
+			},
+		},
+	},
+	special_tiles = {
+		-- New-style milk source material (mostly unused)
+		{
+			name = "food_milk_animated.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 2.0,
+			},
+			backface_culling = false,
+		},
+	},
+	--alpha = 0,
+	paramtype = "light",
+	walkable = false,
+	pointable = false,
+	diggable = false,
+	buildable_to = true,
+	is_ground_content = false,
+	drop = "",
+	drowning = 1,
+	liquidtype = "source",
+	liquid_alternative_flowing = "food:milk_flowing",
+	liquid_alternative_source = "food:milk",
+	liquid_viscosity = 3,
+	post_effect_color = {a = 127, r = 255, g = 255, b = 255},
+	groups = {milk = 3, liquid = 3, puts_out_fire = 1, freezes = 1, melt_around = 1},
+	sounds = default.node_sound_water_defaults(),
+})
+
+minetest.register_node("food:bottle_milk", {
+	description = "Bottle of milk",
+	drawtype = "plantlike",
+	tiles = {"food_bottle_milk.png"},
+	inventory_image = "food_bottle_milk.png",
+	wield_image = "food_bottle_milk.png",
+	paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	stack_max = 12,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	sounds = default.node_sound_glass_defaults(),
+	on_use = function(itemstack, user, pointed_thing)
+		local replace_with_item = "vessels:glass_bottle"
+		if pointed_thing.under  then
+			local target = minetest.get_node(pointed_thing.under)
+			if target.name == "vessels:drinking_glass" then
+				minetest.set_node(pointed_thing.under, {name="food:glass_milk"})
+				if itemstack:take_item() ~= nil then
+					if itemstack:is_empty() then
+						itemstack:add_item(replace_with_item)
+					else
+						local inv = user:get_inventory()
+						if inv:room_for_item("main", {name=replace_with_item}) then
+							inv:add_item("main", replace_with_item)
+						else
+							local pos = user:getpos()
+							pos.y = math.floor(pos.y + 0.5)
+							minetest.add_item(pos, replace_with_item)
+						end
+					end
+				end
+			else
+				minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+			end
+		else
+			minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+		end
+		return itemstack
+	end
+})
+
+for _,milk in ipairs(food.milk) do
+	minetest.register_craft( {
+		output = "food:bottle_milk 8",
+		replacements = food.milk_replacements,
+		recipe = {
+			{ "vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle" },
+			{ "vessels:glass_bottle", milk, "vessels:glass_bottle" },
+			{ "vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle" }
+		}
+	})
+end
+
+minetest.register_craft( {
+	output = "mobs:bucket_milk",
+	replacements = {
+		{"food:bottle_milk", "vessels:glass_bottle"}
+	},
+	recipe = {
+		{ "food:bottle_milk", "food:bottle_milk", "food:bottle_milk" },
+		{ "food:bottle_milk", "bucket:bucket_empty", "food:bottle_milk" },
+		{ "food:bottle_milk", "food:bottle_milk", "food:bottle_milk" }
+	}
+})
+
+minetest.register_craft( {
+	output = "mobs:pail_milk",
+	replacements = {
+		{"food:bottle_milk", "vessels:glass_bottle"}
+	},
+	recipe = {
+		{ "food:bottle_milk", "food:bottle_milk", "food:bottle_milk" },
+		{ "food:bottle_milk", "bucket:wooden_empty", "food:bottle_milk" },
+		{ "food:bottle_milk", "food:bottle_milk", "food:bottle_milk" }
+	}
+})
+
+minetest.register_node("food:glass_milk", {
+	description = "Glass of milk",
+	drawtype = "plantlike",
+	tiles = {"food_glass_milk.png"},
+	inventory_image = "food_glass_milk.png",
+	wield_image = "food_glass_milk.png",
+	paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	stack_max = 1,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2}
+	},
+	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
+	sounds = default.node_sound_glass_defaults(),
+	on_use = minetest.item_eat(1, "vessels:drinking_glass"),
+})
+
+--[[
+minetest.register_node("food:beaker_milk", {
+	description = "Beaker of milk",
+	drawtype = "plantlike",
+	tiles = {"vessels_beaker.png"},
+	inventory_image = "vessels_beaker.png",
+	wield_image = "vessels_beaker.png",
+	paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	stack_max = 1,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
+	sounds = default.node_sound_defaults(),
+	on_use = minetest.item_eat(1, "vessels:beaker"),
+})
+]]
+
+minetest.register_node("food:flask_milk", {
+	description = "Flask of milk",
+	drawtype = "plantlike",
+	tiles = {"vessels_steel_bottle.png"},
+	inventory_image = "vessels_steel_bottle_inv.png",
+	wield_image = "vessels_steel_bottle.png",
+	paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	stack_max = 12,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+	},
+	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	sounds = default.node_sound_defaults(),
+	on_use = function(itemstack, user, pointed_thing)
+		local replace_with_item = "vessels:steel_bottle"
+		if pointed_thing.under  then
+			local target = minetest.get_node(pointed_thing.under)
+			if target.name == "vessels:drinking_glass" then
+				minetest.set_node(pointed_thing.under, {name="food:glass_milk"})
+				if itemstack:take_item() ~= nil then
+					if itemstack:is_empty() then
+						itemstack:add_item(replace_with_item)
+					else
+						local inv = user:get_inventory()
+						if inv:room_for_item("main", {name=replace_with_item}) then
+							inv:add_item("main", replace_with_item)
+						else
+							local pos = user:getpos()
+							pos.y = math.floor(pos.y + 0.5)
+							minetest.add_item(pos, replace_with_item)
+						end
+					end
+				end
+			else
+				minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+			end
+		else
+			minetest.do_item_eat(1, replace_with_item, itemstack, user, pointed_thing)
+		end
+		return itemstack
+	end
+
+})
+
+for _,milk in ipairs(food.milk) do
+	minetest.register_craft( {
+		output = "food:flask_milk 8",
+		replacements = food.milk_replacements,
+		recipe = {
+			{ "vessels:steel_bottle", "vessels:steel_bottle", "vessels:steel_bottle" },
+			{ "vessels:steel_bottle", milk, "vessels:steel_bottle" },
+			{ "vessels:steel_bottle", "vessels:steel_bottle", "vessels:steel_bottle" }
+		}
+	})
+end
+
+minetest.register_craft( {
+	output = "mobs:bucket_milk",
+	replacements = {
+		{"food:flask_milk", "vessels:steel_bottle"}
+	},
+	recipe = {
+		{ "food:flask_milk", "food:flask_milk", "food:flask_milk" },
+		{ "food:flask_milk", "bucket:bucket_empty", "food:flask_milk" },
+		{ "food:flask_milk", "food:flask_milk", "food:flask_milk" }
+	}
+})
+
+minetest.register_craft( {
+	output = "mobs:pail_milk",
+	replacements = {
+		{"food:flask_milk", "vessels:steel_bottle"}
+	},
+	recipe = {
+		{ "food:flask_milk", "food:flask_milk", "food:flask_milk" },
+		{ "food:flask_milk", "bucket:wooden_empty", "food:flask_milk" },
+		{ "food:flask_milk", "food:flask_milk", "food:flask_milk" }
+	}
+})

@@ -238,7 +238,7 @@ function food.register_drink(defn)
 		},
 		recipe = {
 			{ "food:bottle_"..defn.name, "food:bottle_"..defn.name, "food:bottle_"..defn.name },
-			{ "food:bottle_"..defn.name, "bucket:bucket_wooden_empty", "food:bottle_"..defn.name },
+			{ "food:bottle_"..defn.name, "bucket:wooden_empty", "food:bottle_"..defn.name },
 			{ "food:bottle_"..defn.name, "food:bottle_"..defn.name, "food:bottle_"..defn.name }
 		}
 	})
@@ -365,7 +365,7 @@ function food.register_drink(defn)
 		},
 		recipe = {
 			{ "food:flask_"..defn.name, "food:flask_"..defn.name, "food:flask_"..defn.name },
-			{ "food:flask_"..defn.name, "bucket:bucket_wooden_empty", "food:flask_"..defn.name },
+			{ "food:flask_"..defn.name, "bucket:wooden_empty", "food:flask_"..defn.name },
 			{ "food:flask_"..defn.name, "food:flask_"..defn.name, "food:flask_"..defn.name }
 		}
 	})
@@ -550,7 +550,7 @@ minetest.register_craft( {
 	},
 	recipe = {
 		{ "food:bottle_water", "food:bottle_water", "food:bottle_water" },
-		{ "food:bottle_water", "bucket:bucket_wooden_empty", "food:bottle_water" },
+		{ "food:bottle_water", "bucket:wooden_empty", "food:bottle_water" },
 		{ "food:bottle_water", "food:bottle_water", "food:bottle_water" }
 	}
 })
@@ -673,7 +673,7 @@ minetest.register_craft( {
 	},
 	recipe = {
 		{ "food:flask_water", "food:flask_water", "food:flask_water" },
-		{ "food:flask_water", "bucket:bucket_wooden_empty", "food:flask_water" },
+		{ "food:flask_water", "bucket:wooden_empty", "food:flask_water" },
 		{ "food:flask_water", "food:flask_water", "food:flask_water" }
 	}
 })
