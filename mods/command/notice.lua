@@ -7,12 +7,6 @@ function notice.send(target, text)
 		return false, ("There's no player named '%s'."):format(target)
 	end
 	local fs = { }
-	--[[
-	for _, line in ipairs(text:split("|")) do
-		table.insert(fs, ("label[1,%f;%s]"):format(y+1, minetest.formspec_escape(line)))
-		y = y + 0.5
-	end
-	--]]
 	local lines = { }
 	for i, line in ipairs(text:split("|")) do
 		local lt = { }

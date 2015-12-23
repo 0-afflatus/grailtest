@@ -269,7 +269,7 @@ end
 --
 
 minetest.register_node("tree:pine_tree", {
-	description = "Pine Tree",
+	description = "Fir Tree",
 	tiles = {"tree_fir_trunk_top.png", "tree_fir_trunk_top.png",
 		"tree_fir_trunk.png"},
 	paramtype2 = "facedir",
@@ -281,7 +281,7 @@ minetest.register_node("tree:pine_tree", {
 })
 
 minetest.register_node("tree:pine_wood", {
-	description = "Pine Wood Planks",
+	description = "Fir Wood Planks",
 	tiles = {"tree_pine_wood.png"},
 	is_ground_content = false,
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
@@ -289,7 +289,7 @@ minetest.register_node("tree:pine_wood", {
 })
 
 minetest.register_node("tree:pine_needles",{
-	description = "Pine Needles",
+	description = "Fir Needles",
 	drawtype = "allfaces_optional",
 	visual_scale = 1.3,
 	tiles = {"tree_pine_needles.png"},
@@ -310,7 +310,7 @@ minetest.register_node("tree:pine_needles",{
 })
 
 minetest.register_node("tree:pine_sapling", {
-	description = "Pine Sapling",
+	description = "Fir Sapling",
 	drawtype = "plantlike",
 	visual_scale = 1.0,
 	tiles = {"tree_pine_sapling.png"},

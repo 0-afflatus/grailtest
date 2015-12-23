@@ -240,6 +240,7 @@ minetest.register_abm({
 	end,
 })
 --]]
+
 dofile(minetest.get_modpath("fire").."/bonfire.lua")
 
 minetest.log("action", "MOD["..minetest.get_current_modname().."]: [Loaded]")

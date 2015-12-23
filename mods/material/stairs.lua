@@ -51,20 +51,6 @@ stairs.register_stair_and_slab("oak_wood", "moretrees:oak_planks",
 	"Oak wood slab",
 	default.node_sound_wood_defaults())
 
---[[stairs.register_stair_and_slab("apple_tree_wood", "moretrees:apple_tree_planks",
-	{snappy=2,choppy=2,oddly_breakable_by_hand=2},
-	{"moretrees_apple_tree_wood.png"},
-	"Apple wood stair",
-	"Apple wood slab",
-	default.node_sound_wood_defaults())]]
-
---[[stairs.register_stair_and_slab("acacia_wood", "moretrees:acacia_planks",
-	{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
-	{"moretrees_acacia_wood.png"},
-	"Acaciawood stair",
-	"Acaciawood slab",
-	default.node_sound_wood_defaults())]]
-
 for _, row in ipairs(material.dyes) do
 	local name = row[1]
 	local desc = row[2]
@@ -90,33 +76,6 @@ stairs.register_stair_and_slab("material_glass_obsidian", "material:glass_obsidi
 	"Obsidian Glass slab",
 	default.node_sound_glass_defaults())
 
---[[
--- Tiles & Shingles
--- replaced with slopes
-
-stairs.register_stair_and_slab("shingles_clay", "material:shingles_clay",
-	{cracky=3},
-	{"material_clay_tiles.png"},
-	"Tiled Roof",
-	"Tiled Slab",
-	default.node_sound_wood_defaults())
-
-stairs.register_stair_and_slab("shingles_wood", "material:shingles_wood",
-	{choppy=3,oddly_breakable_by_hand=2,flammable=3},
-	{"material_shingles_wood.png"},
-	"Tiled Wooden Roof",
-	"Tiled Wooden Slab",
-	default.node_sound_wood_defaults())
-
-stairs.register_stair_and_slab("shingles_slate", "material:shingles_slate",
-	{cracky=3},
-	{"material_slate.png"},
-	"Slate Roof",
-	"Slate Slab",
-	default.node_sound_wood_defaults())
-
-]]--
-	
 stairs.register_stair_and_slab("stone_tile", "material:stone_tile",
 	{cracky=3},
 	{"material_stone_tile.png"},

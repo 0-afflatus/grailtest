@@ -108,21 +108,6 @@ function basic_bow:spawn_particles(pos, texture)
 	end
 end
 
---[[
-function --basic_bow:play_node_sound(node, pos)
-	local item = minetest.registered_items[node.name]
-	if item then
-		if item.sounds then
-			local spec = item.sounds.dug
-			if spec then
-				spec.pos = pos
-				minetest.sound_play(spec.name, spec)
-			end
-		end
-	end
-end
-]]
-
 function basic_bow:punch_node(pos, def)
 	local node = minetest.get_node(pos)
 	if not node then
@@ -523,19 +508,3 @@ minetest.register_craft({
 		{"mineral:steel_ingot", "group:stick", "group:stick"},
 	}
 })
-
---[[
-minetest.register_craft({
-	output = "basic_bow:arrow 2",
-	recipe = {
-		{"default:stick", "default:stick", "default:flint"},
-	}
-})
-minetest.register_craft({
-	output = "basicbow:arrow 2",
-	recipe = {
-		{"default:flint", "default:stick", "default:stick"},
-	}
-})
---]]
-

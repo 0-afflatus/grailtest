@@ -1009,14 +1009,6 @@ minetest.register_craft( {
         },
 })
 
---[[minetest.register_craft( {
-        output = "signs:sign_wall_green 2",
-        recipe = {
-			{ "dye:dark_green", "dye:white", "dye:dark_green" },
-			{ "steel:sheet_metal", "steel:sheet_metal", "steel:sheet_metal" }
-        },
-})]]
-
 minetest.register_craft( {
         output = "signs:sign_wall_yellow 4",
         recipe = {
@@ -1024,14 +1016,6 @@ minetest.register_craft( {
 			{ "default:steel_ingot", "default:steel_ingot", "default:steel_ingot" }
         },
 })
-
---[[minetest.register_craft( {
-        output = "signs:sign_wall_yellow 2",
-        recipe = {
-			{ "dye:yellow", "dye:black", "dye:yellow" },
-			{ "steel:sheet_metal", "steel:sheet_metal", "steel:sheet_metal" }
-        },
-})]]
 
 minetest.register_craft( {
         output = "signs:sign_wall_red 4",
@@ -1041,14 +1025,6 @@ minetest.register_craft( {
         },
 })
 
---[[minetest.register_craft( {
-        output = "signs:sign_wall_red 2",
-        recipe = {
-			{ "dye:red", "dye:white", "dye:red" },
-			{ "steel:sheet_metal", "steel:sheet_metal", "steel:sheet_metal" }
-        },
-})]]
-
 minetest.register_craft( {
         output = "signs:sign_wall_white_red 4",
         recipe = {
@@ -1057,14 +1033,6 @@ minetest.register_craft( {
         },
 })
 
---[[minetest.register_craft( {
-        output = "signs:sign_wall_white_red 2",
-        recipe = {
-			{ "dye:white", "dye:red", "dye:white" },
-			{ "steel:sheet_metal", "steel:sheet_metal", "steel:sheet_metal" }
-        },
-})]]
-
 minetest.register_craft( {
         output = "signs:sign_wall_white_black 4",
         recipe = {
@@ -1072,14 +1040,6 @@ minetest.register_craft( {
 			{ "default:steel_ingot", "default:steel_ingot", "default:steel_ingot" }
         },
 })
-
---[[minetest.register_craft( {
-        output = "signs:sign_wall_white_black 2",
-        recipe = {
-			{ "dye:white", "dye:black", "dye:white" },
-			{ "steel:sheet_metal", "steel:sheet_metal", "steel:sheet_metal" }
-        },
-})]]
 
 if minetest.setting_get("log_mods") then
 	minetest.log("action", S("signs loaded"))

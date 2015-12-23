@@ -130,12 +130,6 @@ minetest.register_on_newplayer(function(player)
 	command.welcome(player)
 end)
 
---[[
-minetest.register_on_joinplayer(function(player)
-	command.welcome(player)
-end)
-]]
-
 minetest.register_chatcommand("welcome", {
 	params = "",
 	privs = { },

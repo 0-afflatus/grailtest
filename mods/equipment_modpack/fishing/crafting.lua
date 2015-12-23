@@ -15,29 +15,20 @@
 minetest.register_craft({
 	output = "fishing:pole",
 	recipe = { 
-		{"", 				"",					"default:stick"	},
-		{"", 				"default:stick",	"material:string"},
-		{"default:stick",	"",					"material:string"},
-	}
-})
-
---[[minetest.register_craft({
-	output = "fishing:pole",
-	recipe = { 
-		{"", 				"",					"default:stick"  },
-		{"", 				"default:stick",	"moreblocks:rope"},
-		{"default:stick",	"",					"moreblocks:rope"},
+		{"", 			"",			"default:stick"	},
+		{"", 			"default:stick",	"material:string"},
+		{"default:stick",	"",			"material:string"},
 	}
 })
 
 minetest.register_craft({
 	output = "fishing:pole",
 	recipe = { 
-		{"", 				"",					"default:stick"	},
-		{"", 				"default:stick",	"ropes:rope"   	},
-		{"default:stick",	"",					"ropes:rope"   	},
+		{"", 			"",			"default:stick"	},
+		{"", 			"default:stick",	"equipment:rope"   	},
+		{"default:stick",	"",			"equipment:rope"   	},
 	}
-})]]
+})
 
 
 -----------------------------------------------------------------------------------------------
@@ -49,30 +40,6 @@ minetest.register_craft({
 	recipe = "fishing:fish_raw",
 	cooktime = 2,
 })
-
---[[---------------------------------------------------------------------------------------------
--- Wheat Seed
------------------------------------------------------------------------------------------------
-minetest.register_craft({
-	type = "shapeless",
-	output = "farming:seed_wheat",
-	recipe = {"farming:wheat"},
-})
------------------------------------------------------------------------------------------------
--- Sushi
------------------------------------------------------------------------------------------------
-minetest.register_craft({
-	type = "shapeless",
-	output = "fishing:sushi",
-	recipe = {"fishing:fish_raw","farming:seed_wheat","flowers:seaweed"},
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "fishing:sushi",
-	recipe = {"fishing:fish_raw","farming:seed_wheat","seaplants:kelpgreen"},
-		
-})]]
 
 -----------------------------------------------------------------------------------------------
 -- Roasted Shark

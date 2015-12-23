@@ -260,7 +260,7 @@ end
 
 -- Register default stairs and slabs
 
-stairs.register_stair_and_slab("wood", "tree:apple_wood",
+stairs.register_stair_and_slab("wood", "tree:apple_tree_wood",
 		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		{"tree_apple_tree_wood.png"},
 		"Apple Wood Stair",
@@ -276,9 +276,9 @@ stairs.register_stair_and_slab("junglewood", "tree:junglewood",
 
 stairs.register_stair_and_slab("pine_wood", "tree:pine_wood",
 		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
-		{"tree_pine_wood.png"},
-		"Pine Wood Stair",
-		"Pine Wood Slab",
+		{"tree_fir_wood.png"},
+		"Fir Wood Stair",
+		"Fir Wood Slab",
 		default.node_sound_wood_defaults())
 
 stairs.register_stair_and_slab("acacia_wood", "tree:acacia_wood",

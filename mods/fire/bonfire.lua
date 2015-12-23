@@ -74,31 +74,6 @@ for _,tinder in ipairs(tinder) do
 	})
 end
 
---[[
-function fire.strike_fire(user, pointed_thing)
-	if pointed_thing.type == "node" then
-		local n_pointed_above = minetest.get_node(pointed_thing.above)
-		local n_pointed_under = minetest.get_node(pointed_thing.under)
-
-		--for _,tinder in ipairs(tinder) do
-			--if user:get_inventory():get_stack("main", user:get_wield_index()+1):get_name() == tinder then
-				--user:get_inventory():remove_item("main", tinder)
-				if n_pointed_under.name == "equipment:torch_unlit" then
-					n_pointed_under.name = "equipment:torch"
-					minetest.add_node(pointed_thing.under, n_pointed_under)
-				elseif n_pointed_under.name == "fire:bonfire_unlit" then
-					minetest.add_node(pointed_thing.under, {name="fire:bonfire"})
-				--elseif n_pointed_above.name == "air" then
-					--minetest.add_node(pointed_thing.above, {name="fire:basic_flame"})
-				end
-			--end
-		--end				
-	else
-		return
-	end
-end
-]]
-
 function fire.strike_fire(user, pointed_thing)
 	if pointed_thing.type == "node" then
 		local n_pointed_above = minetest.get_node(pointed_thing.above)

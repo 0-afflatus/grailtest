@@ -78,21 +78,7 @@ minetest.register_craft({
 		{'plant:fibre', 'plant:fibre', 'plant:fibre'},
 	}
 })
---[[
-minetest.register_craft({
-	output = 'material:wood 4',
-	recipe = {
-		{'default:tree'},
-	}
-})
 
-minetest.register_craft({
-	output = 'material:junglewood 4',
-	recipe = {
-		{'default:jungletree'},
-	}
-})
-]]
 minetest.register_craft({
 	output = 'material:stick 4',
 	recipe = {
