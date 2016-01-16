@@ -18,7 +18,7 @@ minetest.register_alias("flowers:cotton", "plant:fibre")
 minetest.register_alias("flowers:cotton_wad", "plant:fibre")
 --minetest.register_alias("farming:cotton_8", "plant:cotton_8")
 minetest.register_alias("farming:string", "material:string")
-minetest.register_alias("farming:cotton", "plant:fibre")
+minetest.register_alias("farming:cotton", "material:string")
 
 
 minetest.register_alias("farming:carrot", "plant:carrot")

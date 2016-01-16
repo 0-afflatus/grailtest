@@ -228,7 +228,7 @@ minetest.register_tool("tool:hoe_mithril", {
 		},
 	},
 	on_use = function(itemstack, user, pointed_thing)
-		return hoe_on_use(itemstack, user, pointed_thing, 150)
+		return hoe_on_use(itemstack, user, pointed_thing, 250)
 	end,
 })
 
@@ -260,7 +260,7 @@ minetest.register_tool("tool:hoe_copper", {
 		},
 	},
 	on_use = function(itemstack, user, pointed_thing)
-		return hoe_on_use(itemstack, user, pointed_thing, 45)
+		return hoe_on_use(itemstack, user, pointed_thing, 123)
 	end,
 })
 
@@ -308,7 +308,7 @@ minetest.register_tool("tool:hoe_steel", {
 		},
 	},
 	on_use = function(itemstack, user, pointed_thing)
-		return hoe_on_use(itemstack, user, pointed_thing, 200)
+		return hoe_on_use(itemstack, user, pointed_thing, 150)
 	end,
 })
 
@@ -605,7 +605,7 @@ minetest.register_tool("tool:sword_ruby", {
 	description = "Ruby Sword",
 	inventory_image = "tool_sword_ruby.png",
 	tool_capabilities = {
-		full_punch_interval = 0.6,
+		full_punch_interval = 0.5,
 		max_drop_level=1,
 		groupcaps={
 			snappy={times={[1]=1.70, [2]=0.70, [3]=0.23}, uses=40, maxlevel=3},
