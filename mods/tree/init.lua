@@ -549,6 +549,48 @@ function tree.grow_new_acacia_tree(pos)
 		path, random, nil, false)
 end
 
+-- Stair and slab
+
+stairs.register_stair_and_slab(
+	"trees_apple_tree_wood",
+	"trees:apple_tree_wood",
+	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
+	{ "trees_apple_tree_wood.png" },
+	"Applewood Stair",
+	"Applewood Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"trees_acacia_wood",
+	"trees:acacia_wood",
+	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
+	{ "trees_acacia_wood.png" },
+	"Acaia wood Stair",
+	"Acaia wood Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"trees_pine_wood",
+	"trees:pine_wood",
+	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
+	{ "trees_pine_wood.png" },
+	"Pinewood Stair",
+	"Pinewood Slab",
+	default.node_sound_wood_defaults()
+)
+
+stairs.register_stair_and_slab(
+	"trees_junglewood",
+	"trees:junglewood",
+	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
+	{ "trees_junglewood.png" },
+	"Junglewood Stair",
+	"Junglewood Slab",
+	default.node_sound_wood_defaults()
+)
+
 -- Mapgen
 
 local mg_params = minetest.get_mapgen_params()
