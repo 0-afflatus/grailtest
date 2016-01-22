@@ -88,8 +88,8 @@ for i=2,5 do
 		drop = {
 			max_items = 1,
 			items = {
-				{items = {'plant:barley_seed'},rarity = 12},
-				{items = {'plant:oats_seed'},rarity = 12},
+				{items = {'plant:barley_seed'},rarity = 9},
+				{items = {'plant:oats_seed'},rarity = 9},
 				{items = {'plant:grass_1'},rarity = 2},
 				{items = {'plant:hay'},rarity = 2},
 			}
@@ -184,8 +184,8 @@ for i=2,5 do
 		drop = {
 			max_items = 1,
 			items = {
-				{items = {'plant:wheat_seed'},rarity = 12},
-				{items = {'plant:wheat_seed'},rarity = 12},
+				{items = {'plant:wheat_seed'},rarity = 10},
+				{items = {'plant:wheat_seed'},rarity = 10},
 				{items = {'plant:golden_grass_1'},rarity = 2},
 				{items = {'plant:hay'},rarity = 2},
 			}

@@ -102,6 +102,15 @@ minetest.register_node("vessels:glass_bottle", {
 })
 
 minetest.register_craft( {
+	output = "vessels:glass_bottle 12",
+	recipe = {
+		{ "", "default:glass", "" },
+		{ "default:glass", "", "default:glass" },
+		{ "default:glass", "default:glass", "default:glass" }
+	}
+})
+
+minetest.register_craft( {
 	output = "vessels:glass_bottle 10",
 	recipe = {
 		{ "default:glass", "", "default:glass" },
@@ -125,6 +134,15 @@ minetest.register_node("vessels:drinking_glass", {
 	},
 	groups = {vessel = 1,dig_immediate = 3,attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
+})
+
+minetest.register_craft( {
+	output = "vessels:drinking_glass 8",
+	recipe = {
+		{ "default:glass", "", "default:glass" },
+		{ "", "default:glass", "" },
+		{ "", "default:glass", "" }
+	}
 })
 
 minetest.register_craft( {
@@ -179,6 +197,15 @@ minetest.register_node("vessels:steel_bottle", {
 	},
 	groups = {vessel=1,dig_immediate=3,attached_node=1},
 	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_craft( {
+	output = "vessels:steel_bottle 6",
+	recipe = {
+		{ "", "default:steel_ingot", "" },
+		{ "default:steel_ingot", "", "default:steel_ingot" },
+		{ "default:steel_ingot", "default:steel_ingot", "default:steel_ingot" }
+	}
 })
 
 minetest.register_craft( {

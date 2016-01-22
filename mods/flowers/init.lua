@@ -126,13 +126,14 @@ minetest.register_abm({
 
 local mushrooms_datas = {
 	{"brown", 2},
+	{"blue", 1},
 	{"red", -6}
 }
 
 for _, m in pairs(mushrooms_datas) do
 	local name, nut = m[1], m[2]
 
-	-- Register fertile mushrooms
+	--[[ Register fertile mushrooms
 
 	-- These are placed by mapgen and the growing ABM.
 	-- These drop an infertile mushroom, and 0 to 3 spore
@@ -166,7 +167,7 @@ for _, m in pairs(mushrooms_datas) do
 			type = "fixed",
 			fixed = {-0.3, -0.5, -0.3, 0.3, 0, 0.3}
 		}
-	})
+	})]]
 
 	-- Register infertile mushrooms
 
@@ -193,7 +194,7 @@ for _, m in pairs(mushrooms_datas) do
 		}
 	})
 
-	-- Register mushroom spores
+	--[[ Register mushroom spores
 
 	minetest.register_node("flowers:mushroom_spores_" .. name, {
 		description = string.sub(string.upper(name), 0, 1) ..
@@ -211,11 +212,11 @@ for _, m in pairs(mushrooms_datas) do
 			type = "wallmounted",
 		},
 		groups = {dig_immediate = 3, attached_node = 1},
-	})
+	})]]
 end
 
 
--- Register growing ABM
+--[[ Register growing ABM
 
 minetest.register_abm({
 	nodenames = {"flowers:mushroom_spores_brown", "flowers:mushroom_spores_red"},
@@ -236,7 +237,7 @@ minetest.register_abm({
 			end
 		end
 	end
-})
+})]]
 
 
 --

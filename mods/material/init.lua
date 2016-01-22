@@ -3,7 +3,8 @@
 --
 
 -- Wooden planks
--- The others are in moretrees
+-- are in trees and moretrees
+--[[
 
 minetest.register_node("material:wood", {
 	description = "Wooden Planks",
@@ -20,6 +21,7 @@ minetest.register_node("material:junglewood", {
 	groups = {choppy=2,oddly_breakable_by_hand=2,flammable=3,wood=1},
 	sounds = default.node_sound_wood_defaults(),
 })
+]]
 
 -- Brick
 

@@ -84,6 +84,12 @@ minetest.register_tool("tool:axe_ruby", {
 		},
 		damage_groups = {fleshy=7},
 	},
+	--[[after_use = function(itemstack, user, node, digparams)
+              local pos = 
+	      default.fell(pos, node, user)
+	      itemstack:add_wear(digparams.wear)
+              return itemstack
+        end,]]
 })
 
 minetest.register_tool("tool:axe_silver", {

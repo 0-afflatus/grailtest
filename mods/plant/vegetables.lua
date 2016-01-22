@@ -246,7 +246,7 @@ plant:grow_veg("plant:beet", {"plant:beet_1", "plant:beet_2", "plant:beet_3"}, 6
 -- Wild Onion Plant
 minetest.register_craftitem("plant:wild_onion_plant", {
 	description = "Wild Onion",
-	groups = {not_in_creative_inventory = 1, vegetable = 1},
+	groups = {vegetable = 1},
 	inventory_image = "plant_wild_onion.png",
 	on_use = minetest.item_eat(2),
 	on_place = function(itemstack, placer, pointed_thing)
@@ -392,6 +392,7 @@ plant:grow_veg("plant:wild_onion_5", {"plant:onion_1", "plant:onion_2", "plant:o
 
 minetest.register_craftitem("plant:beans_seed", {
 	description = "Beans",
+	groups = {vegetable = 1, salad = 1, pulse = 1},
 	inventory_image = "plant_beans_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		local above = minetest.get_node(pointed_thing.above)
@@ -401,7 +402,8 @@ minetest.register_craftitem("plant:beans_seed", {
 			itemstack:take_item(1)
 			return itemstack
 		end
-	end
+	end,
+	on_use = minetest.item_eat(4),
 })
 
 minetest.register_node("plant:beans_1", {
@@ -462,21 +464,11 @@ minetest.register_node("plant:beans", {
 		items = {
 			{ items = {'plant:beans_seed'} },
 			{ items = {'plant:beans_seed'}, rarity = 2},
-			{ items = {'plant:beans_seed'}, rarity = 5},
-			{ items = {'plant:beans_item'} },
-			{ items = {'plant:beans_item'}, rarity = 2 },
-			{ items = {'plant:beans_item'}, rarity = 5 }
+			{ items = {'plant:beans_seed'}, rarity = 2},
 		}
 	},
 	groups = {snappy=3, flammable=2, not_in_creative_inventory = 1,plant = 1,flora = 1,attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_craftitem("plant:beans_item", {
-	description = "Bean Pods",
-	inventory_image = "plant_beans_pods.png",
-	groups = {vegetable = 1, salad = 1, pulse = 1},
-	on_use = minetest.item_eat(4),
 })
 
 plant:grow_veg("plant:beans", {"plant:beans_1", "plant:beans_2", "plant:beans_3"}, 60, 23)

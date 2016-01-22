@@ -152,8 +152,9 @@ function flowers.register_decorations()
 	register_flower(1133,    "viola")
 	register_flower(73133,   "dandelion_white")
 
-	register_mushroom("mushroom_fertile_brown")
-	register_mushroom("mushroom_fertile_red")
+	register_mushroom("mushroom_brown")
+	register_mushroom("mushroom_blue")
+	register_mushroom("mushroom_red")
 
 	register_waterlily()
 end

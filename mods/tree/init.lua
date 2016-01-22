@@ -552,40 +552,40 @@ end
 -- Stair and slab
 
 stairs.register_stair_and_slab(
-	"trees_apple_tree_wood",
-	"trees:apple_tree_wood",
+	"tree_apple_tree_wood",
+	"tree:apple_tree_wood",
 	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
-	{ "trees_apple_tree_wood.png" },
+	{ "tree_apple_tree_wood.png" },
 	"Applewood Stair",
 	"Applewood Slab",
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_stair_and_slab(
-	"trees_acacia_wood",
-	"trees:acacia_wood",
+	"tree_acacia_wood",
+	"tree:acacia_wood",
 	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
-	{ "trees_acacia_wood.png" },
+	{ "tree_acacia_wood.png" },
 	"Acaia wood Stair",
 	"Acaia wood Slab",
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_stair_and_slab(
-	"trees_pine_wood",
-	"trees:pine_wood",
+	"tree_pine_wood",
+	"tree:pine_wood",
 	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
-	{ "trees_pine_wood.png" },
+	{ "tree_pine_wood.png" },
 	"Pinewood Stair",
 	"Pinewood Slab",
 	default.node_sound_wood_defaults()
 )
 
 stairs.register_stair_and_slab(
-	"trees_junglewood",
-	"trees:junglewood",
+	"tree_junglewood",
+	"tree:junglewood",
 	{ snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3 },
-	{ "trees_junglewood.png" },
+	{ "tree_junglewood.png" },
 	"Junglewood Stair",
 	"Junglewood Slab",
 	default.node_sound_wood_defaults()

@@ -114,6 +114,7 @@ minetest.register_craftitem("bucket:wooden_empty", {
 		local node = minetest.get_node(pointed_thing.under)
 		local liquiddef = bucket.contents[node.name]
 		local item_count = user:get_wielded_item():get_count()
+		
 		if node.name == "default:lava" or 
 				node.name == "default:lava_flowing" or 
 				node.name == "default:lava_source" then
@@ -123,6 +124,7 @@ minetest.register_craftitem("bucket:wooden_empty", {
 			minetest.place_node(on_top, {name="fire:basic_flame"})
 			itemstack:take_item()
 			return itemstack
+		
 		elseif liquiddef ~= nil and liquiddef.itemname ~= nil and
 				node.name == liquiddef.source then
 			if check_protection(pointed_thing.under,
@@ -154,7 +156,7 @@ minetest.register_craftitem("bucket:wooden_empty", {
 
 			minetest.add_node(pointed_thing.under, {name="air"})
 
-			return ItemStack(liquiddef.itemname)
+			return ItemStack(giving_back)
 		end
 	end,
 })

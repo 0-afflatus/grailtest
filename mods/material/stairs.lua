@@ -51,6 +51,13 @@ stairs.register_stair_and_slab("oak_wood", "moretrees:oak_planks",
 	"Oak wood slab",
 	default.node_sound_wood_defaults())
 
+stairs.register_stair_and_slab("jungletree_wood", "moretrees:jungletree_planks",
+	{snappy=2,choppy=2,oddly_breakable_by_hand=2},
+	{"moretrees_jungletree_wood.png"},
+	"jungletree wood stair",
+	"jungletree wood slab",
+	default.node_sound_wood_defaults())
+
 for _, row in ipairs(material.dyes) do
 	local name = row[1]
 	local desc = row[2]

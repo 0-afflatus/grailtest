@@ -28,11 +28,11 @@ end
 function default.node_sound_dirt_defaults(table)
 	table = table or {}
 	table.footstep = table.footstep or
-			{name = "default_dirt_footstep", gain = 1.0}
+			{name = "default_dirt_footstep", gain = 0.5}
 	table.dug = table.dug or
-			{name = "default_dirt_footstep", gain = 1.5}
+			{name = "default_dirt_footstep", gain = 1.0}
 	table.place = table.place or
-			{name = "default_place_node", gain = 1.0}
+			{name = "default_place_node", gain = 0.8}
 	default.node_sound_defaults(table)
 	return table
 end
@@ -106,5 +106,19 @@ function default.dig_up(pos, node, digger)
 	local nn = minetest.get_node(np)
 	if nn.name == node.name then
 		minetest.node_dig(np, nn, digger)
+	end
+end
+
+function default.fell(pos, node, digger)
+	if digger == nil then return end
+	-- for node in find nodes in area
+	local minp = {x = pos.x, y = pos.y + 1, z = pos.z}
+	local maxp = {x = pos.x, y = pos.y + 1, z = pos.z}
+	local nodelist = minetest.find_nodes_in_area(minp, maxp, node.name)
+	for _, np in ipairs(nodelist) do
+		local nn = minetest.get_node(np)
+		if nn.name == node.name then
+			minetest.node_dig(np, nn, digger)
+		end
 	end
 end
