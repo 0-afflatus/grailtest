@@ -194,6 +194,8 @@ for _, m in pairs(mushrooms_datas) do
 		}
 	})
 
+	minetest.register_alias("flowers:mushroom_fertile_" .. name, "flowers:mushroom_" .. name)
+	
 	--[[ Register mushroom spores
 
 	minetest.register_node("flowers:mushroom_spores_" .. name, {
