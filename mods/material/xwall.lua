@@ -165,9 +165,10 @@ end
 xwall.register_wall("material:cobble_wall", "default_cobble.png")
 xwall.register_wall("material:desert_cobble_wall", "default_desert_cobble.png")
 xwall.register_wall("material:bluestone_cobble_wall", "mineral_bluestone_cobble.png")
+xwall.register_wall("material:brick_wall", "material_brick.png")
 
 minetest.register_craft({
-	output = "material:cobble_wall 6",
+	output = "material:cobble_wall_ln 6",
 	recipe = {
 		{"default:cobble", "default:cobble", "default:cobble"},
 		{"default:cobble", "default:cobble", "default:cobble"}
@@ -175,7 +176,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "material:desert_cobble_wall 6",
+	output = "material:desert_cobble_wall_ln 6",
 	recipe = {
 		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"},
 		{"default:desert_cobble", "default:desert_cobble", "default:desert_cobble"}
@@ -183,10 +184,18 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "material:bluestone_cobble_wall 6",
+	output = "material:bluestone_cobble_wall_ln 6",
 	recipe = {
-		{"default:bluestone_cobble", "default:bluestone_cobble", "default:bluestone_cobble"},
-		{"default:bluestone_cobble", "default:bluestone_cobble", "default:bluestone_cobble"}
+		{"mineral:bluestone_cobble", "mineral:bluestone_cobble", "mineral:bluestone_cobble"},
+		{"mineral:bluestone_cobble", "mineral:bluestone_cobble", "mineral:bluestone_cobble"}
+	}
+})
+
+minetest.register_craft({
+	output = "material:brick_wall_ln 6",
+	recipe = {
+		{"material:brick", "material:brick", "material:brick"},
+		{"material:brick", "material:brick", "material:brick"}
 	}
 })
 
