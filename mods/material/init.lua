@@ -240,6 +240,29 @@ minetest.register_node("material:basalt_chequer", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("material:red_stone_tile", {
+	description = "Red stone Tile",
+	tiles = {"material_red_stone_tile.png"},
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("material:red_stone_tile_split", {
+	description = "Split red stone Tile",
+	tiles = {"material_red_stone_tile_split_top.png",
+		"material_red_stone_tile_split.png"},
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("material:red_stone_chequer", {
+	description = "Red stone Chequer",
+	tiles = {"material_red_stone_chequer.png"},
+	paramtype2 = "facedir",
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
 minetest.register_node("material:stone_rune", {
 	description = "Stone Rune",
 	tiles = {"material_stone_rune.png"},

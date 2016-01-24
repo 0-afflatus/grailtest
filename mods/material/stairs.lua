@@ -153,3 +153,17 @@ stairs.register_stair_and_slab("basalt_tile_split", "material:basalt_tile_split"
 	"Split Basalt Tile Slab",
 	default.node_sound_stone_defaults())
 
+stairs.register_stair_and_slab("red_stone_tile", "material:red_stone_tile",
+	{cracky=3},
+	{"material_red_stone_tile.png"},
+	"redstone Tile Stairs",
+	"redstone Tile Slab",
+	default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("red_stone_tile_split", "material:red_stone_tile_split",
+	{cracky=3},
+	{"material_red_stone_tile_split.png"},
+	"Split redstone Tile Stairs",
+	"Split redstone Tile Slab",
+	default.node_sound_stone_defaults())
+

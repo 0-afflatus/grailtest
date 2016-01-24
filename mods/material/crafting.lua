@@ -233,16 +233,24 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "material:stone_chequer 4",
 	recipe = {
-		{"mineral:white_stone", "default:stone"},
-		{"default:stone", "mineral:white_stone"},
+		{"material:stone_brick", "material:whitestone_brick"},
+		{"material:whitestone_brick", "material:stone_brick"},	
 	}
 })
 
 minetest.register_craft({
 	output = "material:stone_chequer 4",
 	recipe = {
-		{"mineral:white_cobble", "default:cobble"},
-		{"default:cobble", "mineral:white_cobble"},
+		{"material:white_stone_tile_split", "material:stone_tile_split"},
+		{"material:stone_tile_split", "material:white_stone_tile_split"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:stone_chequer 4",
+	recipe = {
+		{"material:stone_tile_split", "material:white_stone_tile_split"},
+		{"material:white_stone_tile_split", "material:stone_tile_split"},
 	}
 })
 
@@ -267,6 +275,30 @@ minetest.register_craft({
 	recipe = {
 		{"material:whitestone_brick", "material:greenstone_brick"},
 		{"material:greenstone_brick", "material:whitestone_brick"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:green_stone_chequer 4",
+	recipe = {
+		{"material:greenstone_brick", "material:whitestone_brick"},
+		{"material:whitestone_brick", "material:greenstone_brick"},	
+	}
+})
+
+minetest.register_craft({
+	output = "material:green_stone_chequer 4",
+	recipe = {
+		{"material:white_stone_tile_split", "material:green_stone_tile_split"},
+		{"material:green_stone_tile_split", "material:white_stone_tile_split"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:green_stone_chequer 4",
+	recipe = {
+		{"material:green_stone_tile_split", "material:white_stone_tile_split"},
+		{"material:white_stone_tile_split", "material:green_stone_tile_split"},
 	}
 })
 
@@ -297,8 +329,24 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "material:blue_stone_chequer 4",
 	recipe = {
-		{"mineral:white_cobble", "mineral:bluestone_cobble"},
-		{"mineral:bluestone_cobble", "mineral:white_cobble"},
+		{"material:bluestone_brick", "material:whitestone_brick"},
+		{"material:whitestone_brick", "material:bluestone_brick"},	
+	}
+})
+
+minetest.register_craft({
+	output = "material:blue_stone_chequer 4",
+	recipe = {
+		{"material:white_stone_tile_split", "material:blue_stone_tile_split"},
+		{"material:blue_stone_tile_split", "material:white_stone_tile_split"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:blue_stone_chequer 4",
+	recipe = {
+		{"material:blue_stone_tile_split", "material:white_stone_tile_split"},
+		{"material:white_stone_tile_split", "material:blue_stone_tile_split"},
 	}
 })
 
@@ -323,6 +371,87 @@ minetest.register_craft({
 	recipe = {
 		{"material:whitestone_brick", "material:basalt_brick"},
 		{"material:basalt_brick", "material:whitestone_brick"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:basalt_chequer 4",
+	recipe = {
+		{"material:basalt_brick", "material:whitestone_brick"},
+		{"material:whitestone_brick", "material:basalt_brick"},	
+	}
+})
+
+minetest.register_craft({
+	output = "material:basalt_chequer 4",
+	recipe = {
+		{"material:white_stone_tile_split", "material:basalt_tile_split"},
+		{"material:basalt_tile_split", "material:white_stone_tile_split"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:basalt_chequer 4",
+	recipe = {
+		{"material:basalt_tile_split", "material:white_stone_tile_split"},
+		{"material:white_stone_tile_split", "material:basalt_tile_split"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:red_stone_tile 6",
+	recipe = {
+		{"default:desert_stone", "default:desert_stone", "default:desert_stone"},
+		{"default:desert_stone", "default:desert_stone", "default:desert_stone"},
+		{"default:desert_stone", "default:desert_stone", "default:desert_stone"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:red_stone_tile 6",
+	recipe = {
+		{"mineral:clay_brick", "mineral:clay_brick", "mineral:clay_brick"},
+		{"mineral:clay_brick", "mineral:clay_brick", "mineral:clay_brick"},
+		{"mineral:clay_brick", "mineral:clay_brick", "mineral:clay_brick"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:red_stone_tile_split",
+	recipe = {
+		{"material:red_stone_tile"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:red_stone_chequer 4",
+	recipe = {
+		{"material:whitestone_brick", "material:desert_stone_brick"},
+		{"material:desert_stone_brick", "material:whitestone_brick"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:red_stone_chequer 4",
+	recipe = {
+		{"material:desert_stone_brick", "material:whitestone_brick"},
+		{"material:whitestone_brick", "material:desert_stone_brick"},	
+	}
+})
+
+minetest.register_craft({
+	output = "material:red_stone_chequer 4",
+	recipe = {
+		{"material:white_stone_tile_split", "material:red_stone_tile_split"},
+		{"material:red_stone_tile_split", "material:white_stone_tile_split"},
+	}
+})
+
+minetest.register_craft({
+	output = "material:red_stone_chequer 4",
+	recipe = {
+		{"material:red_stone_tile_split", "material:white_stone_tile_split"},
+		{"material:white_stone_tile_split", "material:red_stone_tile_split"},
 	}
 })
 
