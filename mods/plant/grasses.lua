@@ -261,17 +261,18 @@ minetest.register_node("plant:junglegrass", {
 	},
 })
 
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {"default:dirt_with_grass"},
-	sidelen = 80,
-	fill_ratio = 0.1,
-	biomes = {"rainforest", "rainforest_swamp"},
-	y_min = 1,
-	y_max = 70,
-	decoration = "plant:junglegrass",
-})
-
+if minetest.get_mapgen_params().mgname ~= "v6" then
+	minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 80,
+		fill_ratio = 0.1,
+		biomes = {"rainforest", "rainforest_swamp"},
+		y_min = 1,
+		y_max = 70,
+		decoration = "plant:junglegrass",
+	})
+end
 --
 -- wheat
 --

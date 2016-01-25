@@ -14,12 +14,6 @@ minetest.register_alias("gravel", "default:gravel")
 
 minetest.register_alias("farming:soil_wet", "default:soil_wet")
 
---minetest.register_alias("tree", "default:tree")
---minetest.register_alias("leaves", "default:leaves")
---minetest.register_alias("sapling", "default:sapling")
---minetest.register_alias("jungletree", "default:jungletree")
---minetest.register_alias("apple", "default:apple")
-
 minetest.register_alias("cloud", "default:cloud")
 minetest.register_alias("snow", "default:snow")
 minetest.register_alias("water_flowing", "default:water_flowing")

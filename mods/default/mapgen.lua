@@ -189,8 +189,8 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = 2,
 		y_max = 95,
-		heat_point = 55,
-		humidity_point = 79,
+		heat_point = 60,
+		humidity_point = 85,
 	})
 	
 	minetest.register_biome({
@@ -224,7 +224,7 @@ function mapgen.register_biomes()
 		--node_water = "",
 		y_min = -112,
 		y_max = -4,
-		heat_point = 55,
+		heat_point = 60,
 		humidity_point = 85,
 	})
 	
@@ -328,7 +328,7 @@ function mapgen.register_biomes()
 		y_min = 2,
 		y_max = 75,
 		heat_point = 101,
-		humidity_point = 85,
+		humidity_point = 87,
 	})
 
 	minetest.register_biome({
