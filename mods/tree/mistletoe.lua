@@ -20,7 +20,7 @@ minetest.register_node("tree:mistletoe", {
 minetest.register_abm({
 	nodenames = {"tree:apple_fruit"},
 	interval = 23,
-	chance = 223,
+	chance = 443,
 	catch_up = false,
 	action = function(pos, node)
 		if (minetest.get_node_light(pos) or 0) > 12 then
@@ -32,7 +32,7 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"moretrees:acorn"},
 	interval = 211,
-	chance = 997,
+	chance = 1667,
 	catch_up = false,
 	action = function(pos, node)
 		local above = {x = pos.x, y = pos.y + 1, z = pos.z}

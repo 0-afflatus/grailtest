@@ -46,21 +46,24 @@ Find the Grail.
 
 Gameplay
 --------
-"The theme of the Grail is the bringing of life into what is known as the wasteland." ~ Joseph Campbell. 
+"The theme of the Grail is the bringing of life into what is known as the wasteland." ~~ Joseph Campbell. 
 
-"You can't expect to wield supreme executive power just because some watery tart threw a sword at you." ~ Dennis, Monty Python and the Holy Grail.
+"You can't expect to wield supreme executive power just because some watery tart threw a sword at you." ~~ Dennis, Monty Python and the Holy Grail.
 
-"None of them had any idea where the Holy Grail really was, and I don't think any of them actually expected to find it, or would have known what to do with it if he had run across it." ~ Mark Twain, A Connecticut Yankee in King Arthur's Court.
+"None of them had any idea where the Holy Grail really was, and I don't think any of them actually expected to find it, or would have known what to do with it if he had run across it." ~~ Mark Twain, A Connecticut Yankee in King Arthur's Court.
 
-"That rabbit's got a vicious streak a mile wide!" ~ Tim the Enchanter, Monty Python and the Holy Grail.
+"That rabbit's got a vicious streak a mile wide!" ~~ Tim the Enchanter, Monty Python and the Holy Grail.
 
-"But choose wisely, for while the true Grail will bring you life, the false Grail will take it from you." ~ Grail Knight, Indiana Jones and the Last Crusade.
+"But choose wisely, for while the true Grail will bring you life, the false Grail will take it from you." ~~ Grail Knight, Indiana Jones and the Last Crusade.
 
+"No point in mentioning the bats, I thought.  The poor bastard will see them soon enough."
+		~~ Hunter S. Thompson, Fear and Loathing in Las Vegas
+		
 "It begins with the king as a boy, having to spend the night alone in the forest to prove his courage so he can become king. Now while he is spending the night alone he's visited by a sacred vision. Out of the fire appears the Holy Grail, symbol of God's divine grace. And a voice said to the boy, 'You shall be keeper of the grail so that it may heal the hearts of men.' But the boy was blinded by greater visions of a life filled with power and glory and beauty. And in this state of radical amazement he felt for a brief moment not like a boy, but invincible, like God, so he reached into the fire to take the grail, and the grail vanished, leaving him with his hand in the fire to be terribly wounded. Now as this boy grew older, his wound grew deeper. Until one day, life for him lost its reason. He had no faith in any man, not even himself. He couldn't love or feel loved. He was sick with experience. He began to die. One day a fool wandered into the castle and found the king alone. And being a fool, he was simple minded, he didn't see a king. He only saw a man alone and in pain. And he asked the king, 'What ails you friend?' The king replied, 'I'm thirsty. I need some water to cool my throat'. So the fool took a cup from beside his bed, filled it with water and handed it to the king. As the king began to drink, he realized his wound was healed. He looked in his hands and there was the holy grail, that which he sought all of his life. And he turned to the fool and said with amazement, 'How can you find that which my brightest and bravest could not?' And the fool replied, 'I don't know. I only knew that you were thirsty.' It's very beautiful, isn't it?" ~ Parry, The Fisher King.
 
-"Follow your bliss." ~ Joseph Campbell.
+"Follow your bliss." ~~ Joseph Campbell.
 
-"We grow block, by block. And player, by player" ~ DC_gaming
+"We grow block, by block. And player, by player" ~~ DC_gaming
 
 Development
 -----------
@@ -72,7 +75,7 @@ One of the aims of the game is increased magical pseudo-realism; that is, things
 
 License of source code
 ----------------------
-Copyright (C) 2014-2015 afflatus, Tim Hawthorn <afflatus@pathilorra.co.uk>
+Copyright (C) 2014-2016 afflatus, Tim Hawthorn <afflatus@pathilorra.co.uk>
 
 Based on minetest_game:
 Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
@@ -95,7 +98,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 License of media (textures and sounds)
 --------------------------------------
 menu/background.png and menu/icon.png
-Copyright (C) 2014-2015 afflatus, Tim Hawthorn <afflatus@pathilorra.co.uk>
+Copyright (C) 2014-2016 afflatus, Tim Hawthorn <afflatus@pathilorra.co.uk>
 
 Based on original minetest_game media:
 Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
