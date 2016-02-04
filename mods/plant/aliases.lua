@@ -12,18 +12,12 @@ minetest.register_alias("default:papyrus", "plant:papyrus")
 minetest.register_alias("papyrus", "plant:papyrus")
 
 minetest.register_alias("farming:wheat", "plant:straw")
---minetest.register_alias("flowers:cotton_plant", "farming:cotton_8") 
---minetest.register_alias("flowers:flower_cotton", "farming:cotton_8")
 minetest.register_alias("flowers:cotton", "plant:fibre")
 minetest.register_alias("flowers:cotton_wad", "plant:fibre")
---minetest.register_alias("farming:cotton_8", "plant:cotton_8")
 minetest.register_alias("farming:string", "material:string")
 minetest.register_alias("farming:cotton", "material:string")
 
 
 minetest.register_alias("farming:carrot", "plant:carrot")
 minetest.register_alias("farming:seed_wheat", "plant:wheat_seed")
---minetest.register_alias("farming:seed_cotton", "plant:cotton_seed")
---minetest.register_alias("ethereal:fish_raw", "fishing:fish")
---minetest.register_alias("farming:bread", "food:bread")
 minetest.register_alias("farming:potato", "plant:beetroot")

@@ -39,9 +39,5 @@ minetest.register_alias("mapgen_snow", "default:snow")
 minetest.register_alias("mapgen_ice", "default:ice")
 minetest.register_alias("mapgen_sandstone", "default:sandstone")
 minetest.register_alias("mapgen_cobble", "default:cobble")
---minetest.register_alias("mapgen_stair_cobble", "stairs:stair_cobble")
 minetest.register_alias("mapgen_mossycobble", "default:mossycobble")
-minetest.register_alias("mapgen_sandstonebrick", "default:sandstone")
---minetest.register_alias("mapgen_stair_sandstonebrick", "stairs:stair_sandstonebrick")
-
 
