@@ -20,10 +20,9 @@ Napophelois from MTCORE32px (CC BY-SA 3.0):
 	flowers_rose.png
 	flowers_tulip.png
 	flowers_viola.png
+	flowers_*_pot.png
 
 Gambit (WTFPL):
     flowers_mushroom_*.png
     flowers_waterlily.png
-
-DanDuncombe (WTFPL):
-    flowers_spores_*.png
+	

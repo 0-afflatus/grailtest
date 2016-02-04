@@ -1,8 +1,9 @@
 -- Bench
 -- From cottages mod by Sokomine
+-- modified for grailtest by afflatus
 -- License: GPLv3
 
-minetest.register_node("equipment:bench", {
+minetest.register_node(":equipment:bench", {
 	drawtype = "nodebox",
 	description = "Wooden bench",
 	tiles = {"material_wood.png", "material_wood.png",  "material_wood.png",  "material_wood.png",  "material_wood.png",  "material_wood.png"},

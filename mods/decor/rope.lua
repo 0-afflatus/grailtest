@@ -1,6 +1,8 @@
 local rope = {}
 
 -- Code by Mirko K. (modified by Temperest, Wulfsdad and kilbith) (License: GPL).
+-- modified for grailtest by afflatus
+
 minetest.register_on_punchnode(function(pos, oldnode, digger)
 	if oldnode.name == "equipment:rope" then
 		rope.remove(pos, oldnode, digger, "equipment:rope")

@@ -412,7 +412,7 @@ material.dyes = {
 dofile(minetest.get_modpath("material").."/reed.lua")
 dofile(minetest.get_modpath("material").."/bones.lua")
 dofile(minetest.get_modpath("material").."/stairs.lua")
-dofile(minetest.get_modpath("material").."/xwall.lua")
+--dofile(minetest.get_modpath("material").."/xwall.lua")
 dofile(minetest.get_modpath("material").."/crafting.lua")
 dofile(minetest.get_modpath("material").."/aliases.lua")
 

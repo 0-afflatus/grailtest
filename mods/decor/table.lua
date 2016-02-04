@@ -1,8 +1,9 @@
 -- Table
 -- From cottages mod by Sokomine
+-- modified for grailtest by afflatus
 -- License: GPLv3
 
-minetest.register_node("equipment:table", {
+minetest.register_node(":equipment:table", {
 		description = "Table",
 		drawtype = "nodebox",
                 -- top, bottom, side1, side2, inner, outer

@@ -1,0 +1,50 @@
+Grailtest 0.4 mod: decor
+========================
+
+Based on x_decor and cottages modified for grailtest by afflatus.
+
+License of source code:
+-----------------------
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Code
+----
+Sokomine from cottages (GPLv3):
+	shelf.lua
+	table.lua
+	bench.lua
+
+Mirko K (GPL):
+	rope.lua
+	
+kilbith from x_decor (GPLv3):
+	chair.lua
+	cabinet.lua
+
+License of media (textures and sounds)
+--------------------------------------
+Textures : 
+
+Napiophelios (CC BY-SA 3.0):
+	equipment_lantern.png
+	equipment_cabinet_*.png
+	equipment_half_cabinet_*.png
+	doors_prison_door_*.png
+	doors_prison_rust_door.png
+	equipment_rope.png
+	equipment_rope_inv.png
+	xpanes_wood_frane.png
+
+(based on originals by Gambit, Cisoun, kilbith)

@@ -162,10 +162,10 @@ function xwall.register_wall(name, tiles, def)
 	xwall.register(name, def, node_box_data)
 end
 
-xwall.register_wall("material:cobble_wall", "default_cobble.png")
-xwall.register_wall("material:desert_cobble_wall", "default_desert_cobble.png")
-xwall.register_wall("material:bluestone_cobble_wall", "mineral_bluestone_cobble.png")
-xwall.register_wall("material:brick_wall", "material_brick.png")
+xwall.register_wall(":material:cobble_wall", "default_cobble.png")
+xwall.register_wall(":material:desert_cobble_wall", "default_desert_cobble.png")
+xwall.register_wall(":material:bluestone_cobble_wall", "mineral_bluestone_cobble.png")
+xwall.register_wall(":material:brick_wall", "material_brick.png")
 
 minetest.register_craft({
 	output = "material:cobble_wall_ln 6",

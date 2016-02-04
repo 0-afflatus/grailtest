@@ -7,9 +7,8 @@ The cauldron provides a cooking device for any item with both shapeless and cook
 
 credits
 -------
-
-Napiophelios (CC BY-SA 3.0):
-	equipment_lantern.png
+Textures:
+--------
 
 VanessaE:
 	bucket.png
@@ -63,19 +62,6 @@ afflatus (CC BY-SA 3.0):
 	equipment_torch.png
 	equipment_wood_panel.png
 
-Other:
-	equipment_book.png
-	equipment_bowl.png
-	equipment_cauldron_bottom.png
-	equipment_cauldron_inner.png
-	equipment_cauldron_top.png
-	equipment_cup.png
-	equipment_fence.png
-	equipment_furnace_bottom.png
-	equipment_furnace_fire_bg.png
-	equipment_furnace_fire_fg.png
-	equipment_furnace_front_active.png
-	equipment_furnace_front.png
-	equipment_furnace_side.png
-	equipment_furnace_top.png
-
+modified by Sofar:
+	equipment_chest
+	equipment_cheat_locked

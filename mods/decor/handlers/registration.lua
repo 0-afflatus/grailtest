@@ -84,5 +84,5 @@ function equipment.register(name, def)
 		end
 	end
 
-	minetest.register_node("equipment:".. name, def)
+	minetest.register_node(":equipment:".. name, def)
 end

@@ -1,8 +1,9 @@
 -- Shelf
 -- From cottages mod by Sokomine
+-- modified for grailtest by afflatus
 -- License: GPLv3
 
-minetest.register_node("equipment:shelf", {
+minetest.register_node(":equipment:shelf", {
 		description = "Storage shelf",
 		drawtype = "nodebox",
                 -- top, bottom, side1, side2, inner, outer
