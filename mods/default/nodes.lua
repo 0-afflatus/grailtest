@@ -1011,3 +1011,13 @@ minetest.register_abm({
 		default.cool_lava_source(...)
 	end,
 })
+
+-- default wood for u_i compatibility
+minetest.register_node("default:wood", {
+	description = "Wood",
+	tiles = {"default_wood.png"},
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, wood = 1},
+	sounds = default.node_sound_wood_defaults(),
+})
+
