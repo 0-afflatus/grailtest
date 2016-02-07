@@ -70,8 +70,9 @@ function flowers.register_mgv6_decorations()
 	register_mgv6_flower("viola")
 	register_mgv6_flower("dandelion_white")
 
-	register_mgv6_mushroom("mushroom_fertile_brown")
-	register_mgv6_mushroom("mushroom_fertile_red")
+	register_mgv6_mushroom("mushroom_brown")
+	register_mgv6_mushroom("mushroom_red")
+	register_mgv6_mushroom("mushroom_blue")
 
 	register_mgv6_waterlily()
 end
@@ -87,8 +88,8 @@ local function register_flower(seed, name)
 		place_on = {"default:dirt_with_grass"},
 		sidelen = 16,
 		noise_params = {
-			offset = -0.02,
-			scale = 0.03,
+			offset = -0.015,
+			scale = 0.025,
 			spread = {x = 200, y = 200, z = 200},
 			seed = seed,
 			octaves = 3,
