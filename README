@@ -65,6 +65,8 @@ Gameplay
 
 "We grow block, by block. And player, by player" ~~ DC_gaming
 
+"with a tree trunk and stone... dig a hole and build a empire later" -- TheMiner
+
 Development
 -----------
 The development of grail_test has tended to roughly follow evolution. It features a stripped-down core, which only really provides the raw elements and a bit of legacy support. Game Universe specific features have been stripped out into minerals, materials, food, tools and equipment mods. These were re-introduced in sequence in order to get the chain of dependencies right. The game also provides legacy support for farming and moreores. The tech level of the core game is not intended to progress beyond Archimedean simple machines.
