@@ -9,7 +9,7 @@ minetest.register_ore({
 	ore            = "mineral:greenstone",
 	wherein        = "default:stone",
 	clust_size     = 63,
-	y_min          = -31000,
+	y_min          = -30000,
 	y_max          = -511,
 	noise_threshhold = 0.5,
 	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.23,
@@ -89,7 +89,7 @@ minetest.register_ore({
 	wherein          = {"default:stone"},
 	clust_scarcity   = 25*25*25,
 	clust_size       = 6,
-	y_min            = -31000,
+	y_min            = -30000,
 	y_max            = 31000,
 	noise_threshhold = 0.5,
 	noise_params     = {
@@ -152,7 +152,7 @@ minetest.register_ore({
 	clust_scarcity = 12*12*12,
 	clust_num_ores = 3,
 	clust_size     = 2,
-	y_min          = -32,
+	y_min          = -64,
 	y_max          = 2,
 })
 
@@ -164,7 +164,7 @@ minetest.register_ore({
 	clust_num_ores = 5,
 	clust_size     = 3,
 	y_min          = -128,
-	y_max          = -16,
+	y_max          = -32,
 })
 
 minetest.register_ore({
@@ -185,8 +185,8 @@ minetest.register_ore({
 	clust_scarcity = 24*24*24,
 	clust_num_ores = 23,
 	clust_size     = 6,
-	y_min          = -31000,
-	y_max          = -64,
+	y_min          = -30000,
+	y_max          = -96,
 })
 
 minetest.register_ore({
@@ -229,7 +229,7 @@ minetest.register_ore({
 	clust_scarcity = 11*11*11,
 	clust_num_ores = 7,
 	clust_size     = 4,
-	y_min          = -31000,
+	y_min          = -30000,
 	y_max          = -128,
 })
 
@@ -240,8 +240,8 @@ minetest.register_ore({
 	clust_scarcity = 15 * 15 * 15,
 	clust_num_ores = 3,
 	clust_size     = 2,
-	y_min     = -127,
-	y_max     = -64,
+	y_min     = -256,
+	y_max     = -127,
 })
 
 minetest.register_ore({
@@ -251,7 +251,7 @@ minetest.register_ore({
 	clust_scarcity = 13 * 13 * 13,
 	clust_num_ores = 5,
 	clust_size     = 3,
-	y_min     = -31000,
+	y_min     = -30000,
 	y_max     = -128,
 })
 
@@ -285,7 +285,7 @@ minetest.register_ore({
 	clust_scarcity = 13*13*13,
 	clust_num_ores = 5,
 	clust_size     = 3,
-	y_min     = -31000,
+	y_min     = -30000,
 	y_max     = -256,
 	flags          = "absheight",
 })
@@ -308,7 +308,7 @@ minetest.register_ore({
 	clust_scarcity = 12*12*12,
 	clust_num_ores = 5,
 	clust_size     = 3,
-	y_min     = -31000,
+	y_min     = -30000,
 	y_max     = -376,
 })
 
@@ -319,7 +319,7 @@ minetest.register_ore({
 	clust_scarcity = 15*15*15,
 	clust_num_ores = 23,
 	clust_size     = 6,
-	y_min     = -31000,
+	y_min     = -30000,
 	y_max     = -1024,
 })
 
@@ -344,7 +344,7 @@ minetest.register_ore({
 	clust_scarcity = 17*11*17,
 	clust_num_ores = 9,
 	clust_size     = 7,
-	y_min     = -31000,
+	y_min     = -30000,
 	y_max     = -376,
 	noise_threshhold = 0.75,
 	noise_params   = 0, 1, {10, 50, 10}, 111, 3, 0.70,
@@ -358,8 +358,8 @@ minetest.register_ore({
 	clust_scarcity = 32*32*32,
 	clust_num_ores = 4,
 	clust_size     = 4,
-	y_min     = -255,
-	y_max     = -192,
+	y_min     = -511,
+	y_max     = -256,
 	noise_threshhold = 0.75,
 	noise_params   = 0, 1, {50, 10, 50}, 555, 3, 0.70,
 	flags          = "absheight",
@@ -372,8 +372,8 @@ minetest.register_ore({
 	clust_scarcity = 19*17*19,
 	clust_num_ores = 8,
 	clust_size     = 6,
-	y_min     = -31000,
-	y_max     = -256,
+	y_min     = -30000,
+	y_max     = -512,
 	noise_threshhold = 0.75,
 	noise_params   = 0, 1, {50, 10, 50}, 555, 3, 0.70,
 	flags          = "absheight",
@@ -387,7 +387,7 @@ minetest.register_ore({
 	clust_num_ores = 3,
 	clust_size     = 4,
 	y_min     = -447,
-	y_max     = -224,
+	y_max     = -336,
 	noise_threshhold = 0.75,
 	noise_params   = 0, 1, {10, 1000, 10}, 333, 3, 0.70,
 	flags          = "absheight",
@@ -400,7 +400,7 @@ minetest.register_ore({
 	clust_scarcity = 23*17*23,
 	clust_num_ores = 7,
 	clust_size     = 7,
-	y_min     = -671,
+	y_min     = -672,
 	y_max     = -448,
 	noise_threshhold = 0.75,
 	noise_params   = 0, 1, {10, 1000, 10}, 333, 3, 0.70,
@@ -420,7 +420,7 @@ minetest.register_ore({
 		persist  = 0.5,
 		flags    = "eased",
 	},
-	noise_threshhold = 0.8,
+	noise_threshhold = 0.91,
 	random_factor = 0.23,
 	y_min     = -16000,
 	y_max     = -672,
@@ -433,8 +433,8 @@ minetest.register_ore({
 	clust_scarcity = 23*23*23,
 	clust_num_ores = 5,
 	clust_size     = 4,
-	y_min     = -375,
-	y_max     = -160,
+	y_min     = -475,
+	y_max     = -200,
 	noise_threshhold = 0.8,
 	noise_params   = 0, 1, {10, 10, 10}, 444, 3, 0.70,
 	flags          = "absheight",
@@ -447,8 +447,8 @@ minetest.register_ore({
 	clust_scarcity = 17*13*17,
 	clust_num_ores = 10,
 	clust_size     = 7,
-	y_min     = -639,
-	y_max     = -376,
+	y_min     = -954,
+	y_max     = -476,
 	noise_threshhold = 0.8,
 	noise_params   = 0, 1, {10, 10, 10}, 444, 3, 0.70,
 	flags          = "absheight",
@@ -467,10 +467,10 @@ minetest.register_ore({
 		persist  = 0.5,
 		flags    = "eased",
 	},
-	noise_threshhold = 0.85,
+	noise_threshhold = 0.93,
 	random_factor = 0.2,
 	y_min     = -30000,
-	y_max     = -640,
+	y_max     = -954,
 })
 
 minetest.register_ore({
@@ -480,8 +480,8 @@ minetest.register_ore({
 	clust_scarcity = 19*19*19,
 	clust_num_ores = 4,
 	clust_size     = 3,
-	y_min     = -383,
-	y_max     = -192,
+	y_min     = -511,
+	y_max     = -256,
 	flags          = "absheight",
 })
 
@@ -492,8 +492,8 @@ minetest.register_ore({
 	clust_scarcity = 42*23*42,
 	clust_num_ores = 6,
 	clust_size     = 3,
-	y_min     = -511,
-	y_max     = -384,
+	y_min     = -1023,
+	y_max     = -512,
 	flags          = "absheight",
 })
 
@@ -510,10 +510,10 @@ minetest.register_ore({
 		persist  = 0.5,
 		flags    = "eased",
 	},
-	noise_threshhold = 0.9,
+	noise_threshhold = 0.96,
 	random_factor = 0.15,
 	y_min     = -30000,
-	y_max     = -512,
+	y_max     = -1023,
 })
 
 minetest.register_ore({
@@ -523,8 +523,8 @@ minetest.register_ore({
 	clust_scarcity = 37*37*37,
 	clust_num_ores = 3,
 	clust_size     = 5,
-	y_min     = -511,
-	y_max     = -256,
+	y_min     = -1023,
+	y_max     = -512,
 	noise_threshhold = 0.95,
 	noise_params   = 0, 1, {100, 10, 100}, 222, 3, 0.70,
 	flags          = "absheight",
@@ -537,8 +537,8 @@ minetest.register_ore({
 	clust_scarcity = 23*12*23,
 	clust_num_ores = 6,
 	clust_size     = 6,
-	y_min     = -767,
-	y_max     = -512,
+	y_min     = -1535,
+	y_max     = -1024,
 	noise_threshhold = 0.95,
 	noise_params   = 0, 1, {100, 10, 100}, 222, 3, 0.70,
 	flags          = "absheight",
@@ -557,10 +557,10 @@ minetest.register_ore({
 		persist  = 0.5,
 		flags    = "eased",
 	},
-	noise_threshhold = 0.95,
+	noise_threshhold = 0.98,
 	random_factor = 0.1,
 	y_min     = -30000,
-	y_max     = -768,
+	y_max     = -1536,
 })
 
 minetest.register_ore({
