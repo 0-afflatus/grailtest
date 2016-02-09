@@ -365,7 +365,7 @@ mesh = "basic_bow_arrow.b3d",
 				self.node_pos = npos
 				self.state = "stuck"
 				stop_arrow(self.object, tpos, true)
-				minetest.sound_play("basic_bow_arrow", {pos = self.lastpos, gain = 0.7, max_hear_distance = 40})
+				minetest.sound_play("basic_bow_arrow", {pos = self.lastpos, gain = 0.7, max_hear_distance = 16})
 			end
 			self.timer = 0
 		end
@@ -402,7 +402,7 @@ minetest.register_tool("basic_bow:wood_bow", {
 				ent = obj:get_luaentity()
 			end
 			if ent then
-				minetest.sound_play("basic_bow_throw", {object=obj})
+				minetest.sound_play("basic_bow_throw", {gain = 0.3, max_hear_distance = 12, pos = pos})
 				local frame = get_animation_frame(dir)
 				obj:setyaw(yaw + math.pi)
 				obj:set_animation({x=frame, y=frame}, 0)
@@ -424,7 +424,7 @@ minetest.register_tool("basic_bow:wood_bow", {
 							ent.state = "stuck"
 							stop_arrow(object, pos, true)
 							--basic_bow:play_node_sound(node)
-							minetest.sound_play("basic_bow_arrow", {gain = 0.0009, max_hear_distance = 24, pos = pos})
+							minetest.sound_play("basic_bow_arrow", {gain = 0.0009, max_hear_distance = 12, pos = pos})
 						end, obj, tpos, ppos)
 						return itemstack
 					end
