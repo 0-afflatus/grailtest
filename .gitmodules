@@ -1,0 +1,12 @@
+[submodule "mods/biome_lib"]
+	path = mods/biome_lib
+	url = https://github.com/VanessaE/biome_lib.git
+[submodule "mods/moretrees"]
+	path = mods/moretrees
+	url = https://github.com/VanessaE/moretrees.git
+[submodule "mods/plantlife_modpack"]
+	path = mods/plantlife_modpack
+	url = https://github.com/VanessaE/plantlife_modpack.git
+[submodule "mods/simplyslopes"]
+	path = mods/simplyslopes
+	url = https://github.com/Delaroyas/simplyslopes.git
