@@ -56,7 +56,7 @@ minetest.register_node("fire:bonfire", {
 -- Crafting
 --
 
-tinder = {
+local tinder_list = {
 	"plant:fibre",
 	"default:paper",
 	"default:coal_lump",
@@ -64,7 +64,7 @@ tinder = {
 	"plant:hawthorn",
 }
 
-for _,tinder in ipairs(tinder) do
+for _,tinder in ipairs(tinder_list) do
 	minetest.register_craft({
 		output = 'fire:bonfire',
 		recipe = {
@@ -76,7 +76,7 @@ end
 
 function fire.strike_fire(user, pointed_thing)
 	if pointed_thing.type == "node" then
-		local n_pointed_above = minetest.get_node(pointed_thing.above)
+		--local n_pointed_above = minetest.get_node(pointed_thing.above)
 		local n_pointed_under = minetest.get_node(pointed_thing.under)
 		if n_pointed_under.name == "equipment:torch_unlit" then
 			n_pointed_under.name = "equipment:torch"

@@ -2,9 +2,7 @@
 -- Register biomes
 --
 
-mapgen = {}
-
-function mapgen.register_biomes()
+function default.register_biomes()
 
 	minetest.register_biome({
 		name = "polar",
@@ -527,5 +525,5 @@ if mg_params.mgname == "v6" then
 else
 	minetest.clear_registered_biomes()
 	minetest.clear_registered_decorations()
-	mapgen.register_biomes()
+	default.register_biomes()
 end

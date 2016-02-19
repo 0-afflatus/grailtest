@@ -110,7 +110,7 @@ function tree.grow_tree(pos, is_apple_tree, bad)
 		error("Deprecated use of tree.grow_tree")
 	end
 
-	local x, y, z = pos.x, pos.y, pos.z
+	--local x, y, z = pos.x, pos.y, pos.z
 	local height = random(4, 5)
 	local c_tree = minetest.get_content_id("tree:apple_tree_trunk")
 	local c_leaves = minetest.get_content_id("tree:apple_tree_leaves")
@@ -433,7 +433,7 @@ function tree.grow_pine_tree(pos)
 		end
 	end
 
-	local dev = 2
+	dev = 2
 	for yy = my + 1, my + 2 do
 		for zz = z - dev, z + dev do
 			local vi = a:index(x - dev, yy, zz)

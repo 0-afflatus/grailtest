@@ -20,7 +20,7 @@ fachwerk.register_fachwerk = function( basename, texture, description, craft_fro
 
 	minetest.register_node("fachwerk:"..basename, { 
 		description = "Truss with "..description,
-		tile_images = { texture.."^fachwerk_blank.png"},
+		tiles = { texture.."^fachwerk_blank.png"},
 		groups = group_def,
 		sounds = default.node_sound_stone_defaults(),
 		paramtype = "light",
@@ -29,7 +29,7 @@ fachwerk.register_fachwerk = function( basename, texture, description, craft_fro
 
 	minetest.register_node("fachwerk:"..basename.."_1", { 
 		description = "truss with "..description.." oblique beam 1",
-		tile_images = {
+		tiles = {
 			texture.."^fachwerk_blank.png", -- top
 			texture.."^fachwerk_blank.png", -- bottom
 			texture.."^fachwerk_beam_1.png",
@@ -45,7 +45,7 @@ fachwerk.register_fachwerk = function( basename, texture, description, craft_fro
 	-- TODO: is this one really needed? the node above covers most of that already
 	minetest.register_node("fachwerk:"..basename.."_2", { 
 	description = "Truss with "..description.." oblique beam 2",
-		tile_images = {
+		tiles = {
 			texture.."^fachwerk_blank.png", -- top
 			texture.."^fachwerk_blank.png", -- bottom
 			texture.."^fachwerk_beam_2.png",
@@ -60,7 +60,7 @@ fachwerk.register_fachwerk = function( basename, texture, description, craft_fro
 
 	minetest.register_node("fachwerk:"..basename.."_cross", {
 		description = "truss with "..description.." cross",
-		tile_images = {texture.."^fachwerk_cross.png"},
+		tiles = {texture.."^fachwerk_cross.png"},
 		groups = group_def,
 		sounds = default.node_sound_stone_defaults(),
 	})

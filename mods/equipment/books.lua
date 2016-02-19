@@ -187,7 +187,7 @@ minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv
 		return
 	end
 
-	local copy = ItemStack("equipment:book_written")
+	--local copy = ItemStack("equipment:book_written")
 	local original
 	local index
 	for i = 1, player:get_inventory():get_size("craft") do

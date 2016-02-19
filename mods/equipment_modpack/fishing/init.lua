@@ -26,6 +26,8 @@ local mname		= "fishing"
 
 -----------------------------------------------------------------------------------------------
 
+fishing = {}
+
 dofile(minetest.get_modpath("fishing").."/settings.txt")
 dofile(minetest.get_modpath("fishing").."/bobber.lua")
 dofile(minetest.get_modpath("fishing").."/bobber_shark.lua")
@@ -56,7 +58,7 @@ minetest.register_tool("fishing:pole", {
 			local pt = pointed_thing
 			local node = minetest.get_node(pt.under)
 			if string.find(node.name, "default:water") then
-				local player = user:get_player_name()
+				--local player = user:get_player_name()
 				local inv = user:get_inventory()
 				if inv:get_stack("main", user:get_wield_index()+1):get_name() == "fishing:bait_worm" then
 					if not minetest.setting_getbool("creative_mode") then
@@ -68,7 +70,7 @@ minetest.register_tool("fishing:pole", {
 					})
 					minetest.add_entity({interval = 1,x=pt.under.x, y=pt.under.y+(45/64), z=pt.under.z}, "fishing:bobber_entity")
 					
-					if WEAR_OUT == true 
+					if fishing.WEAR_OUT == true 
 					and not minetest.setting_getbool("creative_mode") then
 						return rod_wear(itemstack, user, pointed_thing, 30)	
 					else
@@ -85,7 +87,7 @@ minetest.register_tool("fishing:pole", {
 					})
 					minetest.add_entity({interval = 1,x=pt.under.x, y=pt.under.y+(45/64), z=pt.under.z}, "fishing:bobber_entity_shark")
 					
-					if WEAR_OUT == true 
+					if fishing.WEAR_OUT == true 
 					and not minetest.setting_getbool("creative_mode") then
 						return rod_wear(itemstack, user, pointed_thing, 30)	
 					else
@@ -115,7 +117,7 @@ minetest.register_tool("fishing:pole", {
 	end,
 })
 
-if SIMPLE_DECO_FISHING_POLE == true then
+if fishing.SIMPLE_DECO_FISHING_POLE == true then
 minetest.register_node("fishing:pole_deco", {
 	description = "Fishing Pole",
 	inventory_image = "fishing_pole.png",

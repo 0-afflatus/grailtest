@@ -542,7 +542,7 @@ signs_lib.update_sign = function(pos, fields, owner)
 	if sign_info == nil then
 		return
 	end
-	local text = minetest.add_entity({x = pos.x + sign_info.delta.x,
+	text = minetest.add_entity({x = pos.x + sign_info.delta.x,
 										y = pos.y + sign_info.delta.y,
 										z = pos.z + sign_info.delta.z}, "signs:text")
 	text:setyaw(sign_info.yaw)
@@ -600,11 +600,11 @@ function signs_lib.determine_sign_type(itemstack, placer, pointed_thing, locked)
 		print(dump(pt_name))
 		local signname = itemstack:get_name()
 
-		if fences_with_sign[pt_name] and signname == "default:sign_wall" then
+		if fences_with_sign[pt_name] and signname == "equipment:sign_wall" then
 			minetest.add_node(under, {name = fences_with_sign[pt_name], param2 = fdir})
-		elseif wdir == 0 and signname == "default:sign_wall" then
+		elseif wdir == 0 and signname == "equipment:sign_wall" then
 			minetest.add_node(above, {name = "signs:sign_hanging", param2 = fdir})
-		elseif wdir == 1 and signname == "default:sign_wall" then
+		elseif wdir == 1 and signname == "equipment:sign_wall" then
 			minetest.add_node(above, {name = "signs:sign_yard", param2 = fdir})
 		else -- it must be a wooden or metal wall sign.
 			minetest.add_node(above, {name = signname, param2 = fdir})
@@ -754,8 +754,8 @@ minetest.register_node(":signs:sign_post", {
     drop = {
 		max_items = 2,
 		items = {
-			{ items = { "default:sign_wall" }},
-			{ items = { "default:fence_wood" }},
+			{ items = { "equipment:sign_wall" }},
+			{ items = { "equipment:fence_wood" }},
 		},
     },
 })
@@ -937,7 +937,6 @@ function signs_lib.register_fence_with_sign(fencename, fencewithsignname)
 	def_sign.on_punch = function(pos, node, puncher, ...)
 		signs_lib.update_sign(pos)
 	end
-	local fencename = fencename
 	def_sign.after_dig_node = function(pos, node, ...)
 	    node.name = fencename
 	    minetest.add_node(pos, node)
@@ -954,7 +953,7 @@ build_char_db()
 minetest.register_alias("homedecor:fence_wood_with_sign", "signs:sign_post")
 minetest.register_alias("sign_wall_locked", "locked_sign:sign_wall_locked")
 
-signs_lib.register_fence_with_sign("default:fence_wood", "signs:sign_post")
+signs_lib.register_fence_with_sign("equipment:fence_wood", "signs:sign_post")
 
 -- restore signs' text after /clearobjects and the like
 

@@ -90,9 +90,9 @@ minetest.register_node("vessels:barrel", {
 				if p_inv:room_for_item("main", {name=liquiddef.itemname}) then
 					p_inv:add_item("main", liquiddef.itemname)
 				else
-					local pos = player:getpos()
+					pos = player:getpos()
 					pos.y = math.floor(pos.y + 0.5)
-					core.add_item(pos, liquiddef.itemname)
+					minetest.add_item(pos, liquiddef.itemname)
 				end
 
 				-- set to return empty buckets minus 1

@@ -30,7 +30,7 @@ minetest.register_node("mineral:coal_block", {
 
 minetest.register_node("mineral:mithril_stone", {
 	description = "Mithril Ore",
-	tiles ={"default_stone.png^mineral_mithril.png"},
+	tiles ={"mineral_greenstone.png^mineral_mithril.png"},
 	is_ground_content = true,
 	groups = {cracky = 1},
 	drop = 'mineral:mithril_lump',
@@ -44,7 +44,7 @@ minetest.register_node("mineral:mithril_block", {
 
 minetest.register_node("mineral:diamond_stone", {
 	description = "Diamond Ore",
-	tiles = {"default_stone.png^mineral_diamond.png"},
+	tiles = {"mineral_basalt.png^mineral_diamond.png"},
 	is_ground_content = true,
 	groups = {cracky = 1},
 	drop = "mineral:diamond_gem",
@@ -84,7 +84,7 @@ minetest.register_node("mineral:obsidian", {
 
 minetest.register_node("mineral:ruby_stone", {
 	description = "Ruby Ore",
-	tiles = {"default_stone.png^mineral_ruby.png"},
+	tiles = {"mineral_greenstone.png^mineral_ruby.png"},
 	is_ground_content = true,
 	groups = {cracky = 2},
 	drop = "mineral:ruby_gem",
@@ -107,7 +107,7 @@ minetest.register_node("mineral:silver_block", {
 
 minetest.register_node("mineral:saphire_stone", {
 	description = "Saphire Ore",
-	tiles = {"default_stone.png^mineral_saphire.png"},
+	tiles = {"mineral_greenstone.png^mineral_saphire.png"},
 	is_ground_content = true,
 	groups = {cracky = 3},
 	drop = "mineral:saphire_gem",
@@ -122,7 +122,7 @@ minetest.register_node("mineral:bronze_block", {
 
 minetest.register_node("mineral:copper_stone", {
 	description = "Copper Ore",
-	tiles ={"default_stone.png^mineral_copper.png"},
+	tiles ={"mineral_bluestone.png^mineral_copper.png"},
 	is_ground_content = true,
 	groups = {cracky = 2},
 	drop = 'mineral:copper_lump',

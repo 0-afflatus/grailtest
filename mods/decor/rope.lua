@@ -11,7 +11,7 @@ end)
 
 function rope.place(itemstack, _, pointed_thing)
 	if pointed_thing.type == "node" then
-		local under = pointed_thing.under
+		--local under = pointed_thing.under
 		local above = pointed_thing.above
 		local pos = above
 		local oldnode = minetest.get_node(pos)

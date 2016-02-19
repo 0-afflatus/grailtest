@@ -7,81 +7,81 @@ basic_bow = {}
 minetest.register_alias("bow", "basic_bow:wood_bow")
 minetest.register_alias("arrow", "basicbow:arrow")
 
-BASIC_BOW_USES = 300
-BASIC_BOW_ARROW_TOOL_CAPS = {damage_groups={fleshy=4}}
-BASIC_BOW_ARROW_LIFETIME = 60-- 1  minute
-BASIC_BOW_ENABLE_PARTICLE_FX = true
-BASIC_BOW_ENABLE_PROTECTION = false
-BASIC_BOW_EXPLOSION_TEXTURE = "basic_bow_hit.png"
-BASIC_BOW_ALLOW_NODES = true
-BASIC_BOW_ALLOW_ENTITIES = true
-BASIC_BOW_ALLOW_PLAYERS = true
-BASIC_BOW_PLAYER_OFFSET = {x=0, y=1, z=0}
-BASIC_BOW_ENTITY_OFFSET = {x=0, y=0, z=0}
-BASIC_BOW_ENTITIES = {
-"creatures:sheep",
-"creatures:zombie",
-"creeper:creeper",
-"kpgmobs:cow",
-"kpgmobs:deer",
-"kpgmobs:horse",
-"kpgmobs:horse2",
-"kpgmobs:horse3",
-"kpgmobs:horsearah1",
-"kpgmobs:horseh1",
-"kpgmobs:horsepegh1",
-"kpgmobs:jeraf",
-"kpgmobs:medved",
-"kpgmobs:pumba",
-"kpgmobs:rat",
-"kpgmobs:sheep",
-"kpgmobs:wolf",
-"mobs:chicken",
-"mobs:cow",
-"mobs:dirt_monster",
-"mobs:dungeon_master",
-"mobs:goat",
-"mobs:kitten",
-"mobs:mese_monster",
-"mobs:npc",
-"mobs:oerkki",
-"mobs:pig",
-"mobs:pumba",
-"mobs:rat",
-"mobs:rhino",
-"mobs:sand_monster",
-"mobs:sheep",
-"mobs:spider",
-"mobs:stone_monster",
-"mobs:tree_monster",
-"mobs_goblins:goblin",
-"mobs_goblins:goblin_cobble",
-"mobs_goblins:goblin_coal",
-"mobs_goblins:goblin_iron",
-"mobs_goblins:goblin_gold",
-"mobs_goblins:goblin_diamond",
-"mobs_goblins:goblin_king",
-"ninja:ninja",
-"pmobs:archer",
-"pmobs:dog",
-"pmobs:guard",
-"pmobs:ninja",
-"pmobs:npc",
-"pmobs:npc_nurse",
-"pmobs:npc_women",
-"pmobs:wolf",
-"pmobs:yeti",
-"pyramids:mummy",
-"zombie:zombie",
+basic_bow.USES = 300
+basic_bow.ARROW_TOOL_CAPS = {damage_groups={fleshy=4}}
+basic_bow.ARROW_LIFETIME = 60-- 1  minute
+basic_bow.ENABLE_PARTICLE_FX = true
+basic_bow.ENABLE_PROTECTION = false
+basic_bow.EXPLOSION_TEXTURE = "basic_bow_hit.png"
+basic_bow.ALLOW_NODES = true
+basic_bow.ALLOW_ENTITIES = true
+basic_bow.ALLOW_PLAYERS = true
+basic_bow.PLAYER_OFFSET = {x=0, y=1, z=0}
+basic_bow.ENTITY_OFFSET = {x=0, y=0, z=0}
+basic_bow.ENTITIES = {
+	"creatures:sheep",
+	"creatures:zombie",
+	"creeper:creeper",
+	"kpgmobs:cow",
+	"kpgmobs:deer",
+	"kpgmobs:horse",
+	"kpgmobs:horse2",
+	"kpgmobs:horse3",
+	"kpgmobs:horsearah1",
+	"kpgmobs:horseh1",
+	"kpgmobs:horsepegh1",
+	"kpgmobs:jeraf",
+	"kpgmobs:medved",
+	"kpgmobs:pumba",
+	"kpgmobs:rat",
+	"kpgmobs:sheep",
+	"kpgmobs:wolf",
+	"mobs:chicken",
+	"mobs:cow",
+	"mobs:dirt_monster",
+	"mobs:dungeon_master",
+	"mobs:goat",
+	"mobs:kitten",
+	"mobs:mese_monster",
+	"mobs:npc",
+	"mobs:oerkki",
+	"mobs:pig",
+	"mobs:pumba",
+	"mobs:rat",
+	"mobs:rhino",
+	"mobs:sand_monster",
+	"mobs:sheep",
+	"mobs:spider",
+	"mobs:stone_monster",
+	"mobs:tree_monster",
+	"mobs_goblins:goblin",
+	"mobs_goblins:goblin_cobble",
+	"mobs_goblins:goblin_coal",
+	"mobs_goblins:goblin_iron",
+	"mobs_goblins:goblin_gold",
+	"mobs_goblins:goblin_diamond",
+	"mobs_goblins:goblin_king",
+	"ninja:ninja",
+	"pmobs:archer",
+	"pmobs:dog",
+	"pmobs:guard",
+	"pmobs:ninja",
+	"pmobs:npc",
+	"pmobs:npc_nurse",
+	"pmobs:npc_women",
+	"pmobs:wolf",
+	"pmobs:yeti",
+	"pyramids:mummy",
+	"zombie:zombie",
 }
 
 if minetest.is_singleplayer() == true then
-	BASIC_BOW_ALLOW_ENTITIES = true
-	BASIC_BOW_ALLOW_PLAYERS = true
+	basic_bow.ALLOW_ENTITIES = true
+	basic_bow.ALLOW_PLAYERS = true
 end
 
 local allowed_entities = {}
-for _,v in ipairs(BASIC_BOW_ENTITIES) do
+for _,v in ipairs(basic_bow.ENTITIES) do
 	allowed_entities[v] = 1
 end
 
@@ -89,14 +89,16 @@ local function get_dot_product(v1, v2)
 	return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z
 end
 
+--[[
 local function get_particle_pos(p, v, d)
 	return vector.add(p, vector.multiply(v, {x=d, y=d, z=d}))
 end
+]]
 
 function basic_bow:spawn_particles(pos, texture)
-	if BASIC_BOW_ENABLE_PARTICLE_FX == true then
+	if basic_bow.ENABLE_PARTICLE_FX == true then
 		if type(texture) ~= "string" then
-			texture = BASIC_BOW_EXPLOSION_TEXTURE
+			texture = basic_bow.EXPLOSION_TEXTURE
 		end
 		local spread = {x=0.1, y=0.1, z=0.1}
 		minetest.add_particlespawner(15, 0.3,
@@ -117,7 +119,7 @@ function basic_bow:punch_node(pos, def)
 	if not item then
 		return
 	end
-	if BASIC_BOW_ENABLE_PROTECTION then
+	if basic_bow.ENABLE_PROTECTION then
 		if minetest.is_protected(pos, def.name) then
 			return
 		end
@@ -142,9 +144,9 @@ end
 function basic_bow:is_valid_object(object)
 	if object then
 		if object:is_player() == true then
-			return BASIC_BOW_ALLOW_PLAYERS
+			return basic_bow.ALLOW_PLAYERS
 		end
-		if BASIC_BOW_ALLOW_ENTITIES == true then
+		if basic_bow.ALLOW_ENTITIES == true then
 			local luaentity = object:get_luaentity()
 			if luaentity then
 				if luaentity.name then
@@ -178,6 +180,7 @@ function basic_bow:process_round(round)
 	local target = {object=nil, distance=10000}
 	local p1 = round.pos
 	local v1 = round.ray
+	-- Undefined variable 'shooter' ???
 	for _,ref in ipairs(shooter.objects) do
 		local p2 = vector.add(ref.pos, ref.offset)
 		if p1 and p2 and ref.name ~= round.name then
@@ -200,14 +203,14 @@ function basic_bow:process_round(round)
 			local user = minetest.get_player_by_name(round.name)
 			if user then
 				target.object:punch(user, nil, round.def.tool_caps, v1)
-				basic_bow:spawn_particles(target.pos, BASIC_BOW_EXPLOSION_TEXTURE)
+				basic_bow:spawn_particles(target.pos, basic_bow.EXPLOSION_TEXTURE)
 			end
 			return 1
-		elseif pos and BASIC_BOW_ALLOW_NODES == true then
+		elseif pos and basic_bow.ALLOW_NODES == true then
 			basic_bow:punch_node(pos, round.def)
 			return 1
 		end
-	elseif BASIC_BOW_ALLOW_NODES == true then
+	elseif basic_bow.ALLOW_NODES == true then
 		local d = round.def.step
 		local p2 = vector.add(p1, vector.multiply(v1, {x=d, y=d, z=d}))
 		local success, pos = minetest.line_of_sight(p1, p2, 1)
@@ -242,8 +245,8 @@ local function punch_object(puncher, object)
 			local p1 = puncher:getpos()
 			local p2 = object:getpos()
 			local tpos = get_target_pos(p1, p2, dir, 0)
-			basic_bow:spawn_particles(tpos, BASIC_BOW_EXPLOSION_TEXTURE)
-			object:punch(puncher, nil, BASIC_BOW_ARROW_TOOL_CAPS, dir)
+			basic_bow:spawn_particles(tpos, basic_bow.EXPLOSION_TEXTURE)
+			object:punch(puncher, nil, basic_bow.ARROW_TOOL_CAPS, dir)
 		end
 	end
 end
@@ -277,7 +280,7 @@ mesh = "basic_bow_arrow.b3d",
 		"basic_bow_arrow_uv.png",
 	},
 	timer = 0,
-	lifetime = BASIC_BOW_ARROW_LIFETIME,
+	lifetime = basic_bow.ARROW_LIFETIME,
 	player = nil,
 	state = "init",
 	node_pos = nil,
@@ -339,9 +342,9 @@ mesh = "basic_bow_arrow.b3d",
 			for _,obj in ipairs(objects) do
 				if basic_bow:is_valid_object(obj) then
 					local collisionbox = {-0.25,-1.0,-0.25, 0.25,0.8,0.25}
-					local offset = BASIC_BOW_PLAYER_OFFSET
+					local offset = basic_bow.PLAYER_OFFSET
 					if not obj:is_player() then
-						offset = BASIC_BOW_ENTITY_OFFSET
+						offset = basic_bow.ENTITY_OFFSET
 						local ent = obj:get_luaentity()
 						if ent then
 							local def = minetest.registered_entities[ent.name]
@@ -360,7 +363,7 @@ mesh = "basic_bow_arrow.b3d",
 			local p = vector.add(pos, vector.multiply(dir, {x=5, y=5, z=5}))
 			local _, npos = minetest.line_of_sight(pos, p, 1)
 			if npos then
-				local node = minetest.get_node(npos)
+				--local node = minetest.get_node(npos)
 				local tpos = get_target_pos(pos, npos, dir, 0.66)
 				self.node_pos = npos
 				self.state = "stuck"
@@ -380,63 +383,65 @@ minetest.register_tool("basic_bow:wood_bow", {
 	inventory_image = "basic_bow_inv.png",
 	wield_image = "basic_bow_loaded.png",
 
-
 	on_use = function(itemstack, user, pointed_thing)
-			local inv = user:get_inventory()
-	if user:get_inventory():get_stack("main", user:get_wield_index()+1): get_name()=="basic_bow:arrow" then
-	if not minetest.setting_getbool("creative_mode") then
-	user:get_inventory():remove_item("main", "basic_bow:arrow 1")
-	end
-		if not minetest.setting_getbool("creative_mode") then
-			itemstack:add_wear(65535/BASIC_BOW_USES)
-		end
-		itemstack = "basic_bow:wood_bow 1 "..itemstack:get_wear()
-		local pos = user:getpos()
-		local dir = user:get_look_dir()
-		local yaw = user:get_look_yaw()
-		if pos and dir and yaw then
-			pos.y = pos.y + 1.5
-			local obj = minetest.add_entity(pos, "basic_bow:arrow_entity")
-			local ent = nil
-			if obj then
-				ent = obj:get_luaentity()
+		local inv = user:get_inventory()
+		local wielded = inv:get_stack("main", user:get_wield_index()+1)
+		if wielded: get_name()=="basic_bow:arrow" then
+			if not minetest.setting_getbool("creative_mode") then
+			user:get_inventory():remove_item("main", "basic_bow:arrow 1")
 			end
-			if ent then
-				minetest.sound_play("basic_bow_throw", {gain = 0.3, max_hear_distance = 12, pos = pos})
-				local frame = get_animation_frame(dir)
-				obj:setyaw(yaw + math.pi)
-				obj:set_animation({x=frame, y=frame}, 0)
-				obj:setvelocity({x=dir.x * 14, y=dir.y * 14, z=dir.z * 14})
-				if pointed_thing.type ~= "nothing" then
-					local ppos = minetest.get_pointed_thing_position(pointed_thing, false)
-					local _, npos = minetest.line_of_sight(pos, ppos, 1)
-					if npos then
-						ppos = npos
-						pointed_thing.type = "node"
-					end
-					if pointed_thing.type == "object" then
-						punch_object(user, pointed_thing.ref)
-					elseif pointed_thing.type == "node" then
-						local node = minetest.get_node(ppos)
-						local tpos = get_target_pos(pos, ppos, dir, 0.66)
-						minetest.after(0.2, function(object, pos, npos)
-							ent.node_pos = npos
-							ent.state = "stuck"
-							stop_arrow(object, pos, true)
-							--basic_bow:play_node_sound(node)
-							minetest.sound_play("basic_bow_arrow", {gain = 0.0009, max_hear_distance = 12, pos = pos})
-						end, obj, tpos, ppos)
-						return itemstack
-					end
+			
+			if not minetest.setting_getbool("creative_mode") then
+				itemstack:add_wear(65535/basic_bow.USES)
+			end
+			
+			itemstack = "basic_bow:wood_bow 1 "..itemstack:get_wear()
+			local pos = user:getpos()
+			local dir = user:get_look_dir()
+			local yaw = user:get_look_yaw()
+			if pos and dir and yaw then
+				pos.y = pos.y + 1.5
+				local obj = minetest.add_entity(pos, "basic_bow:arrow_entity")
+				local ent = nil
+				if obj then
+					ent = obj:get_luaentity()
 				end
-				obj:setacceleration({x=dir.x * -3, y=-5, z=dir.z * -3})
-				ent.player = ent.player or user
-				ent.state = "flight"
+				if ent then
+					minetest.sound_play("basic_bow_throw", {gain = 0.3, max_hear_distance = 12, pos = pos})
+					local frame = get_animation_frame(dir)
+					obj:setyaw(yaw + math.pi)
+					obj:set_animation({x=frame, y=frame}, 0)
+					obj:setvelocity({x=dir.x * 14, y=dir.y * 14, z=dir.z * 14})
+					if pointed_thing.type ~= "nothing" then
+						local ppos = minetest.get_pointed_thing_position(pointed_thing, false)
+						local _, npos = minetest.line_of_sight(pos, ppos, 1)
+						if npos then
+							ppos = npos
+							pointed_thing.type = "node"
+						end
+						if pointed_thing.type == "object" then
+							punch_object(user, pointed_thing.ref)
+						elseif pointed_thing.type == "node" then
+							--local node = minetest.get_node(ppos)
+							local tpos = get_target_pos(pos, ppos, dir, 0.66)
+							minetest.after(0.2, function(object, pos, npos)
+								ent.node_pos = npos
+								ent.state = "stuck"
+								stop_arrow(object, pos, true)
+								--basic_bow:play_node_sound(node)
+								minetest.sound_play("basic_bow_arrow", {gain = 0.0009, max_hear_distance = 12, pos = pos})
+							end, obj, tpos, ppos)
+							return itemstack
+						end
+					end
+					obj:setacceleration({x=dir.x * -3, y=-5, z=dir.z * -3})
+					ent.player = ent.player or user
+					ent.state = "flight"
+				end
 			end
 		end
-	end
-	return itemstack
-end,
+		return itemstack
+	end,
 })
 
 --[[

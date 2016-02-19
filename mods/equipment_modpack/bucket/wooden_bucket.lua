@@ -67,7 +67,7 @@ function bucket.register_contents(source, flowing, itemname, inventory_image, na
 						itemstack) or itemstack
 				end
 
-				local place_liquid = function(pos, node, source, flowing)
+				local place_liquid = function(pos)
 					if check_protection(pos,
 							user and user:get_player_name() or "",
 							"place "..source) then
@@ -84,7 +84,7 @@ function bucket.register_contents(source, flowing, itemname, inventory_image, na
 				else
 					-- not buildable to; place the liquid above
 					-- check if the node above can be replaced
-					local node = minetest.get_node_or_nil(pointed_thing.above)
+					node = minetest.get_node_or_nil(pointed_thing.above)
 					if node and minetest.registered_nodes[node.name].buildable_to then
 						place_liquid(pointed_thing.above,
 								node, source,
@@ -146,7 +146,7 @@ minetest.register_craftitem("bucket:wooden_empty", {
 				else
 					local pos = user:getpos()
 					pos.y = math.floor(pos.y + 0.5)
-					core.add_item(pos, liquiddef.itemname)
+					minetest.add_item(pos, liquiddef.itemname)
 				end
 
 				-- set to return empty buckets minus 1

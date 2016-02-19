@@ -61,7 +61,7 @@ stairs.register_stair_and_slab("jungletree_wood", "moretrees:jungletree_planks",
 for _, row in ipairs(material.dyes) do
 	local name = row[1]
 	local desc = row[2]
-	local craft_color_group = row[3]
+	--local craft_color_group = row[3]
 	stairs.register_stair_and_slab("wool_"..name, "wool:"..name,
 	{snappy=2,choppy=2,oddly_breakable_by_hand=3,flammable=3,fabric=1,wool=1},
 	{"wool_"..name..".png"},

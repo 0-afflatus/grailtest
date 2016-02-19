@@ -49,7 +49,7 @@ local function allow_metadata_inventory_put(pos, listname, index, stack, player)
 		return 0
 	end
 	local meta = minetest.get_meta(pos)
-	local inv = meta:get_inventory()
+	--local inv = meta:get_inventory()
 	if listname == "src" then
 		return stack:get_count()
 	elseif listname == "dst" then
@@ -164,7 +164,7 @@ minetest.register_abm({
 			end
 		end
 		local srclist = inv:get_list("src")
-		local dstlist = inv:get_list("dst")
+		--local dstlist = inv:get_list("dst")
 		
 		--
 		-- Cooking

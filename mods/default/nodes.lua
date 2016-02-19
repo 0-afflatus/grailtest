@@ -856,7 +856,9 @@ minetest.register_abm({
 		elseif node.name == "default:dirt_with_snow" then
 			minetest.add_node(pos,{name = "default:dirt_with_ice"})
 		end
-		nodeupdate(pos)
+		
+		-- wtf is this
+		--nodeupdate(pos)
 	end,
 })
 

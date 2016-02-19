@@ -1,7 +1,5 @@
 
-notice = { }
-
-function notice.send(target, text)
+function command.send_notice(target, text)
 	local player = minetest.get_player_by_name(target)
 	if not player then
 		return false, ("There's no player named '%s'."):format(target)
@@ -10,8 +8,8 @@ function notice.send(target, text)
 	local lines = { }
 	for i, line in ipairs(text:split("|")) do
 		local lt = { }
-		for i = 1, #line, 40 do
-			table.insert(lt, line:sub(i, i+39))
+		for j = 1, #line, 40 do
+			table.insert(lt, line:sub(j, j+39))
 		end
 		lines[i] = table.concat(lt, "\n")
 	end
@@ -39,7 +37,7 @@ minetest.register_chatcommand("notice", {
 		if not (target and text) then
 			return false, "Usage: /notice <player> <text>"
 		end
-		local ok, err = notice.send(target, text)
+		local ok, err = command.send_notice(target, text)
 		if not ok then
 			return false, err
 		end

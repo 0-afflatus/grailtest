@@ -187,7 +187,7 @@ minetest.register_abm({
 		end
 		local srclist = inv:get_list("src")
 		local fuellist = inv:get_list("fuel")
-		local dstlist = inv:get_list("dst")
+		--local dstlist = inv:get_list("dst")
 		
 		--
 		-- Cooking

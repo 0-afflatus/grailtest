@@ -1,5 +1,5 @@
 local screwdriver = {}
-local xbg = default.gui_bg..default.gui_bg_img..default.gui_slots
+-- local xbg = default.gui_bg..default.gui_bg_img..default.gui_slots
 
 equipment.register("cabinet", {
 	description = "Wood Cabinet",

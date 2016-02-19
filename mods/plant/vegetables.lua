@@ -250,6 +250,7 @@ minetest.register_craftitem("plant:wild_onion_plant", {
 	inventory_image = "plant_wild_onion.png",
 	on_use = minetest.item_eat(2),
 	on_place = function(itemstack, placer, pointed_thing)
+		-- undefined mod farming - internalise this
 		return farming.place_seed(itemstack, placer, pointed_thing, "plant:wild_onion_1")
 	end
 })

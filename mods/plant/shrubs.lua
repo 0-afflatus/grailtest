@@ -51,7 +51,7 @@ minetest.register_node("plant:orange_tree_trunk", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {tree=1,choppy=2,oddly_breakable_by_hand=1,flammable=2},
+	groups = {tree=1, choppy=2, oddly_breakable_by_hand=1, flammable=2},
 	sounds = default.node_sound_wood_defaults(),
 	on_place = minetest.rotate_node
 })
@@ -113,7 +113,7 @@ minetest.register_node("plant:rhodedendron", {
 	waving = 0,
 	paramtype = "light",
 	drop = "plant:rhodedendron",
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,leaves=1},
+	groups = {snappy=3, flammable=2, plant=1, attached_node=1, leaves=1, flower=1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -215,7 +215,7 @@ minetest.register_node("plant:gorse", {
 	waving = 0,
 	paramtype = "light",
 	drop = "plant:gorse",
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,leaves=1,salad=1},
+	groups = {snappy=3, flammable=2, plant=1, attached_node=1, leaves=1, salad=1, flower=1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -326,7 +326,7 @@ minetest.register_node("plant:blackberry", {
 			{items = {'plant:blackberry'},rarity=4},
 		}
 	},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,leaves=1},
+	groups = {snappy=3, flammable=2, plant=1, attached_node=1, leaves=1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -339,7 +339,7 @@ minetest.register_node("plant:blackberry_fruit", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
-	groups = {fleshy=3,dig_immediate=3,flammable=2,leafdecay=3,leafdecay_drop=1,fruit=1},
+	groups = {fleshy=3, dig_immediate=3, flammable=2, leafdecay=3, leafdecay_drop=1, fruit=1},
 	sounds = default.node_sound_defaults(),
 	on_use = minetest.item_eat(1),
 })
@@ -446,7 +446,7 @@ minetest.register_node("plant:hawthorn", {
 			{items = {'plant:hawthorn'},rarity=8},
 		}
 	},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,leaves=1,salad=1},
+	groups = {snappy=3, flammable=2, plant=1, attached_node=1, leaves=1, salad=1, flower=1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -502,9 +502,9 @@ plant.place_hawthorn = function(pos)
 	for x0 = -1,1 do
 		for z0 = -1,1 do
 			local here = {x=pos.x+x0, y=pos.y+1, z=pos.z+z0}
-			local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
+			--local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
 			local node_here = minetest.get_node(here)
-			local node_below = minetest.get_node(below)
+			--local node_below = minetest.get_node(below)
 			if minetest.registered_nodes[node_here.name].buildable_to and
 					math.random(1,9) > 6 then
 				minetest.set_node(here, {name="plant:hawthorn"})
@@ -556,7 +556,7 @@ minetest.register_node("plant:strawberry", {
 			{items = {'plant:strawberry'},rarity=4},
 		}
 	},
-	groups = {snappy=3,flammable=2,plant=1,attached_node=1,leaves=1},
+	groups = {snappy=3, flammable=2, plant=1, attached_node=1, leaves=1, flower=1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -630,7 +630,7 @@ plant.place_strawberry = function(pos)
 		for z0 = -1,1 do
 			local here = {x=pos.x+x0, y=pos.y+1, z=pos.z+z0}
 			local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
-			local node_here = minetest.get_node(here)
+			--local node_here = minetest.get_node(here)
 			local node_below = minetest.get_node(below)
 			if minetest.registered_nodes[node_below.name].walkable and
 					minetest.get_node_group(node_below.name, "soil") > 1 and
@@ -663,7 +663,7 @@ minetest.register_decoration({
 --
 -- Heath
 --
-rock_surfaces = {
+local rock_surfaces = {
 	"default:rock",
 	"default:stone",
 	"mineral:bluestone",
@@ -677,9 +677,9 @@ rock_surfaces = {
 	"mineral:silver_stone",	
 }
 
-rockplant_biomes = {"tundra", "tundra_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "woodland", "woodland_swamp", "alpine", "mountain"}
+local rockplant_biomes = {"tundra", "tundra_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "woodland", "woodland_swamp", "alpine", "mountain"}
 
-heath_surfaces = {
+local heath_surfaces = {
 	"default:rock",
 	"default:dirt_with_ice",
 	"default:lichen_stone",
@@ -691,9 +691,9 @@ heath_surfaces = {
 	"mineral:silver_stone",	
 }
 
-heath_biomes_cool = {"tundra", "tundra_ocean", "taiga_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "alpine", "mountain"}
+local heath_biomes_cool = {"tundra", "tundra_ocean", "taiga_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "alpine", "mountain"}
 
-heath_biomes_warm = {"grassland", "grassland_ocean", "woodland", "woodland_swamp", "savanna", "savanna_swamp", "rainforest_swamp", "sandy_shore"}
+local heath_biomes_warm = {"grassland", "grassland_ocean", "woodland", "woodland_swamp", "savanna", "savanna_swamp", "rainforest_swamp", "sandy_shore"}
 
 minetest.register_node("plant:heath_sandwort", {
 	description = "Sandwort",
@@ -707,7 +707,7 @@ minetest.register_node("plant:heath_sandwort", {
 	groups = {
 		snappy=3,
 		attached_node=1,
-		not_in_creative_inventory=1
+		not_in_creative_inventory=1, flower=1
 	},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -729,7 +729,7 @@ minetest.register_node("plant:heath_saxifrage_purple", {
 	groups = {
 		snappy=3,
 		attached_node=1,
-		not_in_creative_inventory=1
+		not_in_creative_inventory=1, flower=1
 	},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -751,7 +751,7 @@ minetest.register_node("plant:heath_purple", {
 	groups = {
 		snappy=3,
 		attached_node=1,
-		not_in_creative_inventory=1
+		not_in_creative_inventory=1, flower=1
 	},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -805,9 +805,9 @@ plant.place_heath_green = function(pos)
 	for x0 = -1,1 do
 		for z0 = -1,1 do
 			local here = {x=pos.x+x0, y=pos.y+1, z=pos.z+z0}
-			local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
+			--local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
 			local node_here = minetest.get_node(here)
-			local node_below = minetest.get_node(below)
+			--local node_below = minetest.get_node(below)
 			if minetest.registered_nodes[node_here.name].buildable_to and
 					math.random(1,9) > 6 then
 				minetest.set_node(here, {name="plant:heath_green"})
@@ -840,9 +840,9 @@ plant.place_heath_gold = function(pos)
 	for x0 = -1,1 do
 		for z0 = -1,1 do
 			local here = {x=pos.x+x0, y=pos.y+1, z=pos.z+z0}
-			local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
+			--local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
 			local node_here = minetest.get_node(here)
-			local node_below = minetest.get_node(below)
+			--local node_below = minetest.get_node(below)
 			if minetest.registered_nodes[node_here.name].buildable_to and
 					math.random(1,9) > 6 then
 				minetest.set_node(here, {name="plant:heath_gold"})
@@ -875,9 +875,9 @@ plant.place_heath_red = function(pos)
 	for x0 = -1,1 do
 		for z0 = -1,1 do
 			local here = {x=pos.x+x0, y=pos.y+1, z=pos.z+z0}
-			local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
+			--local below = {x=pos.x+x0, y=pos.y, z=pos.z+z0}
 			local node_here = minetest.get_node(here)
-			local node_below = minetest.get_node(below)
+			--local node_below = minetest.get_node(below)
 			if minetest.registered_nodes[node_here.name].buildable_to and
 					math.random(1,9) > 6 then
 				minetest.set_node(here, {name="plant:heath_red"})
