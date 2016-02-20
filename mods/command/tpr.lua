@@ -145,14 +145,14 @@ end
 minetest.register_chatcommand("tpr", {
 	description = "Request teleport to another player",
 	params = "<playername> | leave playername empty to see help message",
-	privs = {interact=true},
+	privs = {home=true},
 	func = tpr_send
 })
 
 minetest.register_chatcommand("tphr", {
 	description = "Request player to teleport to you",
 	params = "<playername> | leave playername empty to see help message",
-	privs = {interact=true},
+	privs = {home=true},
 	func = tphr_send
 })
 
