@@ -28,5 +28,6 @@ fire_small.ogg sampled from:
 fire_large.ogg sampled from:
   http://www.freesound.org/people/Dynamicell/sounds/17548/
 
+fire_basic_flame.png:
 fire_basic_flame_animated.png:
-  Muadtralk
+  Napiophelios MTCORE (CC-BY-SA)

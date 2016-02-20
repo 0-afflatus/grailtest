@@ -4,11 +4,12 @@
 
 -- Blob ore first to avoid other ores inside blobs
 
+--[[
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:greenstone",
 	wherein        = "default:stone",
-	clust_size     = 63,
+	column_height_max      = 63,
 	y_min          = -30000,
 	y_max          = -511,
 	noise_threshold = 0.5,
@@ -19,7 +20,34 @@ minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:basalt",
 	wherein        = "default:stone",
-	clust_size     = 63,
+	column_height_max      = 63,
+	y_min          = -10000,
+	y_max          = 64,
+	noise_threshold = 0.5,
+	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.23,
+})
+]]
+
+minetest.register_ore({
+	ore_type       = "sheet",
+	ore            = "mineral:greenstone",
+	wherein        = "default:stone",
+	column_height_min = 32,
+	column_midpoint_factor = 0.5,
+	column_height_max      = 63,
+	y_min          = -30000,
+	y_max          = -511,
+	noise_threshold = 0.5,
+	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.23,
+})
+
+minetest.register_ore({
+	ore_type       = "sheet",
+	ore            = "mineral:basalt",
+	wherein        = "default:stone",
+	column_height_min = 32,
+	column_midpoint_factor = 0.5,
+	column_height_max      = 63,
 	y_min          = -10000,
 	y_max          = 64,
 	noise_threshold = 0.5,
@@ -570,17 +598,17 @@ minetest.register_ore({
 	clust_scarcity = 15*15*15,
 	clust_num_ores = 64,
 	clust_size     = 5,
-	y_max     = -1,
 	y_min     = -10,
+	y_max     = -1,
 })
 
--- Sheet types
+--[[ old Sheet types
 
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:bluestone",
 	wherein        = "default:stone",
-	clust_size     = 63,
+	column_height_max      = 63,
 	y_min          = -1023,
 	y_max          = 127,
 	noise_threshold = 0.6,
@@ -591,7 +619,7 @@ minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:white_stone",
 	wherein        = "default:stone",
-	clust_size     = 31,
+	column_height_max      = 31,
 	y_min     		= -255,
 	y_max     		= 31000,
 	noise_threshold = 0.5,
@@ -602,7 +630,7 @@ minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "default:desert_stone",
 	wherein        = "default:stone",
-	clust_size     = 15,
+	column_height_max      = 15,
 	y_min     = -127,
 	y_max     = 31000,
 	noise_threshold = 0.4,
@@ -613,7 +641,7 @@ minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "default:sandstone",
 	wherein        = "default:stone",
-	clust_size     = 15,
+	column_height_max      = 15,
 	y_min     = -127,
 	y_max     = 31000,
 	noise_threshold = 0.3,
@@ -624,14 +652,15 @@ minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:coal_stone",
 	wherein        = "default:stone",
-	clust_size     = 6,
+	column_height_max      = 6,
 	y_min          = -511,
 	y_max          = -32,
 	noise_threshold = 0.75,
 	noise_params   = 0, 1, {127, 127, 127}, 37, 3, 0.50,
 })
+]]
 
---[[ New style sheets
+-- New style sheets
 
 minetest.register_ore({
 	ore_type       = "sheet",
@@ -642,7 +671,7 @@ minetest.register_ore({
 	column_height_max = 63,
 	y_min          = -1023,
 	y_max          = 127,
-	noise_threshold = 0.5,
+	noise_threshold = 0.6,
 	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.50,
 })
 
@@ -656,7 +685,7 @@ minetest.register_ore({
 	y_min     		= -255,
 	y_max     		= 31000,
 	noise_threshold = 0.5,
-	noise_params   = 0, 0, {255, 255, 255}, -992221, 2, 0.50,
+	noise_params   = 0, 0, {255, 255, 255}, -992221, 2, 0.5,
 })
 
 minetest.register_ore({
@@ -668,8 +697,8 @@ minetest.register_ore({
 	column_height_max = 15,
 	y_min     = -127,
 	y_max     = 31000,
-	noise_threshold = 0.5,
-	noise_params   = 0, 0, {255, 31, 255}, -992221, 2, 0.50,
+	noise_threshold = 0.4,
+	noise_params   = 0, 0, {255, 31, 255}, -992221, 2, 0.33,
 })
 
 minetest.register_ore({
@@ -681,8 +710,8 @@ minetest.register_ore({
 	column_height_max = 15,
 	y_min     = -127,
 	y_max     = 31000,
-	noise_threshold = 0.5,
-	noise_params   = 0, 0, {255, 31, 255}, -992221, 2, 0.50,
+	noise_threshold = 0.3,
+	noise_params   = 0, 0, {255, 31, 255}, -992221, 2, 0.33,
 })
 
 minetest.register_ore({
@@ -694,11 +723,11 @@ minetest.register_ore({
 	column_height_max = 6,
 	y_min          = -511,
 	y_max          = -32,
-	noise_threshold = 0.5,
+	noise_threshold = 0.75,
 	noise_params   = 0, 1, {127, 127, 127}, 37, 2, 0.50,
 })
 
--- Puff type
+--[[ Puff type
 
 minetest.register_ore({
 	ore_type       = "puff",

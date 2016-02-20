@@ -598,6 +598,6 @@ minetest.register_decoration({
 	},
 	biomes = {"savanna_swamp"},
 	y_min = 0,
-	y_max = 0,
+	y_max = 1,
 	schematic = minetest.get_modpath("plant").."/schematics/papyrus.mts",
 })
