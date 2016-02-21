@@ -90,8 +90,8 @@ for i=2,5 do
 			items = {
 				{items = {'plant:barley_seed'},rarity = 9},
 				{items = {'plant:oats_seed'},rarity = 9},
-				{items = {'plant:grass_1'},rarity = 2},
 				{items = {'plant:hay'},rarity = 2},
+				{items = {'plant:grass_1'},rarity = 2},
 			}
 		},
 		groups = {snappy=3,flammable=3,flora=1,attached_node=1,not_in_creative_inventory=1},
@@ -120,7 +120,7 @@ local function register_grass_decoration(offset, scale, length)
 			spread = {x = 200, y = 200, z = 200},
 			seed = 329,
 			octaves = 3,
-			persist = 0.6
+			persist = 0.75
 		},
 		biomes = {"grassland", "woodland", "alpine", "savanna_swamp", "woodland_swamp"},
 		y_min = 1,
@@ -186,8 +186,8 @@ for i=2,5 do
 			items = {
 				{items = {'plant:wheat_seed'},rarity = 10},
 				{items = {'plant:wheat_seed'},rarity = 10},
-				{items = {'plant:golden_grass_1'},rarity = 2},
 				{items = {'plant:hay'},rarity = 2},
+				{items = {'plant:golden_grass_1'},rarity = 2},
 			}
 		},
 		groups = {snappy=3,flammable=3,flora=1,attached_node=1,not_in_creative_inventory=1},
@@ -216,7 +216,7 @@ local function register_dry_grass_decoration(offset, scale, length)
 			spread = {x = 200, y = 200, z = 200},
 			seed = 329,
 			octaves = 3,
-			persist = 0.6
+			persist = 0.75
 		},
 		biomes = {"savanna", "steppe"},
 		y_min = 2,
