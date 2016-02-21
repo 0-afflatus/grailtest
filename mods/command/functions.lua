@@ -47,8 +47,8 @@ end
 
 function command:arrest(playername)
 	local perp = minetest.get_player_by_name(playername)
-	--minetest.set_player_privs(perp, {shout = true})
 	if perp then
+		--minetest.set_player_privs(perp, {shout = true})
 		perp:setpos(court)
 	else
 		return false;
@@ -64,8 +64,8 @@ end
 
 function command:jail(playername)
 	local perp = minetest.get_player_by_name(playername)
-	minetest.set_player_privs(perp, {shout = true})
 	if perp then
+		minetest.set_player_privs(perp, {shout = true})
 		perp:setpos(prison)
 	else
 		return false;

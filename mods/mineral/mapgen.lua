@@ -4,54 +4,30 @@
 
 -- Blob ore first to avoid other ores inside blobs
 
---[[
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:greenstone",
 	wherein        = "default:stone",
+	column_height_min = 47,
+	column_midpoint_factor = 0.5,
 	column_height_max      = 63,
 	y_min          = -30000,
 	y_max          = -511,
 	noise_threshold = 0.5,
-	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.23,
+	noise_params   = 0, 1, {511, 511, 511}, -992221, 2, 0.23,
 })
 
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:basalt",
 	wherein        = "default:stone",
-	column_height_max      = 63,
-	y_min          = -10000,
-	y_max          = 64,
-	noise_threshold = 0.5,
-	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.23,
-})
-]]
-
-minetest.register_ore({
-	ore_type       = "sheet",
-	ore            = "mineral:greenstone",
-	wherein        = "default:stone",
-	column_height_min = 32,
-	column_midpoint_factor = 0.5,
-	column_height_max      = 63,
-	y_min          = -30000,
-	y_max          = -511,
-	noise_threshold = 0.5,
-	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.23,
-})
-
-minetest.register_ore({
-	ore_type       = "sheet",
-	ore            = "mineral:basalt",
-	wherein        = "default:stone",
-	column_height_min = 32,
+	column_height_min = 47,
 	column_midpoint_factor = 0.5,
 	column_height_max      = 63,
 	y_min          = -10000,
 	y_max          = 64,
 	noise_threshold = 0.5,
-	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.23,
+	noise_params   = 0, 1, {511, 511, 511}, -992221, 2, 0.23,
 })
 
 minetest.register_ore({ 
@@ -602,64 +578,6 @@ minetest.register_ore({
 	y_max     = -1,
 })
 
---[[ old Sheet types
-
-minetest.register_ore({
-	ore_type       = "sheet",
-	ore            = "mineral:bluestone",
-	wherein        = "default:stone",
-	column_height_max      = 63,
-	y_min          = -1023,
-	y_max          = 127,
-	noise_threshold = 0.6,
-	noise_params   = 0, 1, {1023, 63, 1023}, -992221, 3, 0.5,
-})
-
-minetest.register_ore({
-	ore_type       = "sheet",
-	ore            = "mineral:white_stone",
-	wherein        = "default:stone",
-	column_height_max      = 31,
-	y_min     		= -255,
-	y_max     		= 31000,
-	noise_threshold = 0.5,
-	noise_params   = 0, 1, {255, 31, 255}, -992221, 3, 0.5,
-})
-
-minetest.register_ore({
-	ore_type       = "sheet",
-	ore            = "default:desert_stone",
-	wherein        = "default:stone",
-	column_height_max      = 15,
-	y_min     = -127,
-	y_max     = 31000,
-	noise_threshold = 0.4,
-	noise_params   = 0, 1, {512, 15, 512}, -992221, 3, 0.33,
-})
-
-minetest.register_ore({
-	ore_type       = "sheet",
-	ore            = "default:sandstone",
-	wherein        = "default:stone",
-	column_height_max      = 15,
-	y_min     = -127,
-	y_max     = 31000,
-	noise_threshold = 0.3,
-	noise_params   = 0, 1, {512, 15, 512}, -992221, 3, 0.33,
-})
-
-minetest.register_ore({
-	ore_type       = "sheet",
-	ore            = "mineral:coal_stone",
-	wherein        = "default:stone",
-	column_height_max      = 6,
-	y_min          = -511,
-	y_max          = -32,
-	noise_threshold = 0.75,
-	noise_params   = 0, 1, {127, 127, 127}, 37, 3, 0.50,
-})
-]]
-
 -- New style sheets
 
 minetest.register_ore({
@@ -668,50 +586,50 @@ minetest.register_ore({
 	wherein        = "default:stone",
 	column_height_min = 32,
 	column_midpoint_factor = 0.5,
-	column_height_max = 63,
+	column_height_max = 47,
 	y_min          = -1023,
 	y_max          = 127,
 	noise_threshold = 0.6,
-	noise_params   = 0, 0, {511, 511, 511}, -992221, 2, 0.50,
+	noise_params   = 0, 1, {511, 511, 511}, -992221, 2, 0.50,
 })
 
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "mineral:white_stone",
 	wherein        = "default:stone",
-	column_height_min = 16,
+	column_height_min = 27,
 	column_midpoint_factor = 0.5,
 	column_height_max = 31,
 	y_min     		= -255,
 	y_max     		= 31000,
 	noise_threshold = 0.5,
-	noise_params   = 0, 0, {255, 255, 255}, -992221, 2, 0.5,
+	noise_params   = 0, 1, {255, 255, 255}, -992221, 2, 0.5,
 })
 
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "default:desert_stone",
 	wherein        = "default:stone",
-	column_height_min = 8,
+	column_height_min = 12,
 	column_midpoint_factor = 0.5,
 	column_height_max = 15,
 	y_min     = -127,
 	y_max     = 31000,
 	noise_threshold = 0.4,
-	noise_params   = 0, 0, {255, 31, 255}, -992221, 2, 0.33,
+	noise_params   = 0, 1, {255, 31, 255}, -992221, 2, 0.33,
 })
 
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "default:sandstone",
 	wherein        = "default:stone",
-	column_height_min = 8,
+	column_height_min = 12,
 	column_midpoint_factor = 0.5,
 	column_height_max = 15,
 	y_min     = -127,
 	y_max     = 31000,
 	noise_threshold = 0.3,
-	noise_params   = 0, 0, {255, 31, 255}, -992221, 2, 0.33,
+	noise_params   = 0, 1, {255, 31, 255}, -992221, 2, 0.33,
 })
 
 minetest.register_ore({
@@ -733,7 +651,7 @@ minetest.register_ore({
 	ore_type       = "puff",
 	ore            = "mineral:bluestone",
 	wherein        = "default:stone",
-	np_puff_bottom = 32,
+	np_puff_top = 32,
 	np_puff_bottom = 63,
 	y_min          = -1023,
 	y_max          = 127,
@@ -745,7 +663,7 @@ minetest.register_ore({
 	ore_type       = "puff",
 	ore            = "mineral:white_stone",
 	wherein        = "default:stone",
-	np_puff_bottom = 16,
+	np_puff_top = 16,
 	np_puff_bottom = 31,
 	y_min     		= -255,
 	y_max     		= 31000,
@@ -757,7 +675,7 @@ minetest.register_ore({
 	ore_type       = "puff",
 	ore            = "default:desert_stone",
 	wherein        = "default:stone",
-	np_puff_bottom = 8,
+	np_puff_top = 8,
 	np_puff_bottom = 15,
 	y_min     = -127,
 	y_max     = 31000,
@@ -769,7 +687,7 @@ minetest.register_ore({
 	ore_type       = "puff",
 	ore            = "default:sandstone",
 	wherein        = "default:stone",
-	np_puff_bottom = 8,
+	np_puff_rop = 8,
 	np_puff_bottom = 15,
 	y_min     = -127,
 	y_max     = 31000,
@@ -781,7 +699,7 @@ minetest.register_ore({
 	ore_type       = "puff",
 	ore            = "mineral:coal_stone",
 	wherein        = "default:stone",
-	np_puff_bottom = 2,
+	np_puff_top = 2,
 	np_puff_bottom = 6,
 	y_min          = -511,
 	y_max          = -32,

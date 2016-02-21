@@ -446,7 +446,7 @@ function default.register_mgv6_decorations()
 			octaves = 3,
 			persist = 0.7
 		},
-		y_min = 1,
+		y_min = 0,
 		y_max = 1,
 		decoration = "default:papyrus",
 		height = 2,
