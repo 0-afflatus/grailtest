@@ -153,6 +153,28 @@ function food.register_drink(defn)
 		},
 	})
 	
+	-- readded because most mapgens don't place river water
+	
+	minetest.register_craft({
+		output = "food:bucket_"..defn.name,
+		replacements = food.water_replacements,
+		recipe = {
+			{ defn.flavour, defn.flavour, defn.flavour },
+			{ defn.flavour, "bucket:bucket_water", defn.flavour },
+			{ defn.flavour, defn.flavour, defn.flavour }
+		},
+	})
+
+	minetest.register_craft({
+		output = "food:bucket_wooden_"..defn.name,
+		replacements = food.water_replacements,
+		recipe = {
+			{ defn.flavour, defn.flavour, defn.flavour },
+			{ defn.flavour, "bucket:wooden_water", defn.flavour },
+			{ defn.flavour, defn.flavour, defn.flavour }
+		},
+	})
+	
 	minetest.register_node("food:bottle_"..defn.name, {
 		description = "Bottle of "..defn.desc,
 		drawtype = "plantlike",
