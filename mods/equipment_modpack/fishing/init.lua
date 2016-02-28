@@ -5,6 +5,7 @@ local mname		= "fishing"
 -----------------------------------------------------------------------------------------------
 -- original by wulfsdad (http://forum.minetest.net/viewtopic.php?id=4375)
 -- this version by Mossmanikin (https://forum.minetest.net/viewtopic.php?id=6480)
+-- Multiplayer fix by crabman77
 -- License (code & textures): 	WTFPL
 -- Contains code from: 		animal_clownfish, animal_fish_blue_white, fishing (original), stoneage
 -- Looked at code from:		default, farming

@@ -243,6 +243,7 @@ minetest.register_abm({
 				local zfactor = factor + 3
 				pos.z = pos.z  + zfactor
 			else
+				-- check this, it looks wrong
 				height = height+factor
 				pos.y = pos.y+factor
 			end
@@ -464,7 +465,7 @@ minetest.register_abm({
 			return
 		end
 		local height = 0
-		while minetest.get_node(pos).name == "plant:hawthorn" and minetest.find_node_near(pos, 3, {"group:soil"}) ~= nil do
+		while minetest.get_node(pos).name == "plant:hawthorn" and minetest.find_node_near(pos, 3, {"group:soil"}) do
 			-- randomly choose a direction of growth
 			local factor = math.random(-4, 4)
 			if factor > 1 then
@@ -474,8 +475,8 @@ minetest.register_abm({
 				local zfactor = factor + 3
 				pos.z = pos.z  + zfactor
 			else
-				height = height+1
-				pos.y = pos.y+1
+				height = height + factor
+				pos.y = pos.y + factor
 			end
 		end
 		if height < 3 then
@@ -489,7 +490,7 @@ minetest.register_abm({
 				return
 			end
 			pos.y = pos.y+1
-			if n.name == "air" and minetest.find_node_near(pos, 3, {"group:soil"}) ~= nil then
+			if n.name == "air" and minetest.find_node_near(pos, 3, {"group:soil"}) then
 				minetest.set_node(pos, {name="plant:hawthorn"})
 			end
 		end
@@ -521,12 +522,11 @@ minetest.register_decoration({
 		offset = -0.09,
 		scale = 0.1,
 		spread = {x = 63, y = 63, z = 63}, 
-		seed = 330, 
+		seed = 555, 
 		octaves = 3, 
 		persist = 0.5
 	},
 	biomes = {"woodland", "alpine"},
-	--spawn_by = "",
 	y_min = 5,
 	y_max = 40,
 	decoration = {"plant:hawthorn"},
@@ -664,12 +664,11 @@ minetest.register_decoration({
 -- Heath
 --
 local rock_surfaces = {
-	"default:rock",
 	"default:stone",
 	"mineral:bluestone",
-	"default:lichen_stone",
-	"default:rock_with_lichen_2",
-	"default:rock_with_lichen_3",
+	"default:stone_with_lichen_1",
+	"default:stone_with_lichen_2",
+	"default:stone_with_lichen_3",
 	"default:mossycobble",
 	"mineral:coal_stone",
 	"mineral:iron_stone",
@@ -680,11 +679,10 @@ local rock_surfaces = {
 local rockplant_biomes = {"tundra", "tundra_ocean", "steppe", "steppe_ocean", "grassland", "grassland_ocean", "woodland", "woodland_swamp", "alpine", "mountain"}
 
 local heath_surfaces = {
-	"default:rock",
 	"default:dirt_with_ice",
-	"default:lichen_stone",
-	"default:rock_with_lichen_2",
-	"default:rock_with_lichen_3",
+	"default:stone_with_lichen_1",
+	"default:stone_with_lichen_2",
+	"default:stone_with_lichen_3",
 	"mineral:coal_stone",
 	"mineral:iron_stone",
 	"mineral:tin_stone",
@@ -766,7 +764,7 @@ minetest.register_decoration({
 	place_on = rock_surfaces,
 	sidelen = 80,
 	noise_params = {
-		offset = -0.85,
+		offset = -0.65,
 		scale = 1,
 		spread = {x = 63, y = 63, z = 63}, 
 		seed = 391, 
