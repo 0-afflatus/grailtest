@@ -390,6 +390,13 @@ minetest.register_craft ({
         }
 })
 
+minetest.register_craft({
+	output = 'mineral:diamond_gem 9',
+	recipe = {
+		{'mineral:diamond_stone'}
+	},
+})
+
 minetest.register_craft ({
         output = 'mineral:topaz_stone',
         recipe = {
@@ -397,6 +404,13 @@ minetest.register_craft ({
                 {'mineral:topaz_gem', 'mineral:topaz_gem', 'mineral:topaz_gem'},
                 {'mineral:topaz_gem', 'mineral:topaz_gem', 'mineral:topaz_gem'},
         }
+})
+
+minetest.register_craft({
+	output = 'mineral:topaz_gem 9',
+	recipe = {
+		{'mineral:topaz_stone'}
+	},
 })
 
 minetest.register_craft({
@@ -425,6 +439,13 @@ minetest.register_craft ({
 })
 
 minetest.register_craft({
+	output = 'mineral:ruby_gem 9',
+	recipe = {
+		{'mineral:ruby_stone'}
+	},
+})
+
+minetest.register_craft({
 	output = 'mineral:silver_block',
 	recipe = {
 		{'mineral:silver_ingot', 'mineral:silver_ingot', 'mineral:silver_ingot'},
@@ -447,6 +468,13 @@ minetest.register_craft ({
                 {'mineral:saphire_gem', 'mineral:saphire_gem', 'mineral:saphire_gem'},
                 {'mineral:saphire_gem', 'mineral:saphire_gem', 'mineral:saphire_gem'},
         }
+})
+
+minetest.register_craft({
+	output = 'mineral:saphire_gem 9',
+	recipe = {
+		{'mineral:saphire_stone'}
+	},
 })
 
 minetest.register_craft({
@@ -500,6 +528,13 @@ minetest.register_craft ({
         }
 })
 
+minetest.register_craft({
+	output = 'mineral:emerald_gem 9',
+	recipe = {
+		{'mineral:emerald_stone'}
+	},
+})
+
 minetest.register_craft ({
         output = 'mineral:amethyst_stone',
         recipe = {
@@ -507,6 +542,13 @@ minetest.register_craft ({
                 {'mineral:amethyst_gem', 'mineral:amethyst_gem', 'mineral:amethyst_gem'},
                 {'mineral:amethyst_gem', 'mineral:amethyst_gem', 'mineral:amethyst_gem'},
         }
+})
+
+minetest.register_craft({
+	output = 'mineral:amethyst_gem 9',
+	recipe = {
+		{'mineral:amethyst_stone'}
+	},
 })
 
 minetest.register_craft({
