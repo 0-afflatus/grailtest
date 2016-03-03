@@ -38,6 +38,7 @@ local function check_in_beds(players)
 
 	for n, player in ipairs(players) do
 		local name = player:get_player_name()
+		
 		if not in_bed[name] then
 			return false
 		end

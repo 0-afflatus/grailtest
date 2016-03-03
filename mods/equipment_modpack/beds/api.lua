@@ -28,7 +28,7 @@ function beds.register_bed(name, def)
 			local dir = minetest.facedir_to_dir(n.param2)
 			local p = vector.add(pos, dir)
 			local n2 = minetest.get_node_or_nil(p)
-			def = n2 and minetest.registered_items[n2.name]
+			local def = n2 and minetest.registered_items[n2.name]
 			if not def or not def.buildable_to then
 				minetest.remove_node(pos)
 				return true
@@ -66,7 +66,7 @@ function beds.register_bed(name, def)
 			end
 			local newp = vector.add(pos, minetest.facedir_to_dir(new_param2))
 			local node3 = minetest.get_node_or_nil(newp)
-			def = node3 and minetest.registered_nodes[node3.name]
+			local def = node3 and minetest.registered_nodes[node3.name]
 			if not def or not def.buildable_to then
 				return false
 			end
