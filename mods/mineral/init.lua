@@ -624,6 +624,14 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = 'mineral:clay_lump 4',
+	recipe = {
+		{'mineral:clay'},
+	}
+})
+
+
 --
 -- Cooking recipes
 --
