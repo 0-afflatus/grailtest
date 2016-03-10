@@ -206,3 +206,19 @@ minetest.register_on_craft(function(itemstack, player, old_craft_grid, craft_inv
 	craft_inv:set_stack("craft", index, original)
 end)
 
+-- False bookcase
+
+minetest.register_node("equipment:bookcase", {
+	description = "Fake Bookshelf",
+	tiles = {"equipment_chest_top.png", "equipment_chest_top.png", "equipment_bookshelf.png"},
+	is_ground_content = false,
+	walkable = false,
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, not_in_creative_inventory},
+	sounds = default.node_sound_wood_defaults(),
+})
+
+minetest.register_craft({
+	output = 'equipment:bookcase',
+	type = "shapeless",
+	recipe = {"equipment:bookshelf", "doors:door_wood"},
+})
