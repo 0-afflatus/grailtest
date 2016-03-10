@@ -314,6 +314,7 @@ food.register_drink({
 	colour = "mead",
 	colouring = {a = 120, r = 90, g = 60, b = 0},
 	flavour = "mobs:honey",
+	nutrition = 4,
 	groups = {},
 })
 
@@ -323,6 +324,7 @@ food.register_drink({
 	colour = "mead",
 	colouring = {a = 120, r = 90, g = 60, b = 0},
 	flavour = "none",
+	nutrition = 6,
 	groups = {},
 })
 

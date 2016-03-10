@@ -1,13 +1,15 @@
--- Register drink
--- drink def {
---	name = "water", -- itemstring name
---	desc = "water",
---	colour = "water", -- texture name
---	colouring = {a = 120, r = 30, g = 76, b = 90}, -- the internal colour of the liquid
---	flavour = "", -- itemstring for main ingredient
---	groups = {}, -- not currently used
--- }
--- hide beakers, glasses and source nodes from creative inv
+--[[ Register drink api
+
+drink def {
+	name = "water", -- itemstring name
+	desc = "water",
+	colour = "water", -- texture name
+	colouring = {a = 120, r = 30, g = 76, b = 90}, -- the internal colour of the liquid
+	flavour = "", -- itemstring for main ingredient
+	nutrition = #, -- healing value
+	groups = {}, -- not currently used
+}
+]]--
 
 food.drinks = {
 	replacements = {
@@ -21,10 +23,10 @@ food.drinks = {
 }
 
 function food.register_drink(defn)
-	local nutrition = 2
+	local nutrition = 0
 	minetest.register_node("food:"..defn.name, {
 		description = defn.desc,
-		inventory_image = minetest.inventorycube("food_juice_"..defn.colour..".png^[noalpha"),
+		inventory_image = "food_juice_"..defn.colour..".png^[noalpha",
 		drawtype = "liquid",
 		tiles = {
 			{
@@ -153,7 +155,7 @@ function food.register_drink(defn)
 		},
 	})
 	
-	-- readded because most mapgens don't place river water
+	-- re-added because most mapgens don't place river water
 	
 	minetest.register_craft({
 		output = "food:bucket_"..defn.name,
@@ -193,30 +195,33 @@ function food.register_drink(defn)
 		sounds = default.node_sound_glass_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
 			local replace_with_item = "vessels:glass_bottle"
+			
 			if pointed_thing.under  then
 				local target = minetest.get_node(pointed_thing.under)
 				if target.name == "vessels:drinking_glass" then
 					minetest.set_node(pointed_thing.under, {name="food:glass_"..defn.name})
-					if itemstack:take_item() ~= nil then
-						if itemstack:is_empty() then
-							itemstack:add_item(replace_with_item)
-						else
-							local inv = user:get_inventory()
-							if inv:room_for_item("main", {name=replace_with_item}) then
-								inv:add_item("main", replace_with_item)
-							else
-								local pos = user:getpos()
-								pos.y = math.floor(pos.y + 0.5)
-								minetest.add_item(pos, replace_with_item)
-							end
-						end
-					end
 				else
-					minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+					minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
 				end
 			else
-				minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+				minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
 			end
+			
+			if itemstack:take_item() ~= nil then
+				if itemstack:is_empty() then
+					itemstack:add_item(replace_with_item)
+				else
+					local inv = user:get_inventory()
+					if inv:room_for_item("main", {name=replace_with_item}) then
+						inv:add_item("main", replace_with_item)
+					else
+						local pos = user:getpos()
+						pos.y = math.floor(pos.y + 0.5)
+						minetest.add_item(pos, replace_with_item)
+					end
+				end
+			end
+			
 			return itemstack
 		end
 	})
@@ -281,8 +286,30 @@ function food.register_drink(defn)
 		},
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
 		sounds = default.node_sound_glass_defaults(),
-		on_use = minetest.item_eat(nutrition, "vessels:drinking_glass"),
+		on_use = function(itemstack, user, pointed_thing)
+			local replace_with_item = "vessels:drinking_glass"
+			
+			minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
+			
+			if itemstack:take_item() ~= nil then
+				if itemstack:is_empty() then
+					itemstack:add_item(replace_with_item)
+				else
+					local inv = user:get_inventory()
+					if inv:room_for_item("main", {name=replace_with_item}) then
+						inv:add_item("main", replace_with_item)
+					else
+						local pos = user:getpos()
+						pos.y = math.floor(pos.y + 0.5)
+						minetest.add_item(pos, replace_with_item)
+					end
+				end
+			end
+			
+			return itemstack
+		end
 	})
+
 --[[
 	minetest.register_node("food:beaker_"..defn.name, {
 		description = "Beaker of "..defn.desc,
@@ -320,29 +347,31 @@ function food.register_drink(defn)
 		sounds = default.node_sound_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
 			local replace_with_item = "vessels:steel_bottle"
+			
 			if pointed_thing.under  then
 				local target = minetest.get_node(pointed_thing.under)
 				if target.name == "vessels:drinking_glass" then
 					minetest.set_node(pointed_thing.under, {name="food:glass_"..defn.name})
-					if itemstack:take_item() ~= nil then
-						if itemstack:is_empty() then
-							itemstack:add_item(replace_with_item)
-						else
-							local inv = user:get_inventory()
-							if inv:room_for_item("main", {name=replace_with_item}) then
-								inv:add_item("main", replace_with_item)
-							else
-								local pos = user:getpos()
-								pos.y = math.floor(pos.y + 0.5)
-								minetest.add_item(pos, replace_with_item)
-							end
-						end
-					end
 				else
-					minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+					minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
 				end
 			else
-				minetest.do_item_eat(nutrition, replace_with_item, itemstack, user, pointed_thing)
+				minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
+			end
+			
+			if itemstack:take_item() ~= nil then
+				if itemstack:is_empty() then
+					itemstack:add_item(replace_with_item)
+				else
+					local inv = user:get_inventory()
+					if inv:room_for_item("main", {name=replace_with_item}) then
+						inv:add_item("main", replace_with_item)
+					else
+						local pos = user:getpos()
+						pos.y = math.floor(pos.y + 0.5)
+						minetest.add_item(pos, replace_with_item)
+					end
+				end
 			end
 			return itemstack
 		end
@@ -402,6 +431,7 @@ food.register_drink({
 	colour = "purple",
 	colouring = {a = 120, r = 90, g = 30, b = 90},
 	flavour = "plant:blackberry_fruit",
+	nutrition = 2,
 	groups = {},
 })
 
@@ -411,6 +441,7 @@ food.register_drink({
 	colour = "purple",
 	colouring = {a = 120, r = 90, g = 30, b = 90},
 	flavour = "none",
+	nutrition = 2,
 	groups = {},
 })
 
@@ -420,6 +451,7 @@ food.register_drink({
 	colour = "rose",
 	colouring = {a = 120, r = 90, g = 60, b = 60},
 	flavour = "tree:apple_fruit",
+	nutrition = 2,
 	groups = {},
 })
 
@@ -429,6 +461,7 @@ food.register_drink({
 	colour = "rose",
 	colouring = {a = 120, r = 90, g = 60, b = 60},
 	flavour = "none",
+	nutrition = 1,
 	groups = {},
 })
 
@@ -438,6 +471,7 @@ food.register_drink({
 	colour = "orange",
 	colouring = {a = 120, r = 90, g = 75, b = 30},
 	flavour = "plant:orange",
+	nutrition = 2,
 	groups = {},
 })
 
@@ -447,6 +481,7 @@ food.register_drink({
 	colour = "lemon",
 	colouring = {a = 120, r = 120, g = 120, b = 60},
 	flavour = "group:grain",
+	nutrition = 0,
 	groups = {},
 })
 
@@ -456,6 +491,7 @@ food.register_drink({
 	colour = "lemon",
 	colouring = {a = 120, r = 120, g = 120, b = 60},
 	flavour = "none",
+	nutrition = 2,
 	groups = {},
 })
 
@@ -465,6 +501,7 @@ food.register_drink({
 	colour = "red",
 	colouring = {a = 120, r = 90, g = 30, b = 30},
 	flavour = "plant:beetroot",
+	nutrition = 3,
 	groups = {},
 })
 
@@ -474,6 +511,7 @@ food.register_drink({
 	colour = "orange",
 	colouring = {a = 120, r = 90, g = 75, b = 30},
 	flavour = "plant:carrot_item",
+	nutrition = 2,
 	groups = {},
 })
 
@@ -483,6 +521,7 @@ food.register_drink({
 	colour = "lemon",
 	colouring = {a = 120, r = 120, g = 120, b = 60},
 	flavour = "plant:gorse",
+	nutrition = 0,
 	groups = {},
 })
 
@@ -492,6 +531,7 @@ food.register_drink({
 	colour = "lemon",
 	colouring = {a = 120, r = 120, g = 120, b = 60},
 	flavour = "none",
+	nutrition = 2,
 	groups = {},
 })
 
