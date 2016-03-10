@@ -122,3 +122,14 @@ function default.fell(pos, node, digger)
 		end
 	end
 end
+
+-- Workaround to fix horse & boat invisible rider bug 
+
+minetest.register_globalstep(function(dtime)
+  for _, player in pairs(minetest.get_connected_players()) do
+    local parent,bone,position,rotation = player:get_attach()
+    if parent then
+      player:set_attach(parent,bone,position,rotation)
+    end
+  end
+end)
