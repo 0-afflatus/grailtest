@@ -10,3 +10,6 @@
 [submodule "mods/simplyslopes"]
 	path = mods/simplyslopes
 	url = https://github.com/0-afflatus/simplyslopes.git
+[submodule "mods/stamina"]
+	path = mods/stamina
+	url = https://github.com/0-afflatus/stamina.git
