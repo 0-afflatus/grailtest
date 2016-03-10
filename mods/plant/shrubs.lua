@@ -475,8 +475,8 @@ minetest.register_abm({
 				local zfactor = factor + 3
 				pos.z = pos.z  + zfactor
 			else
-				height = height + factor
-				pos.y = pos.y + factor
+				height = height + 1
+				pos.y = pos.y + 1
 			end
 		end
 		if height < 3 then
