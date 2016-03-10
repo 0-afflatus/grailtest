@@ -10,16 +10,16 @@ The Minetest Engine can be found in:
 
 Compatibility
 --------------
-The grail_test github master HEAD is generally compatible with the latest stable version of minetest.
+The grail_test github master HEAD is generally compatible with the latest development version of minetest.
 
-This version was developed on minetest 0.4.13.
+This version depends on minetest 0.4.14.
 
 Compatible mods:
 ---------------
-Mods that are known to work, albeit with limited support:
+Mods that are known to work:
 
 Recommended:
-* Mobs Redo by tenplus1, based on PilzAdam's Simple Mobs. https://github.com/tenplus1/mobs
+* Mobs Redo https://github.com/tenplus1/mobs
 * areas
 * chatplus
 * explore_map
@@ -29,7 +29,7 @@ Recommended:
 * no_bad_names
 * player_textures
 * unified_inventory
-* world_edit
+* WorldEdit
 
 Also compatible-ish:
 * 3d_armor
@@ -37,6 +37,8 @@ Also compatible-ish:
 * inventory_plus
 * sedimentology
 * simple_skins
+* treecapitator
+* u-skinsdb
 
 Mods designed for other games may not work as expected.
 
