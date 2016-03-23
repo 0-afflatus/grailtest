@@ -196,32 +196,30 @@ function food.register_drink(defn)
 		on_use = function(itemstack, user, pointed_thing)
 			local replace_with_item = "vessels:glass_bottle"
 			
-			if pointed_thing.under  then
+			if pointed_thing.under then
 				local target = minetest.get_node(pointed_thing.under)
 				if target.name == "vessels:drinking_glass" then
 					minetest.set_node(pointed_thing.under, {name="food:glass_"..defn.name})
+					if itemstack:take_item() ~= nil then
+						if itemstack:is_empty() then
+							itemstack:add_item(replace_with_item)
+						else
+							local inv = user:get_inventory()
+							if inv:room_for_item("main", {name=replace_with_item}) then
+								inv:add_item("main", replace_with_item)
+							else
+								local pos = user:getpos()
+								pos.y = math.floor(pos.y + 0.5)
+								minetest.add_item(pos, replace_with_item)
+							end
+						end
+					end
 				else
-					minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
+					minetest.do_item_eat(defn.nutrition, replace_with_item, itemstack, user, pointed_thing)
 				end
 			else
-				minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
+				minetest.do_item_eat(defn.nutrition, replace_with_item, itemstack, user, pointed_thing)
 			end
-			
-			if itemstack:take_item() ~= nil then
-				if itemstack:is_empty() then
-					itemstack:add_item(replace_with_item)
-				else
-					local inv = user:get_inventory()
-					if inv:room_for_item("main", {name=replace_with_item}) then
-						inv:add_item("main", replace_with_item)
-					else
-						local pos = user:getpos()
-						pos.y = math.floor(pos.y + 0.5)
-						minetest.add_item(pos, replace_with_item)
-					end
-				end
-			end
-			
 			return itemstack
 		end
 	})
@@ -288,24 +286,7 @@ function food.register_drink(defn)
 		sounds = default.node_sound_glass_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
 			local replace_with_item = "vessels:drinking_glass"
-			
-			minetest.do_item_eat(defn.nutrition, nil, itemstack, user, pointed_thing)
-			
-			if itemstack:take_item() ~= nil then
-				if itemstack:is_empty() then
-					itemstack:add_item(replace_with_item)
-				else
-					local inv = user:get_inventory()
-					if inv:room_for_item("main", {name=replace_with_item}) then
-						inv:add_item("main", replace_with_item)
-					else
-						local pos = user:getpos()
-						pos.y = math.floor(pos.y + 0.5)
-						minetest.add_item(pos, replace_with_item)
-					end
-				end
-			end
-			
+			minetest.do_item_eat(defn.nutrition, replace_with_item, itemstack, user, pointed_thing)
 			return itemstack
 		end
 	})
