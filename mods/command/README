@@ -1,5 +1,5 @@
-grailtest 0.4 mod: commands
-===========================
+grailtest 0.4 mod: command
+==========================
 by afflatus [LGPL 2.1] 
 
 spawn - based on AndrejIT [LGPL 2.1] and GunshipPenguin's code.
@@ -25,3 +25,6 @@ Admin justice commands
 /arrest <player> -- teleport player and admin to court
 /detain <player> -- teleport player and admin to office
 /jail <player> -- teleport player and admin to prison
+
+To change the locations for admin commands and the welcome message edit functions.lua
+ToDo: Add chatcommand to set admin locations
