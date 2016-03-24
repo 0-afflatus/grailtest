@@ -1,11 +1,34 @@
 -- These should be set by server admin
 
-local office = {x=-6, y=12, z=-16}
-local office_admin = {x=-2, y=12, z=-16}
+local office = {x=39, y=14, z=-100}
+local office_admin = {x=39, y=14, z=-92}
 local court = {x=-13, y=14, z=-11}
 local court_admin = {x=-22, y=14, z=-11}
-local prison = {x=0, y=-23000, z=0}
-local prison_admin = {x=19, y=-23000, z=19}
+local prison = {x=0, y=-2000, z=0}
+local prison_admin = {x=19, y=-2000, z=19}
+
+local welcome_text = {"Welcome to Grail Test!",
+			"",
+			"Your journey begins in an otherworldly dark-age kingdom ",
+			"that stands on the borders between the lands of the ",
+			"living and the lands of the dead.",
+			"",
+			"You must survive against monsters, ",
+			"using crafting, building and skill. ",
+			"Your  first task is to gather resources to build a shelter.",
+			"",
+			"Go find a tree and chop some wood, then you can make ",
+			"a pick and go mining.",
+			"",
+			"More help:",
+			"Web site: http://grailtest.pathilorra.co.uk",
+			"Includes play guide and links to video tutorials:",
+			"Or just search youtube for grailtest",
+			"",
+			"Forum: https://forum.minetest.net/viewtopic.php?f=10&t=13127",
+			"Github: https://github.com/0-afflatus/grailtest",
+			"To see this screen again type /welcome into chat.",
+			}
 
 -- player_exists()from CommonLib
 --	by Rubenwardy
@@ -79,36 +102,13 @@ function command:make_jailor(adminname)
 	return true;
 end
 
-function command.welcome(player)
+function command.welcome(player, wtext)
 	local target = player:get_player_name()
 	if not player then
 		return false, ("There's no player named '%s'."):format(target)
 	end
 	local fs = { }
-	local text = {"Welcome to Grail Test, "..target.."!",
-			"",
-			"Your journey begins in an otherworldly dark-age kingdom ",
-			"that stands on the borders between the lands of the ",
-			"living and the lands of the dead.",
-			"",
-			"Player killing isn't allowed but you have to survive ",
-			"against monsters, using crafting, building and skill. ",
-			"Your  first task is to gather resources to build a shelter.",
-			"",
-			"Go find a tree and chop some wood, then you can make ",
-			"a pick and go mining. There is a playguide at: ",
-			"http://grailtest.pathilorra.co.uk/playguide.html",
-			"",
-			"Admins are called Wizards here. Hassling for privs or chat ",
-			"spamming will result in gagging or toading. Griefers will ",
-			"be arrested, probably without warning. Crafting, building ",
-			"great public buildings and helping other players is the ",
-			"best way to get player advancement and privs.",
-			"",
-			"If you have any problems /mail afflatus in-game or post in ",
-			"the server forum at: ",
-			"https://forum.minetest.net/viewtopic.php?f=10&t=13127.",}
-	text = table.concat(text, "\n")
+	text = table.concat(wtext, "\n")
 	text = minetest.formspec_escape(text)
 	table.insert(fs, "size[8,11]")
 	table.insert(fs, "background[0,0;8,11;ui_form_bg.png]")
@@ -127,7 +127,7 @@ function command.welcome(player)
 end
 
 minetest.register_on_newplayer(function(player)
-	command.welcome(player)
+	command.welcome(player, welcome_text)
 end)
 
 minetest.register_chatcommand("welcome", {
@@ -136,7 +136,7 @@ minetest.register_chatcommand("welcome", {
 	description = "Show the welcome screen.",
 	func = function(name, params)
 		local player = minetest.get_player_by_name(name)
-		local ok, err = command.welcome(player)
+		local ok, err = command.welcome(player, welcome_text)
 		if not ok then
 			return false, err
 		end
