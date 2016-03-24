@@ -213,7 +213,7 @@ minetest.register_node("equipment:bookcase", {
 	tiles = {"equipment_chest_top.png", "equipment_chest_top.png", "equipment_bookshelf.png"},
 	is_ground_content = false,
 	walkable = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, not_in_creative_inventory},
+	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3, not_in_craft_guide = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_wood_defaults(),
 })
 
