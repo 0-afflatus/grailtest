@@ -2,6 +2,8 @@
 -- Unicorn Soup
 --
 
+-- (does not contain real unicorns)
+
 minetest.register_craftitem("food:soup_unicorn", {
 	description = "Cold unicorn Soup",
 	inventory_image = "food_unicorn_soup.png",
