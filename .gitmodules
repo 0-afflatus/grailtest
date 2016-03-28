@@ -13,3 +13,6 @@
 [submodule "mods/stamina"]
 	path = mods/stamina
 	url = https://github.com/0-afflatus/stamina.git
+[submodule "mods/weather_modpack/snowdrift"]
+	path = mods/weather_modpack/snowdrift
+	url = https://github.com/0-afflatus/snowdrift.git	
