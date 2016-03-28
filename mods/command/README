@@ -27,4 +27,5 @@ Admin justice commands
 /jail <player> -- teleport player and admin to prison
 
 To change the locations for admin commands and the welcome message edit functions.lua
+
 ToDo: Add chatcommand to set admin locations

@@ -4,8 +4,8 @@ local office = {x=39, y=14, z=-100}
 local office_admin = {x=39, y=14, z=-92}
 local court = {x=-13, y=14, z=-11}
 local court_admin = {x=-22, y=14, z=-11}
-local prison = {x=0, y=-2000, z=0}
-local prison_admin = {x=19, y=-2000, z=19}
+local prison = {x=0, y=-2015, z=0}
+local prison_admin = {x=19, y=-2015, z=19}
 
 local welcome_text = {"Welcome to Grail Test!",
 			"",
@@ -13,8 +13,8 @@ local welcome_text = {"Welcome to Grail Test!",
 			"that stands on the borders between the lands of the ",
 			"living and the lands of the dead.",
 			"",
-			"You must survive against monsters, ",
-			"using crafting, building and skill. ",
+			"You must find food, use crafting, ",
+			"building and skill to survive. ",
 			"Your  first task is to gather resources to build a shelter.",
 			"",
 			"Go find a tree and chop some wood, then you can make ",

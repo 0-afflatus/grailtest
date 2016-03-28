@@ -1,8 +1,9 @@
 grailtest 0.4 mod: equipment
 =============================
 
-This mod provides the standard adventuring equipment previously in default. Additions include cauldron and the table, bench and shelf from Sokomine's cottages mod.
+This mod provides the standard adventuring equipment previously in default. 
 
+With a few additions:
 The cauldron provides a cooking device for any item with both shapeless and cooking recipes. It works in much the same way as the furnace.
 
 credits
