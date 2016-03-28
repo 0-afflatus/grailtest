@@ -7,7 +7,7 @@
 
 local TRoPHY = {
 --	  MoD						 iTeM				 NaMe				iCoN
-    {"fishing",  				"fish_raw",			"Fish",				"fishing_fish.png"},
+    {"fishing",  				"fish_raw",			"Fish",				"fishing_fish2.png"},
 	{"fishing",  				"pike",				"Northern Pike",	"fishing_pike.png"},
 	{"fishing",  				"shark",			"Shark",			"fishing_shark.png"},
 }
