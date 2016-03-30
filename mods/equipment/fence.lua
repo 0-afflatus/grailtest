@@ -270,6 +270,7 @@ equipment.register_fence("equipment:fence_apple_wood", {
 	sounds = default.node_sound_wood_defaults()
 })
 
+-- why is this here? delete?
 minetest.register_craft({
 	output = 'equipment:fence_apple_wood 6',
 	recipe = {
