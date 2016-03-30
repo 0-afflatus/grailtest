@@ -126,3 +126,17 @@ food.mobs.grasses = {
 	"plant:wheat_7",
 	"plant:wheat_8",
 }
+
+food.mobs.grazing = {"default:grass_3", "default:grass_4", "default:grass_5", "plant:wheat_8", "plant:barley_8", plant:maize_8", "plant:oats_8", "flowers:seaweed"}
+
+food.mobs.seed = {"plant:wheat_seed", "plant:barley_seed", "plant:oats_seed", "plant:maize_seed", "flowers:sunflower_seeds"}
+
+food.mobs.bunny = {"plant:carrot_3", "plant:carrot"}
+
+food.mobs.kitten = {"mobs:rat", "fishing:fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical"}
+
+food.mobs.npc = {"food:bread", "mobs:meat", "mineral:diamond_gem", "food:cake", "food:fruitcake", "food:soup_chicken_cooked", "food:soup_vegetable_cooked", "food:stew_meat_cooked", "food:stew_vegetable_cooked"}
+
+food.mobs.sheep = {"plant:hay", "plant:grass_5"}
+
+food.mobs.pig = {"tree:apple_fruit", "moretrees:acorn", "plant:beetroot", "plant:carrot_item"}
