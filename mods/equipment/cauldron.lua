@@ -109,7 +109,7 @@ minetest.register_node("equipment:cauldron", {
 minetest.register_node("equipment:cauldron_active", {
 	description = "Cauldron",
 	tiles = {
-		{ name = "equipment_cauldron_top_anim_soup.png",
+		{ name = "equipment_cauldron_top_anim_boiling_water.png",
 			animation = {type="vertical_frames", length=3.0} },
 		"equipment_cauldron_side.png"
 	},
