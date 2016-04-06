@@ -4,15 +4,16 @@
 -- Forum - https://forum.minetest.net/viewtopic.php?f=11&t=10626
 
 local hdoor_list = {   --Number , Description, Material
-	{ "cobble" , "Hidden Cobble Door", "default:cobble"},
-	{ "stone" , "Hidden Stone Door", "default:stone"},	
 	{ "wood", "Hidden Wood Door", "group:wood"},
 	{ "stone_brick", "Hidden Stone Brick Door", "material:stone_brick"},
+	{ "desert_stone_brick", "Hidden Deset Stone Brick Door", "material:desert_stone_brick"},
+	{ "basalt_brick", "Hidden Basalt Brick Door", "material:basalt_brick"},
+	{ "sandstone_brick", "Hidden Sandstone Brick Door", "material:sandstone_brick"},
 	{ "brick", "Hidden Brick Door", "material:brick"},
-	{ "desert_cobble", "Hidden Desert Cobble Door", "default:desert_cobble"},
 	{ "furnace", "Hidden Furnace Door", "equipment:furnace"},
 	{ "chest", "Hidden Chest Door", "equipment:chest"},
 	{ "bookshelf", "Hidden Bookshelf Door", "equipment:bookshelf"},
+	{ "wood_panel", "Hidden Wooden Panel Door", "equipment:panel_wood"},
 }
 
 for i in ipairs(hdoor_list) do
@@ -44,4 +45,16 @@ doors.register("doors:hidden_door_grey", {
 		{"mineral:diamond_gem", "mineral:diamond_gem", ""},
 		{"mineral:diamond_gem", "mineral:diamond_gem", ""}
 	}
+})
+
+doors.register_trapdoor("doors:trapdoor_stone", {
+	description = "Hidden Trapdoor",
+	inventory_image = "material_stone_tile.png",
+	wield_image = "material_stone_tile.png",
+	tile_front = "material_stone_tile.png",
+	tile_side = "material_stone_tile.png",
+	protected = true,
+	sound_open = "doors_steel_door_open",
+	sound_close = "doors_steel_door_close",
+	groups = {cracky=3, level=2, door=1},
 })

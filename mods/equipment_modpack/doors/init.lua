@@ -689,6 +689,8 @@ function doors.register_trapdoor(name, def)
 	}
 	def_closed.tiles = { def.tile_front, def.tile_front, def.tile_side, def.tile_side,
 		def.tile_side, def.tile_side }
+		
+	def_opened.climbable = true
 
 	def_opened.node_box = {
 		type = "fixed",
@@ -843,13 +845,6 @@ doors.register_fencegate("doors:gate_fir_wood", {
 	description = "Fir wood Fence Gate",
 	texture = "tree_pine_wood.png",
 	material = "tree:pine_wood",
-	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
-})
-
-doors.register_fencegate("doors:gate_aspen_wood", {
-	description = "Aspen Fence Gate",
-	texture = "tree_aspen_wood.png",
-	material = "tree:aspen_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2}
 })
 
