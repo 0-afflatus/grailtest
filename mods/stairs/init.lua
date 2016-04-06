@@ -447,3 +447,17 @@ stairs.register_stair_and_slab("white_stone", "mineral:white_stone",
 		"White Stone Stair",
 		"White Stone Slab",
 		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("white_cobble", "mineral:white_cobble",
+		{cracky = 3},
+		{"mineral_white_cobble.png"},
+		"White Cobble Stair",
+		"White Cobble Slab",
+		default.node_sound_stone_defaults())
+
+stairs.register_stair_and_slab("bluestone_cobble", "mineral:bluestone_cobble",
+		{cracky = 3},
+		{"mineral_bluestone_cobble.png"},
+		"Blue Cobble Stair",
+		"Blue Cobble Slab",
+		default.node_sound_stone_defaults())
