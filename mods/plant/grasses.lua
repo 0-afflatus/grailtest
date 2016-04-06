@@ -14,7 +14,7 @@ minetest.register_node("plant:dry_shrub", {
 	walkable = false,
 	is_ground_content = true,
 	buildable_to = true,
-	groups = {snappy=3,flammable=3,attached_node=1},
+	groups = {snappy = 3, flammable = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
 		type = "fixed",
@@ -59,7 +59,7 @@ minetest.register_node("plant:grass_1", {
 			{items = {'plant:grass_1'}},
 		}
 	},
-	groups = {snappy=3,flammable=3,flora=1,attached_node=1},
+	groups = {snappy = 3, flora = 1, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
 		type = "fixed",
@@ -94,7 +94,7 @@ for i=2,5 do
 				{items = {'plant:grass_1'},rarity = 2},
 			}
 		},
-		groups = {snappy=3,flammable=3,flora=1,attached_node=1,not_in_creative_inventory=1},
+		groups = {snappy = 3, flora = 1, attached_node = 1, not_in_creative_inventory = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",

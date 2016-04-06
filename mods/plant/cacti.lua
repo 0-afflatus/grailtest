@@ -5,7 +5,7 @@ minetest.register_node("plant:cactus", {
 	tiles = {"plant_cactus_top.png", "plant_cactus_top.png", "plant_cactus_side.png"},
 	paramtype2 = "facedir",
 	is_ground_content = true,
-	groups = {snappy=1,choppy=3,flammable=2},
+	groups = {snappy = 1, choppy = 3},
 	sounds = default.node_sound_wood_defaults(),
 	on_place = minetest.rotate_node,
 	after_dig_node = function(pos, node, metadata, digger)
