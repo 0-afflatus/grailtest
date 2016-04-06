@@ -7,33 +7,33 @@
 
 
 minetest.register_node("traps:cage",{
-	tile_images = {"traps_grass.png", "default_dirt.png",
+	tiles = {"traps_grass.png", "default_dirt.png",
 			"default_grass_side.png", "default_grass_side.png",
 			"default_grass_side.png", "default_grass_side.png"},
 	inventory_image = minetest.inventorycube("traps_grass.png",
 			"default_grass_side.png", "default_grass_side.png"),
-	dug_item = '', -- Get nothing
-	groups={immortal},
+	drop = '', -- Get nothing
+	groups={immortal = 1},
 	description = "Cage Trap",
 })
 
 minetest.register_node("traps:uncage",{
-	tile_images = {"traps_uncage.png"},
+	tiles = {"traps_uncage.png"},
 	inventory_image = minetest.inventorycube("traps_uncage.png",
 			"traps_uncage.png", "traps_uncage.png"),
-	dug_item = '', -- Get nothing
-	groups={immortal},
+	drop = '', -- Get nothing
+	groups={immortal = 1, not_in_creative_inventory = 1},
 	description = "Cage Trap Release",
 })
 
 minetest.register_node("traps:cage_glass", {
 	description = "Cage glass",
 	drawtype = "glasslike",
-	tiles = {"default_glass.png"},
-	inventory_image = minetest.inventorycube("default_glass.png"),
+	tiles = {"material_glass.png"},
+	inventory_image = minetest.inventorycube("material_glass.png"),
 	paramtype = "light",
 	sunlight_propagates = true,
-	groups = {immortl},
+	groups = {immortal = 1, not_in_creative_inventory = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 

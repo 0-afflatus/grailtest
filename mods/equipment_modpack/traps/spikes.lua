@@ -68,7 +68,7 @@ minetest.register_abm(
 -- Nodes
 minetest.register_node("traps:trap_grass", {
 	description = "Trap Grass",
-    tile_images = {"traps_grass.png", "default_dirt.png",
+    tiles = {"traps_grass.png", "default_dirt.png",
 			"default_grass_side.png", "default_grass_side.png",
 			"default_grass_side.png", "default_grass_side.png"},
 	paramtype2 = "facedir",
@@ -83,7 +83,7 @@ minetest.register_node("traps:trap_spike", {
 	description = "Trap Spike Minor",
     drawtype = "plantlike",
     visual_scale = 1,
-	tile_images = {"traps_minorspike.png"},
+	tiles = {"traps_minorspike.png"},
 	inventory_image = ("traps_minorspike.png"),
     paramtype = "light",
     walkable = false,
@@ -95,11 +95,11 @@ minetest.register_node("traps:trap_spike_set", {
 	description = "Trap Spike Minor",
     drawtype = "raillike",
     visual_scale = 1,
-	tile_images = {"traps_trap_set.png"},
+	tiles = {"traps_trap_set.png"},
     paramtype = "light",
     walkable = false,
 	sunlight_propagates = true,
-    groups = {cracky=3,melty=3},
+    groups = {cracky=3,melty=3, not_in_creative_inventory=1},
     drop = 'traps:trap_spike',
 })
 
@@ -108,7 +108,7 @@ minetest.register_node("traps:trap_spike_major", {
 	description = "Trap Spike Minor",
     drawtype = "plantlike",
     visual_scale = 1,
-	tile_images = {"traps_majorspike.png"},
+	tiles = {"traps_majorspike.png"},
 	inventory_image = ("traps_majorspike.png"),
     paramtype = "light",
     walkable = false,
@@ -120,11 +120,11 @@ minetest.register_node("traps:trap_spike_major_set", {
 	description = "Trap Spike Major",
     drawtype = "raillike",
     visual_scale = 1,
-	tile_images = {"traps_trap_set.png"},
+	tiles = {"traps_trap_set.png"},
     paramtype = "light",
     walkable = false,
 	sunlight_propagates = true,
-    groups = {cracky=3,melty=3},
+    groups = {cracky=3,melty=3, not_in_creative_inventory=1},
     drop = 'traps:trap_spike',
 })
 

@@ -31,12 +31,12 @@ function do_tnt_physics(tnt_np,tntr)
 end
 
 minetest.register_node("traps:mine", {
-	tile_images = {"traps_grass.png", "default_dirt.png",
+	tiles = {"traps_grass.png", "default_dirt.png",
 			"default_grass_side.png", "default_grass_side.png",
 			"default_grass_side.png", "default_grass_side.png"},
 	inventory_image = minetest.inventorycube("traps_grass.png",
 			"nuke_iron_tnt_side.png", "nuke_iron_tnt_side.png"),
-	dug_item = '', -- Get nothing
+	drop = '', -- Get nothing
 	material = {
 		diggability = "not",
 	},

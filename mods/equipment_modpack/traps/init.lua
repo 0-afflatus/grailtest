@@ -28,7 +28,7 @@ minetest.register_craft({
 
 minetest.register_node("traps:trap_sand", {
 	description = "Trap Sand",
-	tile_images = {"default_sand.png"},
+	tiles = {"default_sand.png"},
 	paramtype2 = "facedir",
 	legacy_facedir_simple = true,
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
@@ -40,6 +40,24 @@ minetest.register_craft({
 	recipe = {
 		{'', '', ''},
 		{'', 'default:sand', ''},
+		{'', 'default:stick', ''},
+	}
+})
+
+minetest.register_node("traps:stone_tile", {
+	description = "Fake Stone Tile",
+	tiles = {"material_stone_tile.png"},
+	is_ground_content = false,
+	walkable = false,
+	groups = {cracky=3, oddly_breakable_by_hand = 2, not_in_creative_inventory=1},
+	sounds = default.node_sound_defaults(),
+})
+
+minetest.register_craft({
+	output = 'traps:stone_tile',
+	recipe = {
+		{'', '', ''},
+		{'', "material:stone_tile", ''},
 		{'', 'default:stick', ''},
 	}
 })

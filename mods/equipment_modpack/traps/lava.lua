@@ -7,13 +7,13 @@
 
 
 minetest.register_node("traps:lava",{
-	tile_images = {"traps_grass.png", "default_dirt.png",
+	tiles = {"traps_grass.png", "default_dirt.png",
 			"default_grass_side.png", "default_grass_side.png",
 			"default_grass_side.png", "default_grass_side.png"},
 	inventory_image = minetest.inventorycube("traps_grass.png",
 			"default_grass_side.png", "default_grass_side.png"),
-	dug_item = '', -- Get nothing
-	groups={immortal},
+	drop = '', -- Get nothing
+	groups={immortal = 1},
 	description = "Lava Drop Trap",
 })
 
