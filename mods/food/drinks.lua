@@ -137,7 +137,6 @@ function food.register_drink(defn)
 	
 	minetest.register_craft({
 		output = "food:bucket_"..defn.name,
-		replacements = food.water_replacements,
 		recipe = {
 			{ defn.flavour, defn.flavour, defn.flavour },
 			{ defn.flavour, "bucket:bucket_river_water", defn.flavour },
@@ -147,7 +146,6 @@ function food.register_drink(defn)
 
 	minetest.register_craft({
 		output = "food:bucket_wooden_"..defn.name,
-		replacements = food.water_replacements,
 		recipe = {
 			{ defn.flavour, defn.flavour, defn.flavour },
 			{ defn.flavour, "bucket:wooden_river_water", defn.flavour },
@@ -159,7 +157,6 @@ function food.register_drink(defn)
 	
 	minetest.register_craft({
 		output = "food:bucket_"..defn.name,
-		replacements = food.water_replacements,
 		recipe = {
 			{ defn.flavour, defn.flavour, defn.flavour },
 			{ defn.flavour, "bucket:bucket_water", defn.flavour },
@@ -169,7 +166,6 @@ function food.register_drink(defn)
 
 	minetest.register_craft({
 		output = "food:bucket_wooden_"..defn.name,
-		replacements = food.water_replacements,
 		recipe = {
 			{ defn.flavour, defn.flavour, defn.flavour },
 			{ defn.flavour, "bucket:wooden_water", defn.flavour },
