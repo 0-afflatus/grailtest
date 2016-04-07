@@ -350,6 +350,7 @@ stairs.register_stair_and_slab("obsidian", "mineral:obsidian",
 		"Obsidian Stair",
 		"Obsidian Slab",
 		default.node_sound_glass_defaults())
+
 stairs.register_stair_and_slab("stone_brick", "material:stone_brick",
 		{cracky=2},
 		{"material_stone_brick.png"},
