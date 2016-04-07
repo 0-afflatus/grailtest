@@ -328,5 +328,4 @@ if minetest.get_modpath("mobs") then
 	dofile(minetest.get_modpath("food").."/nonvegan.lua")
 end
 
-dofile(minetest.get_modpath("food").."/mobs.lua")
 dofile(minetest.get_modpath("food").."/aliases.lua")
