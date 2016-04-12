@@ -15,16 +15,27 @@ function equipment.register_fence(name, def)
 	-- Allow almost everything to be overridden
 	local equipment_fields = {
 		paramtype = "light",
-		drawtype = "fencelike",
+		drawtype = "nodebox",
+		node_box = {
+			type = "connected",
+			fixed = {{-1/8, -1/2, -1/8, 1/8, 1/2, 1/8}},
+			-- connect_top =
+			-- connect_bottom =
+			connect_front = {{-1/16,3/16,-1/2,1/16,5/16,-1/8},
+				{-1/16,-5/16,-1/2,1/16,-3/16,-1/8}},
+			connect_left = {{-1/2,3/16,-1/16,-1/8,5/16,1/16},
+				{-1/2,-5/16,-1/16,-1/8,-3/16,1/16}},
+			connect_back = {{-1/16,3/16,1/8,1/16,5/16,1/2},
+				{-1/16,-5/16,1/8,1/16,-3/16,1/2}},
+			connect_right = {{1/8,3/16,-1/16,1/2,5/16,1/16},
+				{1/8,-5/16,-1/16,1/2,-3/16,1/16}},
+		},
+		connects_to = {"group:fence", "group:wood", "group:tree"},
 		inventory_image = fence_texture,
 		wield_image = fence_texture,
-		tiles = { def.texture },
+		tiles = {def.texture},
 		sunlight_propagates = true,
 		is_ground_content = false,
-		selection_box = {
-			type = "fixed",
-			fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
-		},
 		groups = {},
 	}
 	for k, v in pairs(equipment_fields) do
@@ -240,7 +251,7 @@ minetest.register_craft({
 
 equipment.register_fence("equipment:fence_acacia_wood", {
 	description = "Acacia Fence",
-	texture = "tree_acacia_wood.png",
+	texture = "equipment_fence_acacia_wood.png",
 	material = "tree:acacia_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -248,7 +259,7 @@ equipment.register_fence("equipment:fence_acacia_wood", {
 
 equipment.register_fence("equipment:fence_junglewood", {
 	description = "Junglewood Fence",
-	texture = "tree_junglewood.png",
+	texture = "equipment_fence_junglewood.png",
 	material = "tree:junglewood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -256,7 +267,7 @@ equipment.register_fence("equipment:fence_junglewood", {
 
 equipment.register_fence("equipment:fence_fir_wood", {
 	description = "Fir wood Fence",
-	texture = "tree_pine_wood.png",
+	texture = "equipment_fence_pine_wood.png",
 	material = "tree:pine_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -264,7 +275,7 @@ equipment.register_fence("equipment:fence_fir_wood", {
 
 equipment.register_fence("equipment:fence_apple_wood", {
 	description = "Apple wood Fence",
-	texture = "tree_apple_tree_wood.png",
+	texture = "equipment_fence_apple_wood.png",
 	material = "tree:apple_tree_wood",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -281,7 +292,7 @@ minetest.register_craft({
 
 equipment.register_fence("equipment:fence_beech_wood", {
 	description = "Beech wood Fence",
-	texture = "moretrees_beech_wood.png",
+	texture = "equipment_fence_beech_wood.png",
 	material = "moretrees:beech_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -289,7 +300,7 @@ equipment.register_fence("equipment:fence_beech_wood", {
 
 equipment.register_fence("equipment:fence_birch_wood", {
 	description = "Birch wood Fence",
-	texture = "moretrees_birch_wood.png",
+	texture = "equipment_fence_birch_wood.png",
 	material = "moretrees:birch_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -297,7 +308,7 @@ equipment.register_fence("equipment:fence_birch_wood", {
 
 equipment.register_fence("equipment:fence_pine_wood", {
 	description = "Pine wood Fence",
-	texture = "moretrees_pine_wood.png",
+	texture = "equipment_fence_pine_wood.png",
 	material = "moretrees:pine_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -313,7 +324,7 @@ minetest.register_craft({
 
 equipment.register_fence("equipment:fence_oak_wood", {
 	description = "Oak Fence",
-	texture = "moretrees_oak_wood.png",
+	texture = "equipment_fence_oak_wood.png",
 	material = "moretrees:oak_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -329,7 +340,7 @@ minetest.register_craft({
 
 equipment.register_fence("equipment:fence_spruce_wood", {
 	description = "Spruce wood Fence",
-	texture = "moretrees_spruce_wood.png",
+	texture = "equipment_fence_spruce_wood.png",
 	material = "moretrees:spruce_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
@@ -337,7 +348,7 @@ equipment.register_fence("equipment:fence_spruce_wood", {
 
 equipment.register_fence("equipment:fence_willow_wood", {
 	description = "Willow Fence",
-	texture = "moretrees_willow_wood.png",
+	texture = "equipment_fence_willow_wood.png",
 	material = "moretrees:willow_planks",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
