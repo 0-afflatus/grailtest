@@ -4,7 +4,7 @@ Pressure plates work better with this setting in minetest.conf (requires 0.4.14)
 ]]
 
 local plate = {}
-screwdriver = screwdriver or {}
+local screwdriver = screwdriver or {}
 
 local function door_toggle(pos_actuator, pos_door, player)
 	local actuator = minetest.get_node(pos_actuator)
