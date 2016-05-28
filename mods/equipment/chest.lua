@@ -27,7 +27,14 @@ local function get_locked_chest_formspec(pos)
 end
 
 local function has_locked_chest_privilege(meta, player)
-	if player:get_player_name() ~= meta:get_string("owner") then
+	local name = ""
+	if player then
+		if minetest.check_player_privs(player, "protection_bypass") then
+			return true
+		end
+		name = player:get_player_name()
+	end
+	if name ~= meta:get_string("owner") then
 		return false
 	end
 	return true
@@ -122,11 +129,13 @@ minetest.register_node("equipment:chest_locked", {
 	end,
     on_metadata_inventory_put = function(pos, listname, index, stack, player)
 		minetest.log("action", player:get_player_name() ..
-			" moves stuff to locked chest at " .. minetest.pos_to_string(pos))
+			" moves " .. stack:get_name() ..
+			" to locked chest at " .. minetest.pos_to_string(pos))
 	end,
     on_metadata_inventory_take = function(pos, listname, index, stack, player)
 		minetest.log("action", player:get_player_name() ..
-			" takes stuff from locked chest at " .. minetest.pos_to_string(pos))
+			" takes " .. stack:get_name()  ..
+			" from locked chest at " .. minetest.pos_to_string(pos))
 	end,
 	on_rightclick = function(pos, node, clicker)
 		local meta = minetest.get_meta(pos)
