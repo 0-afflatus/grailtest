@@ -108,7 +108,7 @@ function command.welcome(player, wtext)
 		return false, ("There's no player named '%s'."):format(target)
 	end
 	local fs = { }
-	text = table.concat(wtext, "\n")
+	local text = table.concat(wtext, "\n")
 	text = minetest.formspec_escape(text)
 	table.insert(fs, "size[8,11]")
 	table.insert(fs, "background[0,0;8,11;ui_form_bg.png]")
