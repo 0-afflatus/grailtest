@@ -1,4 +1,5 @@
 tree = {}
+local random = math.random
 
 --
 -- Apple Trees

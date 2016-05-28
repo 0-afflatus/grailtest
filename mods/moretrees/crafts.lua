@@ -96,10 +96,10 @@ minetest.register_craft({
 		"moretrees:acorn",
 		"moretrees:acorn",
 		"moretrees:acorn",
-		"moretrees:coconut_milk",
+		"mobs:bucket_milk",
 	},
 	replacements = {
-		{ "moretrees:coconut_milk", "vessels:drinking_glass" }
+		{ "mobs:bucket_milk", "bucket:bucket_empty" }
 	}
 })
 
