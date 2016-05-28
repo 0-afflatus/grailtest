@@ -43,6 +43,7 @@ for _, row in ipairs(wool.dyes) do
 		paramtype = "light",
 		paramtype2 = "facedir",
 		is_ground_content = false,
+		walkable = false,
 		groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 		sounds = default.node_sound_defaults(),
 	})
@@ -70,6 +71,7 @@ minetest.register_node("carpet:rug1", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -95,6 +97,7 @@ minetest.register_node("carpet:rug2", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -120,6 +123,7 @@ minetest.register_node("carpet:rug3", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -145,6 +149,7 @@ minetest.register_node("carpet:rug4", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -170,6 +175,7 @@ minetest.register_node("carpet:rug5", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -195,6 +201,7 @@ minetest.register_node("carpet:rug6", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -220,6 +227,7 @@ minetest.register_node("carpet:rug7", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -245,6 +253,7 @@ minetest.register_node("carpet:rug8", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
@@ -270,6 +279,7 @@ minetest.register_node("carpet:rug9", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	is_ground_content = false,
+	walkable = false,
 	groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 3, flammable = 3},
 	sounds = default.node_sound_defaults(),
 })
