@@ -24,3 +24,9 @@ minetest.register_alias("locked_chest", "equipment:chest_locked")
 minetest.register_alias("sign", "equipment:sign_wall")
 minetest.register_alias("torch", "equipment:torch")
 minetest.register_alias("fence", "equipment:fence_wood")
+
+-- replace beds with wool slabs
+minetest.register_alias("beds:fancy_bed_bottom", "stairs:slab_wool_red")
+minetest.register_alias("beds:fancy_bed_top", "stairs:slab_wool_white")
+minetest.register_alias("beds:bed_bottom", "stairs:slab_wool_red")
+minetest.register_alias("beds:bed_top", "stairs:slab_wool_white")
