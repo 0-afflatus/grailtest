@@ -75,3 +75,7 @@ minetest.register_alias("wool:violet", "material:fabric_violet")
 minetest.register_alias("wool:white", "material:fabric_white")
 minetest.register_alias("wool:yellow", "material:fabric_yellow")
 ]]
+
+minetest.register_alias("material:brick_wall_ln", "material:brick")
+minetest.register_alias("material:cobble_wall_ln", "deafult:cobble")
+minetest.register_alias("material:desert_cobble_wall_ln", "default:desert_cobble")
