@@ -27,7 +27,7 @@ minetest.register_ore({
 	y_min          = -10000,
 	y_max          = 64,
 	noise_threshold = 0.5,
-	noise_params   = 0, 1, {511, 511, 511}, -992221, 2, 0.23,
+	noise_params   = 0, 1, {511, 511, 511}, -99333, 2, 0.23,
 })
 
 minetest.register_ore({ 
@@ -132,7 +132,7 @@ minetest.register_ore({
 	ore            = "mineral:coal_stone",
 	wherein        = "default:stone",
 	clust_scarcity = 8*8*8,
-	clust_num_ores = 8,
+	clust_num_ores = 7,
 	clust_size     = 3,
 	y_min          = -512,
 	y_max          = 64,
@@ -143,7 +143,7 @@ minetest.register_ore({
 	ore            = "mineral:coal_stone",
 	wherein        = "default:stone",
 	clust_scarcity = 24*24*24,
-	clust_num_ores = 27,
+	clust_num_ores = 23,
 	clust_size     = 6,
 	y_min          = -1024,
 	y_max          = -1,
@@ -332,7 +332,7 @@ minetest.register_ore({
 	ore            = "mineral:topaz_stone",
 	wherein        = "default:stone",
 	clust_scarcity = 27*27*27,
-	clust_num_ores = 6,
+	clust_num_ores = 3,
 	clust_size     = 4,
 	y_min     = -375,
 	y_max     = -128,
@@ -424,7 +424,7 @@ minetest.register_ore({
 		persist  = 0.5,
 		flags    = "eased",
 	},
-	noise_threshold = 0.91,
+	noise_threshold = 0.92,
 	random_factor = 0.23,
 	y_min     = -16000,
 	y_max     = -672,
@@ -435,7 +435,7 @@ minetest.register_ore({
 	ore            = "mineral:emerald_stone",
 	wherein        = "default:stone",
 	clust_scarcity = 23*23*23,
-	clust_num_ores = 5,
+	clust_num_ores = 3,
 	clust_size     = 4,
 	y_min     = -475,
 	y_max     = -200,
@@ -449,7 +449,7 @@ minetest.register_ore({
 	ore            = "mineral:emerald_stone",
 	wherein        = "default:stone",
 	clust_scarcity = 17*13*17,
-	clust_num_ores = 10,
+	clust_num_ores = 9,
 	clust_size     = 7,
 	y_min     = -954,
 	y_max     = -476,
@@ -482,7 +482,7 @@ minetest.register_ore({
 	ore            = "mineral:diamond_stone",
 	wherein        = "default:stone",
 	clust_scarcity = 19*19*19,
-	clust_num_ores = 4,
+	clust_num_ores = 3,
 	clust_size     = 3,
 	y_min     = -511,
 	y_max     = -256,
@@ -496,7 +496,7 @@ minetest.register_ore({
 	clust_scarcity = 42*23*42,
 	clust_num_ores = 6,
 	clust_size     = 3,
-	y_min     = -1023,
+	y_min     = -1548,
 	y_max     = -512,
 	flags          = "absheight",
 })
@@ -514,7 +514,7 @@ minetest.register_ore({
 		persist  = 0.5,
 		flags    = "eased",
 	},
-	noise_threshold = 0.96,
+	noise_threshold = 0.94,
 	random_factor = 0.15,
 	y_min     = -30000,
 	y_max     = -1023,
@@ -541,7 +541,7 @@ minetest.register_ore({
 	clust_scarcity = 23*12*23,
 	clust_num_ores = 6,
 	clust_size     = 6,
-	y_min     = -1535,
+	y_min     = -2560,
 	y_max     = -1024,
 	noise_threshold = 0.95,
 	noise_params   = 0, 1, {100, 10, 100}, 222, 3, 0.70,
@@ -561,7 +561,7 @@ minetest.register_ore({
 		persist  = 0.5,
 		flags    = "eased",
 	},
-	noise_threshold = 0.98,
+	noise_threshold = 0.95,
 	random_factor = 0.1,
 	y_min     = -30000,
 	y_max     = -1536,
@@ -590,7 +590,7 @@ minetest.register_ore({
 	y_min          = -1023,
 	y_max          = 127,
 	noise_threshold = 0.6,
-	noise_params   = 0, 1, {511, 511, 511}, -992221, 2, 0.50,
+	noise_params   = 0, 1, {511, 511, 511}, 5258, 2, 0.50,
 })
 
 minetest.register_ore({
@@ -603,7 +603,7 @@ minetest.register_ore({
 	y_min     		= -255,
 	y_max     		= 31000,
 	noise_threshold = 0.5,
-	noise_params   = 0, 1, {255, 255, 255}, -992221, 2, 0.5,
+	noise_params   = 0, 1, {255, 255, 255}, 6895795, 2, 0.5,
 })
 
 minetest.register_ore({
@@ -616,7 +616,7 @@ minetest.register_ore({
 	y_min     = -127,
 	y_max     = 31000,
 	noise_threshold = 0.4,
-	noise_params   = 0, 1, {255, 31, 255}, -992221, 2, 0.33,
+	noise_params   = 0, 1, {255, 31, 255}, 46257, 2, 0.33,
 })
 
 minetest.register_ore({
@@ -629,7 +629,7 @@ minetest.register_ore({
 	y_min     = -127,
 	y_max     = 31000,
 	noise_threshold = 0.3,
-	noise_params   = 0, 1, {255, 31, 255}, -992221, 2, 0.33,
+	noise_params   = 0, 1, {255, 31, 255}, 58048, 2, 0.33,
 })
 
 minetest.register_ore({
@@ -638,10 +638,10 @@ minetest.register_ore({
 	wherein        = "default:stone",
 	column_height_min = 2,
 	column_midpoint_factor = 0.5,
-	column_height_max = 6,
-	y_min          = -511,
-	y_max          = -32,
-	noise_threshold = 0.75,
+	column_height_max = 5,
+	y_min          = -1023,
+	y_max          = -512,
+	noise_threshold = 0.77,
 	noise_params   = 0, 1, {127, 127, 127}, 37, 2, 0.50,
 })
 
