@@ -66,6 +66,3 @@ minetest.register_alias("spruce_trunk", "moretrees:spruce_trunk")
 minetest.register_alias("willow_leaves", "moretrees:willow_leaves")
 minetest.register_alias("willow_wood", "moretrees:willow_planks")
 minetest.register_alias("willow_trunk", "moretrees:willow_trunk")
-
-
-

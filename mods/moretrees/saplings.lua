@@ -46,7 +46,7 @@ biome_lib:grow_plants({
 biome_lib:grow_plants({
 	grow_delay = moretrees.sapling_interval,
 	grow_chance = moretrees.sapling_chance,
-	grow_plant = "plant:orange_sapling",
+	grow_plant = "moretrees:orange_tree_sapling",
 	grow_nodes = moretrees.orange_tree_biome.surface,
 	grow_function = "moretrees:grow_orange"
 })
@@ -54,7 +54,7 @@ biome_lib:grow_plants({
 biome_lib:grow_plants({
 	grow_delay = 2,
 	grow_chance = 30,
-	grow_plant = "moretrees:orange_sapling_ongen",
+	grow_plant = "moretrees:orange_tree_sapling_ongen",
 	grow_nodes = moretrees.orange_tree_biome.surface,
 	grow_function = "moretrees:grow_orange"
 })

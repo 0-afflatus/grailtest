@@ -5,6 +5,7 @@ moretrees.avoidnodes = {}
 moretrees.treelist = {
 	{"beech",		"Beech Tree"},
 	{"apple_tree",		"Apple Tree"},
+	{"orange_tree",		"Orange Tree"},
 	{"oak",			"Oak Tree",		"acorn",	"Acorn",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
 	{"birch",		"Birch Tree"},
 	{"palm",		"Palm Tree",		"coconut",	"Coconut",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	1.0 },
@@ -13,7 +14,7 @@ moretrees.treelist = {
 	{"willow",		"Willow Tree"},
 	{"jungletree",		"Jungle Tree"},
 	{"fir",			"Douglas Fir",		"fir_cone",	"Fir Cone",	{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8 },
-	{"acacia",		"Acacia Tree",		nil,		nil,		nil,					nil, "default_acacia_sapling.png" },
+	{"acacia",		"Acacia Tree"},
 }
 
 --local dirs1 = { 21, 20, 23, 22, 21 }

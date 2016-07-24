@@ -1,7 +1,7 @@
 --
 -- Orange
 --
-
+--[[
 minetest.register_node("plant:orange_sapling", {
 	description = "Orange Tree Sapling",
 	drawtype = "plantlike",
@@ -34,7 +34,7 @@ minetest.register_node("plant:orange_sapling_ongen", {
 	sounds = default.node_sound_defaults(),
 	drop = "plant:orange_sapling"
 })
-
+]]
 minetest.register_node("plant:orange_tree_trunk", {
 	description = "Orange Tree Trunk",
 	drawtype = "nodebox",

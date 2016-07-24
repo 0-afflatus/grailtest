@@ -21,3 +21,6 @@ minetest.register_alias("farming:cotton", "material:string")
 minetest.register_alias("farming:carrot", "plant:carrot")
 minetest.register_alias("farming:seed_wheat", "plant:wheat_seed")
 minetest.register_alias("farming:potato", "plant:beetroot")
+
+minetest.register_alias("plant:orange_sapling", "moretrees:orange_tree_sapling")
+minetest.register_alias("plant:orange_sapling_ongen", "moretrees:orange_tree_sapling_ongen")

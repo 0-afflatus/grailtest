@@ -92,8 +92,8 @@ if moretrees.spawn_saplings then
 	moretrees.spawn_spruce_object = "moretrees:spruce_sapling_ongen"
 	moretrees.spawn_jungletree_object = "moretrees:jungletree_sapling_ongen"
 	moretrees.spawn_fir_object = "moretrees:fir_sapling_ongen"
-	moretrees.spawn_fir_snow_object = "snow:sapling_pine"
-	moretrees.spawn_orange_tree_object = "plant:orange_sapling_ongen"
+	moretrees.spawn_fir_snow_object = "moretrees:sapling_pine"
+	moretrees.spawn_orange_tree_object = "moretrees:orange_tree_sapling_ongen"
 else
 	moretrees.spawn_beech_object = moretrees.beech_model
 	moretrees.spawn_orange_tree_object = "moretrees.grow_orange"
