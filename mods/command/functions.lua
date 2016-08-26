@@ -71,7 +71,13 @@ end
 function command:arrest(playername)
 	local perp = minetest.get_player_by_name(playername)
 	if perp then
-		--minetest.set_player_privs(perp, {shout = true})
+		local privs = minetest.get_player_privs(playername)
+		if privs then
+			privs.home = false
+			privs.interact = false
+			privs.shout = true
+			minetest.set_player_privs(playername, privs)
+		end
 		perp:setpos(court)
 	else
 		return false;
@@ -88,7 +94,13 @@ end
 function command:jail(playername)
 	local perp = minetest.get_player_by_name(playername)
 	if perp then
-		minetest.set_player_privs(perp, {shout = true})
+		local privs = minetest.get_player_privs(playername)
+		if privs then
+			privs.home = false
+			privs.interact = false
+			privs.shout = true
+			minetest.set_player_privs(playername, privs)
+		end
 		perp:setpos(prison)
 	else
 		return false;
@@ -141,5 +153,19 @@ minetest.register_chatcommand("welcome", {
 			return false, err
 		end
 		return true, "Hail o Valiant Grail Tester!"
+	end,
+})
+
+minetest.register_chatcommand("play", {
+	params = "",
+	privs = { },
+	description = "Get interact priv so you can dig and build.",
+	func = function(name, params)
+		local privs = minetest.get_player_privs(name)
+		if privs then
+			privs.interact = true
+			minetest.set_player_privs(name, privs)
+			return true, "You may now interact, dig and build!"
+		end
 	end,
 })
