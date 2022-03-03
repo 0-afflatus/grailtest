@@ -1,0 +1,2 @@
+name = materials_pack
+description = A collection of crafted building materials. Provides wool, dyes, blocks

@@ -1,0 +1,127 @@
+-- Grailtest 5 --
+-- mods/element/ --
+===========================
+
+This mod provides non-game-world-specific nodes and crafts. Earth, air, water and lava. It features some new dirt, grass and rock nodes. Game-world-specific items have been moved into equipment, material, mineral, plant and tool.
+
+License of source code:
+-----------------------
+Copyright (C) 2011-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+Modified for grail_test:
+Copyright (C) 2014-2017 afflatus, Tim Hawthorn <afflatus@pathilorra.co.uk>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or
+(at your option) any later version.
+
+http://www.gnu.org/licenses/lgpl-2.1.html
+
+License of media (textures and sounds)
+--------------------------------------
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+http://creativecommons.org/licenses/by-sa/3.0/
+
+Authors of media files
+-----------------------
+Everything not listed in here:
+Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
+
+Cisoun (WTFPL):
+  element_dirt.png
+  element_lava.png
+  element_leaves.png
+  element_sapling.png
+  element_stone.png
+  wieldhand.png
+  
+Napophelois MTCORE32px (CC BY-SA 3.0):
+  element_acacia_tree.png
+  element_acacia_tree_top.png
+  element_acacia_wood.png
+  element_coal_block.png
+  element_desert_stone_brick.png
+  element_footprint.png
+  element_grass_dry.png
+  element_grass_dry_side.png
+  element_grass_footsteps.png
+  element_grass.png
+  element_grass_side.png
+  element_junglewood.png
+  element_mese_block.png
+  element_obsidian_brick.png
+  element_obsidian.png
+  element_pine_tree.png
+  element_pine_tree_top.png
+  element_pine_wood.png
+  element_stone.png
+  element_sand.png
+  element_wood.png
+
+VanessaE (WTFPL):
+  bubble.png
+  element_desert_sand.png
+  element_desert_cobble.png
+  element_desert_stone.png
+  element_grass_*.png
+  element_sand.png
+  element_sandstone_brick.png
+
+MirceaKitsune (WTFPL):
+  character.x
+
+Jordach (CC BY-SA 3.0):
+  character.png
+
+PilzAdam (WTFPL):
+  element_jungleleaves.png
+  element_junglesapling.png
+  element_junglewood.png
+  element_snowball.png
+
+Splizard (CC BY-SA 3.0):
+  element_snow.png
+  element_snow_side.png
+
+Zeg9 (CC BY-SA 3.0):
+  element_coal_block.png
+
+paramat (CC BY-SA):
+  element_acacia_tree.png
+  element_acacia_tree_top.png
+  element_acacia_wood.png
+  element_grass_dry.png
+  element_grass_dry_side.png
+  element_icydirt.png
+  element_icydirt_side.png
+  element_mix_water_animated.png
+  element_mix_water_flowing_animated.png
+  element_mix_water.png
+  element_permafrost.png
+  element_pinetree.png
+  element_pinetree_top.png
+  element_pinewood.png
+  element_salt_water_flowing_animated.png
+  element_salt_water.png
+  element_salt_water_source_animated.png
+
+brunob.santos (CC BY-SA 4.0):
+  element_desert_cobble.png
+
+BlockMen (CC BY-SA 3.0):
+  element_mineral_mese.png
+  element_wood.png
+
+PilzAdam (WTFPL):
+  element_soil.png
+  element_soil_wet.png
+  element_soil_wet_side.png
+
+afflatus (CC BY-SA 3.0):
+  element_apple.png
+  element_cobble.png
+  element_ice.png
+  element_moss.png
+  element_rock.png
+  element_rock_with_lichen_*.png

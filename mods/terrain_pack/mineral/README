@@ -1,0 +1,72 @@
+-- Grailtest 5 --
+-- mods/mineral/ --
+===================
+
+This mod provides minerals previously in default with additions from moreores.
+
+MoreOres - Calinou (CC BY-SA 3.0)
+	mineral_copper.png
+	mineral_gold.png
+	mineral_iron.png
+	mineral_mithril.png
+	mineral_silver.png
+	mineral_tin.png
+
+afflatus (CC BY-SA 3.0):
+	mineral_amethyst_gem.png
+	mineral_amethyst.png
+	mineral_basalt.png
+	mineral_bluestone_brick.png
+	mineral_bluestone_cobble.png
+	mineral_bluestone.png
+	mineral_bronze_block.png
+	mineral_bronze_ingot.png
+	mineral_copper_block.png
+	mineral_copper_ingot.png
+	mineral_copper_lump.png
+	mineral_diamond_gem.png
+	mineral_diamond.png
+	mineral_emerald_gem.png
+	mineral_emerald.png
+	mineral_gold_block.png
+	mineral_gold_ingot.png
+	mineral_gold_lump.png
+	mineral_greenstone_brick.png
+	mineral_greenstone_cobble.png
+	mineral_greenstone.png
+	mineral_iron_lump.png
+	mineral_mithril_block.png
+	mineral_mithril_ingot.png
+	mineral_mithril_lump.png
+	mineral_ruby_gem.png
+	mineral_ruby.png
+	mineral_saphire_gem.png
+	mineral_saphire.png
+	mineral_silver_block.png
+	mineral_silver_ingot.png
+	mineral_silver_lump.png
+	mineral_steel_block.png
+	mineral_steel_ingot.png
+	mineral_tin_block.png
+	mineral_tin_ingot.png
+	mineral_tin_lump.png
+	mineral_topaz_gem.png
+	mineral_topaz.png
+	
+modified by afflatus:
+	mineral_clay.png
+	mineral_clay_brick.png
+	mineral_clay_lump.png
+	mineral_coal.png
+	mineral_coal_block.png
+	mineral_coal_lump.png
+
+VanessaE (WTFPL):
+	mineral_obsidian.png
+	mineral_obsidian_shard.png
+  
+HeroOfTheWinds (WTFPL):
+	mineral_quartz.png
+	mineral_white_cobble.png
+	mineral_white_stone.png
+  

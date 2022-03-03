@@ -1,0 +1,27 @@
+grailtest 5 mod: command
+==========================
+by afflatus [LGPL 2.1] 
+
+spawn - based on AndrejIT [LGPL 2.1] and GunshipPenguin's code.
+tpr - Traxie21, Zeno and ChaosWormz [WTFPL]
+notice - kaeza [WTFPL]
+
+/notice <player> <text> -- display a notice to player
+
+Teleport commands
+
+/spawn -- teleport back to spawn
+/tpr <player> -- ask to teleport to another player
+/tphr <player> -- ask a player to teleport to you
+/tpy -- accept teleport request
+/tpn -- refuse teleport request
+
+Admin justice commands
+
+/arrest <player> -- teleport player and admin to court
+/detain <player> -- teleport player and admin to office
+/jail <player> -- teleport player and admin to prison
+
+To change the locations for admin commands and the welcome message edit functions.lua
+
+ToDo: Add chatcommand to set admin locations

@@ -1,0 +1,8 @@
+# textdomain: bucket
+Empty wooden bucket=
+Pail of Water=
+Pail of River Water=
+Water Bucket=
+River Water Bucket=
+Lava Bucket=
+Empty Bucket=

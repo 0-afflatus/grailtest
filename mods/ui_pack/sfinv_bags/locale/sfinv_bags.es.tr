@@ -1,0 +1,12 @@
+# textdomain: sfinv_bags
+# author: NathanielFreeman
+
+### init.lua ###
+
+Bag=Bolsa
+Main=Bolsas
+Bags=Bolsas
+Small Bag=Bolsa Pequeña
+Medium Bag=Bolsa Mediana
+Large Bag=Bolsa Grande
+Trolley=Carrito

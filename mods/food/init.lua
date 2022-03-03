@@ -1,3 +1,6 @@
+-- Grailtest 5 --
+-- mods/food/init.lua
+
 --
 -- Food Groups
 --
@@ -34,7 +37,7 @@ minetest.register_craftitem("food:flour", {
 minetest.register_craft({
 	type = "shapeless",
 	output = "food:flour",
-	recipe = {"group:grain","group:grain","group:grain"}
+	recipe = {"group:grain", "group:grain", "group:grain"}
 })
 
 minetest.register_node("food:bread", {

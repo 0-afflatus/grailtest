@@ -1,0 +1,6 @@
+
+-- SETTINGS
+
+mobs.ENABLE_GULLS		= true
+mobs.ENABLE_LARGE_BIRDS		= true
+mobs.ENABLE_SMALL_BIRDS		= true

@@ -12,7 +12,7 @@ STAMINA_EXHAUST_DIG = 3		-- exhaustion increased this value after digged node
 STAMINA_EXHAUST_PLACE = 1	-- .. after digging node
 STAMINA_EXHAUST_MOVE = 1.5	-- .. if player movement detected
 STAMINA_EXHAUST_JUMP = 5	-- .. if jumping
-STAMINA_EXHAUST_CRAFT = 12	-- .. if player crafts
+STAMINA_EXHAUST_CRAFT = 6	-- .. if player crafts
 STAMINA_EXHAUST_PUNCH = 40	-- .. if player punches another player
 STAMINA_EXHAUST_LVL = 160	-- at what exhaustion player saturation gets lowered
 
@@ -214,7 +214,7 @@ function stamina.eat(hp_change, replace_with_item, itemstack, user, pointed_thin
 		return itemstack
 	end
 
-	if hp_change > 0 then
+	if hp_change >= 0 then
 		level = level + hp_change
 		stamina_update(user, level)
 	else
@@ -244,7 +244,7 @@ function stamina.eat(hp_change, replace_with_item, itemstack, user, pointed_thin
 end
 
 -- stamina is disabled if damage is disabled
-if minetest.setting_getbool("enable_damage") and minetest.is_yes(minetest.setting_get("enable_stamina") or "1") then
+if minetest.settings:get_bool("enable_damage") and minetest.is_yes(minetest.settings:get("enable_stamina") or "1") then
 	minetest.register_on_joinplayer(function(player)
 		local inv = player:get_inventory()
 		inv:set_size("stamina", 1)

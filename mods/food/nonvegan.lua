@@ -1,3 +1,6 @@
+-- Grailtest 5 --
+-- mods/food/nonvegan.lua
+
 --
 -- Unicorn Soup
 --
@@ -383,7 +386,7 @@ minetest.register_node("food:milk_flowing", {
 	liquid_viscosity = 3,
 	post_effect_color = {a = 127, r = 255, g = 255, b = 255},
 	groups = {milk = 3, liquid = 3, puts_out_fire = 1, not_in_creative_inventory = 1},
-	sounds = default.node_sound_water_defaults(),
+	sounds = base.node_sound_water_defaults(),
 })
 
 minetest.register_node("food:milk", {
@@ -429,7 +432,7 @@ minetest.register_node("food:milk", {
 	liquid_viscosity = 3,
 	post_effect_color = {a = 127, r = 255, g = 255, b = 255},
 	groups = {milk = 3, liquid = 3, puts_out_fire = 1, freezes = 1, melt_around = 1},
-	sounds = default.node_sound_water_defaults(),
+	sounds = base.node_sound_water_defaults(),
 })
 
 minetest.register_node("food:bottle_milk", {
@@ -447,7 +450,7 @@ minetest.register_node("food:bottle_milk", {
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = base.node_sound_glass_defaults(),
 	on_use = function(itemstack, user, pointed_thing)
 		local replace_with_item = "vessels:glass_bottle"
 		if pointed_thing.under  then
@@ -529,10 +532,25 @@ minetest.register_node("food:glass_milk", {
 		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2}
 	},
 	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = base.node_sound_glass_defaults(),
 	on_use = minetest.item_eat(1, "vessels:drinking_glass"),
 })
 
+minetest.register_craft({
+	output = "food:glass_milk 6",
+	replacements = {
+		{"food:bottle_milk", "vessels:glass_bottle"}
+	},
+	recipe = { {"food:bottle_milk"} }
+})
+
+minetest.register_craft({
+	output = "food:glass_milk 6",
+	replacements = {
+		{"food:flask_milk", "vessels:steel_bottle"}
+	},
+	recipe = { {"food:flask_milk"} }
+})
 --[[
 minetest.register_node("food:beaker_milk", {
 	description = "Beaker of milk",
@@ -549,7 +567,7 @@ minetest.register_node("food:beaker_milk", {
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
 	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
-	sounds = default.node_sound_defaults(),
+	sounds = base.node_sound_defaults(),
 	on_use = minetest.item_eat(1, "vessels:beaker"),
 })
 ]]
@@ -569,7 +587,7 @@ minetest.register_node("food:flask_milk", {
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
-	sounds = default.node_sound_defaults(),
+	sounds = base.node_sound_defaults(),
 	on_use = function(itemstack, user, pointed_thing)
 		local replace_with_item = "vessels:steel_bottle"
 		if pointed_thing.under  then

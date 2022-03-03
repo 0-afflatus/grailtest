@@ -1,3 +1,6 @@
+-- Grailtest 5 --
+-- mods/food/drinks.lua
+
 --[[ Register drink api
 
 drink def {
@@ -51,7 +54,8 @@ function food.register_drink(defn)
 				backface_culling = false,
 			},
 		},
-		alpha = 160,
+		use_texture_alpha = "opaque",
+		--alpha = 160,
 		paramtype = "light",
 		walkable = false,
 		pointable = false,
@@ -97,7 +101,8 @@ function food.register_drink(defn)
 				},
 			},
 		},
-		alpha = 160,
+		use_texture_alpha = "opaque",
+		--alpha = 160,
 		paramtype = "light",
 		paramtype2 = "flowingliquid",
 		walkable = false,
@@ -192,7 +197,7 @@ function food.register_drink(defn)
 			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 		},
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
-		sounds = default.node_sound_glass_defaults(),
+		sounds = base.node_sound_glass_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
 			local replace_with_item = "vessels:glass_bottle"
 			
@@ -283,7 +288,7 @@ function food.register_drink(defn)
 			fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2}
 		},
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
-		sounds = default.node_sound_glass_defaults(),
+		sounds = base.node_sound_glass_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
 			local replace_with_item = "vessels:drinking_glass"
 			minetest.do_item_eat(defn.nutrition, replace_with_item, itemstack, user, pointed_thing)
@@ -307,7 +312,7 @@ function food.register_drink(defn)
 			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 		},
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1, not_in_creative_inventory = 1},
-		sounds = default.node_sound_defaults(),
+		sounds = base.node_sound_defaults(),
 	})
 ]]
 	minetest.register_node("food:flask_"..defn.name, {
@@ -325,7 +330,7 @@ function food.register_drink(defn)
 			fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 		},
 		groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
-		sounds = default.node_sound_defaults(),
+		sounds = base.node_sound_defaults(),
 		on_use = function(itemstack, user, pointed_thing)
 			local replace_with_item = "vessels:steel_bottle"
 			
@@ -356,6 +361,22 @@ function food.register_drink(defn)
 			end
 			return itemstack
 		end
+	})
+
+	minetest.register_craft({
+		output = "food:glass_"..defn.name.." 6",
+		replacements = {
+			{"food:bottle_"..defn.name, "vessels:glass_bottle"}
+		},
+		recipe = { {"food:bottle_"..defn.name} }
+	})
+
+	minetest.register_craft({
+		output = "food:glass_"..defn.name.." 6",
+		replacements = {
+			{"food:flask_"..defn.name, "vessels:steel_bottle"}
+		},
+		recipe = { {"food:flask_"..defn.name} }
 	})
 
 	minetest.register_craft( {
@@ -531,7 +552,7 @@ minetest.register_node("food:bottle_water", {
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = base.node_sound_glass_defaults(),
 	on_use = function(itemstack, user, pointed_thing)
 		local replace_with_item = "vessels:glass_bottle"
 		if pointed_thing.under  then
@@ -613,7 +634,7 @@ minetest.register_node("food:glass_water", {
 		fixed = {-0.2, -0.5, -0.2, 0.2, 0.3, 0.2}
 	},
 	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = base.node_sound_glass_defaults(),
 	on_use = minetest.item_eat(1, "vessels:drinking_glass"),
 })
 
@@ -633,7 +654,7 @@ minetest.register_node("food:beaker_water", {
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
 	groups = {vessel = 1, dig_immediate = 3,attached_node = 1, not_in_creative_inventory = 1},
-	sounds = default.node_sound_defaults(),
+	sounds = base.node_sound_defaults(),
 	on_use = minetest.item_eat(1, "vessels:beaker"),
 })
 ]]
@@ -653,7 +674,7 @@ minetest.register_node("food:flask_water", {
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
 	},
 	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
-	sounds = default.node_sound_defaults(),
+	sounds = base.node_sound_defaults(),
 	on_use = function(itemstack, user, pointed_thing)
 		local replace_with_item = "vessels:steel_bottle"
 		if pointed_thing.under  then
@@ -720,3 +741,21 @@ minetest.register_craft( {
 		{ "food:flask_water", "food:flask_water", "food:flask_water" }
 	}
 })
+
+minetest.register_craft({
+	output = "food:glass_water 6",
+	replacements = {
+		{"food:bottle_water", "vessels:glass_bottle"}
+	},
+	recipe = { {"food:bottle_water"} }
+})
+
+minetest.register_craft({
+	output = "food:glass_water 6",
+	replacements = {
+		{"food:flask_water", "vessels:steel_bottle"}
+	},
+	recipe = { {"food:flask_water"} }
+})
+
+	

@@ -1,0 +1,33 @@
+# textdomain: plant
+Hoe=
+Cactus=
+Sheaf of Straw=
+Sheaf of Hay=
+Straw Bale=
+Hay Bale=
+Plant Fibre=
+Dry Shrub=
+Grass=
+Golden Grass=
+Juncus=
+Wheat=
+Oats=
+Barley=
+Papyrus Reed=
+Jungle Grass=
+Big leaf palm=
+Drakensberg cycad=
+Dwarf sugar palm=
+Seaweed=
+Blue Coral=
+Orange Coral=
+Pink Coral=
+Green Coral=
+Sandy=
+Beetroot=
+Garlic=
+Turnip=
+Potato=
+Carrot=
+Onion=
+

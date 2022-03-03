@@ -1,0 +1,37 @@
+# This file contains settings of nucleus that can be changed in
+# minetest.conf
+
+#    In creative mode players are able to dig all kind of blocks nearly
+#    instantly, and have access to unlimited resources.
+#    Some of the functionality is only available if this setting is present
+#    at startup.
+creative_mode (Creative mode) bool false
+
+#    Flammable nodes will be ignited by nearby igniters. Spreading fire may
+#    cause severe destruction.
+#    Spreading fire nodes will disappear when fire is disabled, but
+#    'permanent_flame' nodes are unaffected.
+enable_fire (Fire) bool true
+
+#    Enable flame sound.
+flame_sound (Flame sound) bool true
+
+#    Enable lavacooling.
+enable_lavacooling (Lavacooling) bool true
+
+#    When TNT explodes, it destroys nearby nodes and damages nearby players.
+#    This setting is disabled by default on servers.
+enable_tnt (TNT) bool true
+
+#    The radius in which nodes will be destroyed by a TNT explosion.
+tnt_radius (TNT radius) int 3 0
+
+# Enable Tree Felling
+enable_tree_felling (Tree felling) bool true
+
+# Enable autoplanting of saplings
+enable_autoplant (Autoplant saplings) bool true
+
+# Whether spork, torches and twig blocks should be given to new players
+give_initial_stuff (Initial Stuff) bool true
+

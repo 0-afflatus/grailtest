@@ -1,6 +1,0 @@
-default
-mineral
-moretrees?
-dye?
-stairs?
-wool?

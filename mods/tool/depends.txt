@@ -1,5 +1,0 @@
-default
-mineral
-moretrees?
-material?
-magic?

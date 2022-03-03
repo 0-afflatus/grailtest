@@ -1,0 +1,28 @@
+# textdomain: tree
+@1 will intersect protection on growth.=
+ Tree Trunk=
+ Wood Planks=
+ Tree Sapling=
+ Tree Leaves=
+Oak flowers=
+Acorn=
+Pine flowers=
+Pine cone=
+Roasted Pine Nuts=
+Apple flowers=
+Banana flowers=
+Palm flowers=
+Coconut=
+Acacia=
+Apple=
+Ash=
+Aspen=
+Banana=
+Birch=
+Beech=
+Jungle=
+Oak=
+Palm=
+Pine=
+Willow=
+

@@ -1,9 +1,0 @@
-fishing.MESSAGES = true
-fishing.FISH_CHANCE = 70
---fishing.NEW_WORM_SOURCE = true
---fishing.WORM_IS_MOB = true
---fishing.WORM_CHANCE = 80
-fishing.WEAR_OUT = true
-fishing.BOBBER_CHECK_RADIUS = 5
-fishing.SIMPLE_DECO_FISHING_POLE = true
-fishing.SHARK_CHANCE = 30

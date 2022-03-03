@@ -1,4 +1,0 @@
-default
-plant
-bucket
-mobs?

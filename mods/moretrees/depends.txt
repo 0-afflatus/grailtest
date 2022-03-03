@@ -1,7 +1,0 @@
-default
-biome_lib
-tree?
-stairs?
-moreblocks?
-intllib?
-

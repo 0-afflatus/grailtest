@@ -1,0 +1,8 @@
+
+-- SETTINGS
+
+mobs.ENABLE_SHARK_LARGE		= true
+mobs.ENABLE_SHARK_MEDIUM		= true
+mobs.ENABLE_SHARK_SMALL		= true
+
+mobs.HELP_WITH_EXPERIMENT		= false

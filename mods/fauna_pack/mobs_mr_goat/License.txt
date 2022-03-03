@@ -1,0 +1,14 @@
+**CODE**
+--------
+See Mobs.Redo license
+
+
+**MODELS/TEXTURES**
+-------------------
+unknown
+Artist/origin: Nathan S.
+
+
+**SOUNDS**
+----------
+Not applicable.
