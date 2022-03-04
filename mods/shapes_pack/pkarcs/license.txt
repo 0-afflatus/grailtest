@@ -1,0 +1,4 @@
+Simple Arcs for Minetest 5.0.x (pkarcs)
+by PEAK
+
+License for the code: LGPLv2.1+
