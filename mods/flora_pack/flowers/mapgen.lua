@@ -302,7 +302,16 @@ function flowers.register_decorations()
 		{"element:dirt_with_grass", "element:dirt_with_grass_light"},
 		{"grassland", "woodland", "alpine", "mediterranean", "chapparal"}
 	)
-	
+	register_flower(98346, 
+		"sunflower",
+		{"element:dirt_with_grass_light", "element:dirt_with_dry_grass"},
+		{"steppe", "mediterranean", "chapparal"}
+	)
+	register_flower(7458,		
+		"hollyhock",
+		{"element:dirt_with_grass"},
+		{"grassland", "woodland"}
+	)
     
 	register_mushroom("mushroom_brown")
 	register_mushroom("mushroom_blue")

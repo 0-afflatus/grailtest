@@ -154,6 +154,24 @@ plant.register_plant("plant:lentil", {
 	place_param2 = 3,
 })
 
+-- Cabbage --
+
+plant.register_plant("plant:cabbage", {
+	description = S("Cabbage"),
+	paramtype2 = "meshoptions",
+	inventory_image = "plant_cabbage.png",
+	steps = 4,
+	grow_time = 242,
+	minlight = 12,
+	maxlight = base.LIGHT_MAX,
+	fertility = {"grassland"},
+	groups = {food_cabbage = 1, flammable = 2, flora = 1},
+	seed_groups = {food_cabbage = 1, seed = 1, snappy = 3, attached_node = 1, vegetable = 1},
+	place_param2 = 3,
+	food_value = 1,
+})
+
+
 --
 -- Mapgen --
 --
@@ -173,7 +191,7 @@ minetest.register_decoration({
 	biomes = {"grassland", "woodland"},
 	y_min = 5,
 	y_max = 50,
-	decoration = {"plant:beetroot_4", "plant:spinach_5", "plant:turnip_5", "plant:beans_4", "plant:fathen_4" },
+	decoration = {"plant:beetroot_4", "plant:spinach_5", "plant:turnip_5", "plant:beans_4", "plant:fathen_4", "plant:cabbage_4" },
 })
 
 minetest.register_decoration({

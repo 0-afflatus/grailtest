@@ -501,7 +501,7 @@ minetest.register_node("flowers:hollyhock", {
 	paramtype = "light",
 	walkable = true,
 	waving = 0,
-	groups = {snappy = 3, flammable = 3, flower =1, flora=1, attached_node = 1},
+	groups = {snappy = 3, flammable = 3, flower =1, flora=1, attached_node = 1, color_red = 1},
 	sounds = base.node_sound_leaves_defaults(),
 	selection_box = {
 		type = "fixed",
