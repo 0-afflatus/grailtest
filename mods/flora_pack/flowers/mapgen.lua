@@ -279,6 +279,30 @@ function flowers.register_decorations()
 		{"element:dirt_with_grass", "element:dirt_with_grass_light"},
 		{"grassland", "steppe", "woodland", "alpine", "mediterranean", "chapparal"}
 	)
+	register_flower(34563,      
+	    "calla", 
+	    {"element:dirt_with_grass", "element:dirt_with_snow"}, 
+	    {"grassland", "woodland_swamp", "alpine", "taiga"}
+	)
+	register_flower(126,      
+	    "gerbera_daisy", 
+	    {"element:dirt_with_dry_grass", "element:dirt_with_grass_jungle"}, 
+	    {"rainforest", "savanna"}
+	)
+	register_flower(548,      
+	    "calendula", 
+	    {"element:dirt_with_grass", "element:dirt_with_grass_light"},
+		{"grassland", "steppe", "woodland", "alpine", "mediterranean", "chapparal"}
+	)
+	register_flower(578, "rosemary",
+		{"element:dirt_with_grass", "element:dirt_with_grass_light"},
+		{"grassland", "woodland", "alpine", "mediterranean", "chapparal"}
+	)
+	register_flower(8679, "hyssop",
+		{"element:dirt_with_grass", "element:dirt_with_grass_light"},
+		{"grassland", "woodland", "alpine", "mediterranean", "chapparal"}
+	)
+	
     
 	register_mushroom("mushroom_brown")
 	register_mushroom("mushroom_blue")

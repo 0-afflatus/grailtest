@@ -154,6 +154,11 @@ flowers.datas = {
 	{"allium", "Allium",{-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_magenta = 1}},
 	{"cornflower", "Cornflower",{-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_blue = 1, herb = 1}},
 	{"poppy", "Poppy",{-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_red = 1}},
+	{"calla", S("Calla"), {-2 / 16, -0.5, -2 / 16, 2 / 16, 3 / 16, 2 / 16}, {color_white = 1, flammable = 1} },
+	{"gerbera_daisy", S("Gerbera"), {-2 / 16, -0.5, -2 / 16, 2 / 16, 3 / 16, 2 / 16}, {color_orange = 1, flammable = 1} },
+	{ "calendula", S("Marigold"), {-5 / 16, -0.5, -5 / 16, 5 / 16, -2 / 16, 5 / 16}, {color_orange = 1, flammable = 1} },
+	{"rosemary", "Rosemary", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_green = 1, herb = 1}},
+	{"hyssop", "Hyssop", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_blue = 1, herb = 1}},
 }
 
 for _,item in pairs(flowers.datas) do
@@ -377,3 +382,162 @@ waterlily_waving_def.groups.not_in_creative_inventory = 1
 minetest.register_node("flowers:waterlily", waterlily_def)
 minetest.register_node("flowers:waterlily_waving", waterlily_waving_def)
 
+--
+-- Sunflower
+--
+
+minetest.register_node("flowers:sunflower_top", {
+	description = S("Sunflower").. " "..S("(flower)"),
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"flowers_sunflower_top.png"},
+	inventory_image = "flowers_sunflower_top_inv.png",
+	paramtype = "light",
+	walkable = true,
+	waving = 1,
+	groups = {snappy = 3, flammable = 3, flower =1, flora=1, attached_node = 1, not_in_creative_inventory = 1},
+	sounds = base.node_sound_leaves_defaults(),
+	drop = "flowers:sunflower",
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.1875, 0.5, 0.1875}
+	},
+	after_destruct = function(pos, oldnode)
+		pos.y = pos.y - 1
+		local node = minetest.get_node_or_nil(pos)
+		if node and node.name == "flowers:sunflower" then
+			minetest.remove_node(pos)
+		end
+	end
+})
+
+minetest.register_node("flowers:sunflower", {
+	description = S("Sunflower"),
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"flowers_sunflower_bottom.png"},
+	inventory_image = "flowers_sunflower_top.png",
+	wield_image = "flowers_sunflower_top.png",
+	paramtype = "light",
+	walkable = true,
+	waving = 0,
+	groups = {snappy = 3, flammable = 3, flower =1, flora=1, attached_node = 1},
+	sounds = base.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.1875, 0.5, 0.1875}
+	},
+
+	on_place = function(itemstack, placer, pointed_thing)
+		if not(pointed_thing.type) == "node" then
+			return
+		end
+		local pos_above = minetest.get_pointed_thing_position(pointed_thing, true)
+		local pos_sunflower_top = pos_above
+		pos_sunflower_top.y = pos_sunflower_top.y + 1
+		local node = minetest.get_node_or_nil(pos_sunflower_top)
+		if node and node.name == "air" then
+			pos_above.y = pos_above.y - 1
+			minetest.set_node(pos_above, {name = "flowers:sunflower"})
+			local player_name = placer and placer:get_player_name() or ""
+			if not (creative and creative.is_enabled_for
+				and creative.is_enabled_for(player_name)) then
+					itemstack:take_item()
+			end
+			return itemstack
+		end
+	end,
+
+	on_construct = function(pos)
+		pos.y = pos.y + 1
+		minetest.place_node(pos, {name = "flowers:sunflower_top"})
+	end,
+
+	after_destruct = function(pos, oldnode)
+		pos.y = pos.y + 1
+		local node = minetest.get_node_or_nil(pos)
+		if node and node.name == "flowers:sunflower_top" then
+			minetest.remove_node(pos)
+		end
+	end
+})
+
+--
+-- Hollyhock
+--
+
+minetest.register_node("flowers:hollyhock_top", {
+	description = S("Hollyhock").. " "..S("(flower)"),
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"flowers_hollyhock_top.png"},
+	inventory_image = "flowers_hollyhock_top_inv.png",
+	paramtype = "light",
+	walkable = true,
+	waving = 1,
+	groups = {snappy = 3, flammable = 3, flower =1, flora=1, attached_node = 1, not_in_creative_inventory = 1},
+	sounds = base.node_sound_leaves_defaults(),
+	drop = "flowers:hollyhock",
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.1875, 0.5, 0.1875}
+	},
+	after_destruct = function(pos, oldnode)
+		pos.y = pos.y - 1
+		local node = minetest.get_node_or_nil(pos)
+		if node and node.name == "flowers:hollyhock" then
+			minetest.remove_node(pos)
+		end
+	end
+})
+
+minetest.register_node("flowers:hollyhock", {
+	description = S("Hollyhock"),
+	drawtype = "plantlike",
+	visual_scale = 1.0,
+	tiles = {"flowers_hollyhock_bottom.png"},
+	inventory_image = "flowers_hollyhock_top.png",
+	wield_image = "flowers_hollyhock_top.png",
+	paramtype = "light",
+	walkable = true,
+	waving = 0,
+	groups = {snappy = 3, flammable = 3, flower =1, flora=1, attached_node = 1},
+	sounds = base.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.1875, 0.5, 0.1875}
+	},
+
+	on_place = function(itemstack, placer, pointed_thing)
+		if not(pointed_thing.type) == "node" then
+			return
+		end
+		local pos_above = minetest.get_pointed_thing_position(pointed_thing, true)
+		local pos_sunflower_top = pos_above
+		pos_sunflower_top.y = pos_sunflower_top.y + 1
+		local node = minetest.get_node_or_nil(pos_sunflower_top)
+		if node and node.name == "air" then
+			pos_above.y = pos_above.y - 1
+			minetest.set_node(pos_above, {name = "flowers:hollyhock"})
+			local player_name = placer and placer:get_player_name() or ""
+			if not (creative and creative.is_enabled_for
+				and creative.is_enabled_for(player_name)) then
+					itemstack:take_item()
+			end
+			return itemstack
+		end
+	end,
+
+	on_construct = function(pos)
+		pos.y = pos.y + 1
+		minetest.place_node(pos, {name = "flowers:hollyhock_top"})
+	end,
+
+	after_destruct = function(pos, oldnode)
+		pos.y = pos.y + 1
+		local node = minetest.get_node_or_nil(pos)
+		if node and node.name == "flowers:hollyhock_top" then
+			minetest.remove_node(pos)
+		end
+	end
+})
