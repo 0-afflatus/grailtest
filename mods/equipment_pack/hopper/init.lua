@@ -442,5 +442,9 @@ if minetest.get_modpath("lucky_block") then
 	})
 end
 
+dungeon_loot.register({
+    {name = "hopper:hopper", chance = 0.08, y = {-4095, -512}}
+})
 
 print (S("[MOD] Hopper loaded"))
+

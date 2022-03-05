@@ -634,67 +634,6 @@ smartshop.showform2=function(pos,player)
 	end
 end
 
---[[
-minetest.register_node("smartshop:wifistorage", {
-	description = "Wifi storage",
-	tiles = {"material_obsidian_glass.png"},
-	groups = {choppy = 2, oddly_breakable_by_hand = 1,tubedevice = 1, tubedevice_receiver = 1,mesecon=2},
-	paramtype = "light",
-	sunlight_propagates = true,
-	light_source = 10,
-	on_timer = function (pos, elapsed)
-		if smartshop.mesecon then
-			mesecon.receptor_off(pos)
-		end
-		return false
-	end,
-	tube = {insert_object = function(pos, node, stack, direction)
-			local meta = minetest.get_meta(pos)
-			local inv = meta:get_inventory()
-			local added = inv:add_item("main", stack)
-			return added
-		end,
-		can_insert = function(pos, node, stack, direction)
-			local meta = minetest.get_meta(pos)
-			local inv = meta:get_inventory()
-			return inv:room_for_item("main", stack)
-		end,
-		input_inventory = "main",
-		connect_sides = {left = 1, right = 1, front = 1, back = 1, top = 1, bottom = 1}},
-after_place_node = function(pos, placer)
-		local meta=minetest.get_meta(pos)
-		local name=placer:get_player_name()
-		meta:set_string("owner",name)
-		meta:set_string("infotext", "Wifi storage by: " .. name)
-	end,
-on_construct = function(pos)
-		local meta=minetest.get_meta(pos)
-		meta:get_inventory():set_size("main", 60)
-		meta:set_int("mesein",0)
-		meta:set_string("title","wifi" .. math.random(1,999))
-	end,
-on_rightclick = function(pos, node, player, itemstack, pointed_thing)
-		smartshop.showform2(pos,player)
-	end,
-allow_metadata_inventory_put = function(pos, listname, index, stack, player)
-		if stack:get_wear()==0 and (minetest.get_meta(pos):get_string("owner")==player:get_player_name() or minetest.check_player_privs(player:get_player_name(), {protection_bypass=true})) then
-		return stack:get_count()
-		end
-		return 0
-	end,
-allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-		if minetest.get_meta(pos):get_string("owner")==player:get_player_name() or minetest.check_player_privs(player:get_player_name(), {protection_bypass=true}) then
-		return stack:get_count()
-		end
-		return 0
-	end,
-can_dig = function(pos, player)
-		local meta=minetest.get_meta(pos)
-		local inv=meta:get_inventory()
-		local p=player:get_player_name()
-		if (meta:get_string("owner")==p or minetest.check_player_privs(p, {protection_bypass=true})) and inv:is_empty("main") or meta:get_string("owner")=="" then
-			return true
-		end
-	end,
+dungeon_loot.register({
+    {name = "smartshop:shop", chance = 0.05, y = {-2047, -64}},
 })
-]]

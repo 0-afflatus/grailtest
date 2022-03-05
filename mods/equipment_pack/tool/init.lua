@@ -684,12 +684,19 @@ dungeon_loot.register({
 	{name = "tool:hoe_copper", chance = 0.1, y = {-8196, -512}},
 	{name = "tool:pick_bronze", chance = 0.1, y = {-32768, -1023}},
 	{name = "tool:pick_steel", chance = 0.08, y = {-32768, -1023}},
-	{name = "tool:pick_diamond", chance = 0.01, y = {-32768, -3072}},
+	{name = "tool:pick_diamond", chance = 0.01, y = {-32768, -2048}},
 	{name = "tool:shovel_steel", chance = 0.1, y = {-8196, -512}},
 	{name = "tool:sword_silver", chance = 0.05, y = {-16384, -1023}},
 	{name = "tool:sword_bronze", chance = 0.06, y = {-16384, -1023}},
-	{name = "tool:sword_diamond", chance = 0.01, y = {-32768, -3072}},
+	{name = "tool:sword_diamond", chance = 0.01, y = {-32768, -2048}},
 	{name = "tool:pick_ruby", chance = 0.005, y = {-32768, -4096}},
+	{name = "tool:staff_wood", chance = 0.1, y = {-32768, 32768}},
+	{name = "tool:staff_diamond", chance = 0.002, y = {-32768, -10235}},
+	{name = "tool:staff_topaz", chance = 0.004, y = {-32768, -511}},
+	{name = "tool:staff_ruby", chance = 0.002, y = {-32768, -23500}},
+	{name = "tool:staff_saphire", chance = 0.003, y = {-32768, -2047}},
+	{name = "tool:staff_emerald", chance = 0.003, y = {-32768, -4096}},
+	{name = "tool:staff_amethyst", chance = 0.004, y = {-32768, -1023}},	
 })
 
 minetest.log("action", "MOD["..minetest.get_current_modname().."]: [Loaded]")

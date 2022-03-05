@@ -320,3 +320,7 @@ minetest.register_craft({
 		{"group:glass", "group:glass", "group:glass"},
 	}
 })
+
+dungeon_loot.register({
+    {name = "itemframes:frame", chance = 0.1, count = {1,3}, y = {-1023, 512}},
+})

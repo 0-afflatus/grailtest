@@ -499,3 +499,7 @@ minetest.register_lbm({
 	run_at_every_load = true,
 	action = check_text
 })
+
+dungeon_loot.register({
+    {name = "signs:sign", chance = 0.2, count = {1,6}, y = {-2047, 1023}},
+})

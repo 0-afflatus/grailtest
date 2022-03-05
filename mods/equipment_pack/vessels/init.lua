@@ -264,4 +264,10 @@ minetest.register_craft( {
 })
 
 dofile(minetest.get_modpath("vessels").."/barrel.lua")
+
+dungeon_loot.register({
+    {name = "vessels:barrel", chance = 0.123, y = {-1023, 1023}},
+    {name = "vessels_glass_bottle", chance = 0.1, y = {-1023, 1023}},
+})
+
 minetest.log("action", "MOD["..minetest.get_current_modname().."]: [Loaded]")

@@ -292,3 +292,7 @@ minetest.register_craft({
 	recipe = "boats:boat",
 	burntime = 20,
 })
+
+dungeon_loot.register({
+    {name = "boats:boat", chance = 0.1, y = {-1023, 1023}},
+})
