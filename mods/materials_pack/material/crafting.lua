@@ -538,6 +538,18 @@ minetest.register_craft({
 	recipe = {"material:glass_obsidian", 'group:dye,'..'basecolor_red'},
 })
 
+minetest.register_craft({
+	output = "material:glass_diamond",
+	type = 'shapeless',
+	recipe = {"material:glass"},
+})
+
+minetest.register_craft({
+	output = "material:glass",
+	type = 'shapeless',
+	recipe = {"material:glass_diamond"},
+})
+
 -- Coloured blocks
 for _, row in ipairs(dye.dyes) do
 	local colour = row[1]

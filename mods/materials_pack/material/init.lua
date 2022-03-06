@@ -322,6 +322,18 @@ minetest.register_node("material:glass", {
 	sounds = base.node_sound_glass_defaults(),
 })
 
+minetest.register_node("material:glass_diamond", {
+	description = "Leaded Glass",
+	drawtype = "glasslike",
+	tiles = {"material_glass_diamond.png"},
+	inventory_image = minetest.inventorycube("material_glass_diamond.png"),
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = false,
+	groups = {cracky=3,oddly_breakable_by_hand=3},
+	sounds = base.node_sound_glass_defaults(),
+})
+
 minetest.register_node("material:glass_obsidian", {
 	description = "Obsidian Glass",
 	drawtype = "glasslike",

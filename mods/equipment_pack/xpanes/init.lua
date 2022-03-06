@@ -172,6 +172,19 @@ xpanes.register_pane("pane", {
 	}
 })
 
+xpanes.register_pane("pane_leaded", {
+	description = "Leaded Glass Pane",
+	textures = {"material_glass_diamond.png","xpanes_pane_half.png","xpanes_white.png"},
+	inventory_image = "material_glass_diamond.png",
+	wield_image = "material_glass_diamond.png",
+	sounds = base.node_sound_glass_defaults(),
+	groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3, pane=1},
+	recipe = {
+		{"material:glass_diamond", "material:glass_diamond", "material:glass_diamond"},
+		{"material:glass_diamond", "material:glass_diamond", "material:glass_diamond"}
+	}
+})
+
 for _, row in ipairs(dye.dyes) do
 	local colour = row[1]
 	local desc = row[2]
