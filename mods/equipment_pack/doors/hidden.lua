@@ -32,7 +32,9 @@ for i in ipairs(hdoor_list) do
 			{"doors:hidden_door_grey", material, ""},
 			{"", "", ""},
 			{"", "", ""},
-		}
+		},
+	    is_lockable = true,
+	    is_closable = true,
 	})
 end
 
@@ -45,7 +47,9 @@ doors.register("doors:hidden_door_grey", {
 		{"mineral:diamond_gem", "mineral:diamond_gem", ""},
 		{"mineral:diamond_gem", "mineral:diamond_gem", ""},
 		{"mineral:diamond_gem", "mineral:diamond_gem", ""}
-	}
+	},
+	is_lockable = true,
+	is_closable = true,
 })
 
 doors.register_trapdoor("doors:trapdoor_stone", {
@@ -58,4 +62,6 @@ doors.register_trapdoor("doors:trapdoor_stone", {
 	sound_open = "doors_steel_door_open",
 	sound_close = "doors_steel_door_close",
 	groups = {cracky=3, level=2, door=1},
+	is_lockable = true,
+	is_closable = true,
 })
