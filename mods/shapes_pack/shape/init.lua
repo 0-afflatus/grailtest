@@ -7,7 +7,7 @@ shape = {}
 
 -- Registration Helper
 
--- Register slabs, slopes, stairs and colums
+-- Register slabs, slopes, stairs and columns
 function shape.register_blocks(nodename)
 
 	local def = minetest.registered_nodes[nodename]

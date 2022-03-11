@@ -210,7 +210,7 @@ function tree.register_tree(name, desc, offset, delay, energy)
 		tiles = {"tree_" .. name .. "_trunk_top.png", "tree_" .. name .. "_trunk_top.png", "tree_" .. name .. "_trunk.png"},
 		paramtype2 = "facedir",
 		is_ground_content = false,
-		groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+		groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2, log=1},
 		sounds = base.node_sound_wood_defaults(),
 
 		on_place = minetest.rotate_node

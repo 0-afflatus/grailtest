@@ -15,17 +15,20 @@ local night = {
 	{name = "cricket", length = 6},
 	{name = "deer", length = 7},
 	{name = "frog", length = 1},
+	{name = "bat_03", length = 1},
+	{name = "owl_hoot", length = 1},	
 }
 
 local day = {
 	handler = {}, frequency = 40,
 	{name = "cardinal", length = 3},
-	{name = "craw", length = 3},
+	{name = "crow_caw", length = 1},
 	{name = "bluejay", length = 6},
 	{name = "robin", length = 4},
 	{name = "bird1", length = 11},
 	{name = "bird2", length = 6},
 	{name = "peacock", length = 2},
+	{name = "pigeon", length = 1},
 	{name = "wind", length = 9},
 }
 
@@ -34,12 +37,15 @@ local frosty_night = {
 	{name = "hornedowl", length = 2},
 	{name = "wolves", length = 4},
 	{name = "deer", length = 7},
+    {name = "wolf_howl", length = 4},
+	{name = "owl_hoot", length = 1},
 }
 
 local frosty_day = {
 	handler = {}, frequency = 20,
 	{name = "cardinal", length = 3},
 	{name = "craw", length = 3},
+	{name = "crow_caw", length = 1},
 	{name = "robin", length = 4},
 	{name = "bird1", length = 11},
 	{name = "bird2", length = 6},
@@ -55,7 +61,8 @@ local high_up = {
 local cave = {
 	handler = {}, frequency = 60,
 	{name = "drippingwater1", length = 1.5},
-	{name = "drippingwater2", length = 1.5}
+	{name = "drippingwater2", length = 1.5},
+	{name = "bat_02", length = 1},
 }
 
 local beach = {

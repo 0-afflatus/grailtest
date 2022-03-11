@@ -216,7 +216,9 @@ local function recipe_fs(fs, data)
 			width = 3
 		end
 	end
-
+    
+    --table.insert(fs, "label[5.5,0.5;%s]"):format(esc(data.name))
+    
 	table.insert(fs, ("label[5.5,1;%s]"):format(esc(data.show_usages
 		and S("Usage @1 of @2", data.rnum, #data.recipes)
 		or S("Recipe @1 of @2", data.rnum, #data.recipes))))
