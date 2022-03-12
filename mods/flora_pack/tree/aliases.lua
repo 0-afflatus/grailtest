@@ -47,3 +47,6 @@ minetest.register_alias("acacia_leaves", "tree:acacia_leaves")
 minetest.register_alias("acacia_trunk", "tree:acacia_trunk")
 minetest.register_alias("acacia_wood", "tree:acacia_wood")
 
+-- cheeky hack
+minetest.register_alias("tree:orange_wood", "equipment:stick")
+
