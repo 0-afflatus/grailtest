@@ -65,6 +65,26 @@ minetest.register_decoration({
 
 minetest.register_decoration({
 	deco_type = "schematic",
+	place_on = {"element:dirt_with_grass_light"},
+	sidelen = 4,
+	noise_params = {
+		offset = 0,
+		scale = 0.0005,
+		spread = {x=127, y=63, z=127},
+		seed = 777,
+		octaves = 3,
+		persist = 0.8
+	},
+	biomes = {"chapparal"},
+	y_min = 5,
+	y_max = 65,
+	schematic = minetest.get_modpath("tree").."/schematics/olive_tree.mts",
+	flags = "place_center_x, place_center_z",
+	rotation = "random"
+})
+
+minetest.register_decoration({
+	deco_type = "schematic",
 	place_on = {"element:dirt_with_grass"},
 	sidelen = 16,
 	noise_params = {

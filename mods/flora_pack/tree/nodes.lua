@@ -18,6 +18,7 @@ tree.defs = {
     {"beech", S("Beech"), 0, 4, 8, 8},
     {"jungle", S("Jungle"), 0, 3, 10, 9},
     {"oak", S("Oak"), 1, 6, 23, 12},
+    {"olive", S("Olive"), 1, 3, 6, 8},
     {"palm", S("Palm"), 1, 4, 5, 6},
     {"pine", S("Pine"), 1, 2, 7, 6},
     {"willow", S("Willow"), 0, 6, 15, 10},
@@ -76,6 +77,54 @@ minetest.register_node("tree:acorn", {
 	tiles = { "tree_acorn.png" },
 	inventory_image = "tree_acorn.png^[transformR180",
 	wield_image = "tree_acorn.png^[transformR180",
+	visual_scale = 0.5,
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+			fixed = {-0.2, -0.5, -0.2, 0.2, 0, 0.2}
+		},
+	groups = { choppy = 3, dig_immediate = 3, flammable = 2, leafdecay_drop = 1, attached_node = 1, nut = 1},
+	sounds = base.node_sound_defaults(),
+})
+
+minetest.register_node("tree:olive_flowers", {
+    description = S("Olive flowers"),
+    drawtype = "allfaces_optional",
+    waving = 1,
+    visual_scale = 1.3,
+    tiles = { "tree_olive_leaves.png" },
+    paramtype = "light",
+	is_ground_content = false,
+	walkable = false,
+	groups = { snappy = 3, leafdecay = 3, flammable = 2, flower = 1 },
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				-- player will get sapling with 1/20 chance
+				items = {"tree:olive"},
+				rarity = 37,
+			},
+			{
+				-- player will get leaves only if he get no saplings,
+				-- this is because max_items is 1
+				items = {"tree:olive_leaves"},
+			}
+		}
+	},
+	sounds = base.node_sound_leaves_defaults(),
+    on_timer = tree.grow_fruit,
+	after_place_node = tree.after_place_leaves,
+})
+
+minetest.register_node("tree:olive_fruit", {
+	description = S("Olive"),
+	drawtype = "plantlike",
+	tiles = { "tree_olive.png" },
+	inventory_image = "tree_olive.png^[transformR180",
+	wield_image = "tree_olive.png^[transformR180",
 	visual_scale = 0.5,
 	paramtype = "light",
 	sunlight_propagates = true,

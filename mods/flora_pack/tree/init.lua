@@ -429,7 +429,8 @@ local fruit = {
 	banana = "banana",
 	oak = "acorn",
 	palm = "coconut",
-	pine = "pine_cone"
+	pine = "pine_cone",
+	olive = "olive_fruit"
 	}
 
 local nodenames = {
@@ -437,7 +438,8 @@ local nodenames = {
 	"tree:banana_leaves",
 	"tree:oak_leaves",
 	"tree:palm_leaves",
-	"tree:pine_leaves"
+	"tree:pine_leaves",
+	"tree:olive_leaves"
 	}
 
 minetest.register_abm({
