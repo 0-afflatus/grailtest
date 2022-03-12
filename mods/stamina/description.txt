@@ -1,0 +1,1 @@
+Adds stamina, hunger and drunk effects.

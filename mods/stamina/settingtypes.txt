@@ -1,0 +1,7 @@
+sprint (Enable sprint) bool true
+
+sprint_particles (Enable sprint particles) bool true
+
+enable_stamina (Enable stamina/hunger) bool true
+
+stamina_tick (Time in seconds after which 1 saturation point is taken) float 1200
