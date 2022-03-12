@@ -131,12 +131,14 @@ feed.grazing = {"plant:grass_3", "plant:grass_4", "plant:grass_5", "plant:wheat_
 
 feed.seed = {"plant:wheat", "plant:barley", "plant:oats", "plant:maize"}
 
+feed.birdseed = {"plant:wheat", "plant:barley", "plant:oats", "plant:maize", "tree:pine_nuts", "fishing:bait:worm", "ethereal:worm"}
+
 feed.bunny = {"plant:carrot_3", "plant:carrot"}
 
-feed.kitten = {"mobs:rat", "fishing:fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical", "mobs_animal:rat", "group:food_fish_raw", "mobs_fish:tropical", "xocean:fish_edible"}
+feed.kitten = {"mobs:rat", "mobs_animal:rat", "fishing:fish_raw", "mobs_fish:clownfish", "mobs_fish:tropical", "group:food_fish_raw", "mobs_fish:tropical", "xocean:fish_edible"}
 
 feed.npc = {"food:bread", "mobs:meat", "mineral:diamond_gem", "food:cake", "food:fruitcake", "food:soup_chicken_cooked", "food:soup_vegetable_cooked", "food:stew_meat_cooked", "food:stew_vegetable_cooked"}
 
 feed.sheep = {"plant:hay", "group:grass"}
 
-feed.pig = {"tree:apple", "tree:acorn", "plant:beetroot", "plant:carrot", "plant:turnip"}
+feed.pig = {"tree:apple", "tree:acorn", "plant:beetroot", "plant:carrot", "plant:turnip", "default:apple", "plant:potato", "ethereal:banana_bread", "plant:melon_slice", "plant:corn"}

@@ -386,7 +386,7 @@ function element.register_biomes()
 
 	minetest.register_biome({
 		name = "savanna_swamp",
-		node_top = "element:mud",
+		node_top = "element:dirt_with_grass",
 		depth_top = 1,
 		node_filler = "element:dirt_red",
 		depth_filler = 2,

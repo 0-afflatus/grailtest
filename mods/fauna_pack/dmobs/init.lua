@@ -44,21 +44,21 @@ end
 if dmobs.regulars then
 
 	-- load friendly mobs
-	dofile(dpath .. "mobs/pig.lua")
-	dofile(dpath .. "mobs/tortoise.lua")
+	--dofile(dpath .. "mobs/pig.lua")
+	--dofile(dpath .. "mobs/tortoise.lua")
 	dofile(dpath .. "mobs/golem_friendly.lua")
 	dofile(dpath .. "mobs/gnorm.lua")
 	dofile(dpath .. "mobs/hedgehog.lua")
-	dofile(dpath .. "mobs/owl.lua")
+	--dofile(dpath .. "mobs/owl.lua")
 	dofile(dpath .. "mobs/whale.lua")
 	dofile(dpath .. "mobs/badger.lua")
-	dofile(dpath .. "mobs/butterfly.lua")
-	dofile(dpath .. "mobs/elephant.lua")
+	--dofile(dpath .. "mobs/butterfly.lua")
+	--dofile(dpath .. "mobs/elephant.lua")
 
 	-- load baddies
-	dofile(dpath .. "mobs/pig_evil.lua")
-	dofile(dpath .. "mobs/fox.lua")
-	dofile(dpath .. "mobs/rat.lua")
+	--dofile(dpath .. "mobs/pig_evil.lua")
+	--dofile(dpath .. "mobs/fox.lua")
+	--dofile(dpath .. "mobs/rat.lua")
 	dofile(dpath .. "mobs/treeman.lua")
 	dofile(dpath .. "mobs/golem.lua")
 	dofile(dpath .. "mobs/skeleton.lua")
