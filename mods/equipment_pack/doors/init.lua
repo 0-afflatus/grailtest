@@ -15,7 +15,7 @@ dofile( minetest.get_modpath( "doors" ) .. "/api.lua" )
 ------------------------
 -- Door Registrations --
 ------------------------
---[[
+
 doors.register_door( "doors:door_wood", {
 	tiles = {{ name = "doors_door_wood.png", backface_culling = true }},
 	description = "Wooden Door",
@@ -28,7 +28,7 @@ doors.register_door( "doors:door_wood", {
 	},
 	can_center = true,
 } )
-]]--
+
 
 doors.register("doors:door_oak", {
 	tiles = {{ name = "doors_door_oak.png", backface_culling = true }},
