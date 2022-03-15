@@ -196,6 +196,10 @@ for _, row in ipairs(dye.dyes) do
 	    trans = "blend",
 	    inventory_image = "xpanes_"..colour.."_glass.png",
 	    wield_image = "xpanes_"..colour.."_glass.png",
+		paramtype = "light",
+		sunlight_propagates = true,
+		light_source = 1,
+		is_ground_content = false,
 	    sounds = base.node_sound_glass_defaults(),
 	    groups = {snappy=2, cracky=3, oddly_breakable_by_hand=3, pane=1},
 	    recipe = {

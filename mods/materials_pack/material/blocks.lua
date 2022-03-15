@@ -55,10 +55,10 @@ for _, row in ipairs(dye.dyes) do
 		use_texture_alpha = "blend",
 		paramtype = "light",
 		sunlight_propagates = true,
-		light_source = 2,
+		light_source = 1,
 		is_ground_content = false,
 		groups = {cracky = 3, oddly_breakable_by_hand = 3},
-		sounds = base.node_sound_defaults(),
+		sounds = base.node_sound_glass_defaults(),
 	})
 end
 

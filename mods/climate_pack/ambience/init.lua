@@ -1,7 +1,7 @@
 
 --= Ambience lite by TenPlus1 (17th June 2016)
 
-local max_frequency_all = 900 -- larger number means more frequent sounds (100-2000)
+local max_frequency_all = 800 -- larger number means more frequent sounds (100-2000)
 local SOUNDVOLUME = 1
 local volume = 0.25
 local ambiences
@@ -28,8 +28,6 @@ local day = {
 	{name = "bird1", length = 11},
 	{name = "bird2", length = 6},
 	{name = "peacock", length = 2},
-	{name = "pigeon", length = 1},
-	{name = "wind", length = 9},
 }
 
 local frosty_night = {
